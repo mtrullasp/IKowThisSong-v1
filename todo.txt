@@ -1,0 +1,2 @@
+* Fer la Base de Dades, amb les imatges baixades i connectar-la per Ids a la Info de Deezer.
+* Buscar basar-me en una db existent online .json.
