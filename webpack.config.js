@@ -16,14 +16,29 @@ module.exports = {
     extensions: ['.js', '.ts', '.tsx']
   },
   module: {
-    loaders: [{
+    rules: [{
       test: /\.tsx?$/,
       use: [
         {
-          loader: "awesome-typescript-loader"
+          loader: "ts-loader"
         },
       ],
       include: path.join(__dirname, 'src')
-    }]
+    },
+      {
+        test: /\.css$/,
+        use: [
+          { loader: "style-loader" },
+          { loader: "css-loader" }
+        ]
+      }
+    ]
+  },
+  externals: {
+    node: {
+      net: "empty",
+      tls: "empty"
+    }
   }
 };
+
