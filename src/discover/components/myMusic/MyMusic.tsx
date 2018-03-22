@@ -4,7 +4,7 @@ import Artists, {
   default as MyArtists
 } from "./MyArtists";
 import { Route, Switch } from "react-router";
-import {ROUTE_ARTISTS, ROUTE_COMPOSERS, ROUTE_PLAYLIST, ROUTE_PLAYLISTS} from "../../../util/constants";
+import {ROUTE_ARTISTS, ROUTE_COMPOSER, ROUTE_COMPOSERS, ROUTE_PLAYLIST, ROUTE_PLAYLISTS} from "../../../util/constants";
 import { CSSProperties } from "react";
 import Tabs, { Tab } from "material-ui/Tabs";
 import AppBar from "material-ui/AppBar";
@@ -19,6 +19,7 @@ import MyTab from "../../../widgets/MyTab";
 import MyPlaylistTracks from "../MyPlaylistTracks";
 import ClientArea from "../ClientArea.";
 import MyComposers from "./MyComposers";
+import Composer from "./Composer";
 
 interface IProps {
   appState?: AppState;
@@ -55,8 +56,9 @@ class MyMusic extends React.Component<IProps, {}> {
         />
         <Route path={ROUTE_PLAYLISTS} component={MyPlaylists} exact />
 */}
-        <Route path={ROUTE_COMPOSERS} component={MyComposers} />
-        <Route path={ROUTE_ARTISTS} component={MyArtists} />
+        <Route path={ROUTE_COMPOSERS} component={MyComposers} exact />
+        <Route path={ROUTE_COMPOSER} component={Composer} />
+        <Route path={ROUTE_ARTISTS} component={MyArtists} exact />
         <Route
           path={"/Me/Playlist/:playlistId/Tracks"}
           component={MyPlaylistTracks}

@@ -1,5 +1,7 @@
 export const ROUTE_COMPOSERS = "/discover/Me/Composers";
+export const ROUTE_COMPOSER = "/discover/Me/Composer/:composerId";
 export const ROUTE_ARTISTS = "/discover/Me/Artists";
+export const ROUTE_KLASSIC_RANKS = "/discover/Me/KlassicRanks";
 export const ROUTE_PLAYLISTS = "/discover/Me/Playlists";
 export const ROUTE_PLAYLIST = "/discover/Me/Playlist/:playlistId";
 export const ROUTE_TRACKS = "/discover/Me/Tracks";

@@ -68,7 +68,7 @@ class MyPlaylists extends React.Component<IProps, {}> {
     const classes: ClassNameMap<string> = this.props.classes;
     /*
       const imatges = this.props.appState.userArtists.map(art => {
-        return <Col lg={3}><img src={art.picture_medium} style={{display: "inline"}}/></Col>
+        return <Col lg={3}><img src={art.PictureMediumURL} style={{display: "inline"}}/></Col>
       });
       return (0
         <Grid fluid={true}>

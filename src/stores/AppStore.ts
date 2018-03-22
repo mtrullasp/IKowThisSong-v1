@@ -9,9 +9,9 @@ import {
   ROUTE_PLAYLISTS
 } from "../util/constants";
 //import composersTs from "../data/composers";
-import { getComposers, insertConposers } from "../data/dbComposers";
-import composersPhoto from "../data/composersPhoto";
-import composers from "../data/composers";
+//import { getComposers, insertConposers } from "../data/dbComposers";
+//import composersPhoto from "../data/composersPhoto";
+//import composers from "../data/composers";
 import * as $ from "jquery";
 import axios from "axios";
 
@@ -20,8 +20,9 @@ export class IComposer {
   IdDeezer: number;
   Nom: string;
   Nivell: number;
+  Bio: string;
   AnyoNeix: number;
-  picture_medium: string;
+  PictureMediumURL: string;
 }
 
 export interface IDZ {
@@ -78,7 +79,7 @@ export interface ITrack {
   available_countries: Array<string>; //List of countries where the track is available	list
   alternative: string; //Return an alernative readable track if the current track is not readable	track
   contributors: Array<Object>; //Return a list of contributors on the track	list
-  artist: IInterpret; //	artist object containing : id, name, link, share, picture, picture_small, picture_medium, picture_big, picture_xl, nb_album, nb_fan, radio, tracklist, role	object
+  artist: IInterpret; //	artist object containing : id, name, link, share, picture, picture_small, PictureMediumURL, picture_big, picture_xl, nb_album, nb_fan, radio, tracklist, role	object
   album: IAlbum; //	album object containing : id, title, link, cover, cover_small, cover_medium, cover_big, cover_xl, release_date	object
 }
 
@@ -175,7 +176,7 @@ export class AppState {
       this.trackProgress = resp.currentTime; //debugger ;
     });
 
-    insertConposers(composers);
+    //insertConposers(composers);
 
     reaction(
       () => this.userId,
@@ -183,11 +184,7 @@ export class AppState {
         /**
          * Coomposers. API Propi SQL SERVER ASP.NET WEB API
          */
-        const URL_COMPOSERS = "http://localhost:50688/api/autors";
-        axios.get(URL_COMPOSERS).then(resp => {
-          this.composersFromApi = resp.data;
-        });
-
+        this.getComposers();
         /**
          * Artists
          */
@@ -195,15 +192,17 @@ export class AppState {
           "user/me/artists?limit=1000",
           (artists: IResponseCollection<TArtist>) => {
             this.userArtistsFromApi = artists.data;
+            //this.setTabActiveIndex(0);
+
             /*this.userArtistsFromApi.forEach(artist => {
-              if (artist.picture_medium.endsWith("000000-80-0-0.jpg")) {
+              if (artist.PictureMediumURL.endsWith("000000-80-0-0.jpg")) {
                 const nomsencer = artist.name.split(" ");
                 const cognom =
                   nomsencer.length > 1
                     ? nomsencer[nomsencer.length - 1].trim().toLowerCase()
                     : nomsencer[0].trim().toLowerCase();
                 /!*
-                artist.picture_medium =
+                artist.PictureMediumURL =
                   "https://www.biografiasyvidas.com/biografia/" +
                   cognom.charAt(0) +
                   "/fotos/" +
@@ -219,7 +218,7 @@ export class AppState {
                         if (comment.text.startsWith("{")) {
                           try {
                             const json = JSON.parse(comment.text);
-                            artist.picture_medium = json["photo"];
+                            artist.PictureMediumURL = json["photo"];
                           } catch (e) {}
                         }
                       });
@@ -290,6 +289,13 @@ export class AppState {
   };
 */
 
+  @action getComposers(): Promise<any> {
+    const URL_COMPOSERS = "http://localhost:50688/api/autors";
+    return axios.get(URL_COMPOSERS).then(resp => {
+      this.composersFromApi = resp.data;
+    });
+  }
+
   @observable user: IUser;
 
   /*
@@ -356,27 +362,26 @@ export class AppState {
           return 1;
         }
         return 0;
-      })
-      .map(artist => {
-        return {
-          ...artist,
-          picture_medium: this.getArtistPhoto(artist, artist.picture_medium)
-        } as TArtist;
       });
   }
 
-  private composersPhotos = composersPhoto;
+  //private composersPhotos = composersPhoto;
   private getArtistPhoto(artist: TArtist, defaultPhoto: string): string {
+/*
     const myPhoto = this.composersPhotos.find(photo => photo.id === artist.id);
     if (!artist.isComposer) {
       return defaultPhoto;
     }
     return !!myPhoto ? myPhoto.foto : defaultPhoto;
+*/
+    return defaultPhoto;
   }
+/*
   private getComposerPhoto(composer: IComposer): string {
     debugger ;const myPhoto = this.composersPhotos.find(photo => photo.id === composer.IdDeezer);
     return !!myPhoto ? myPhoto.foto : '';
   }
+*/
 
   @observable userPlayListSortField: string = "title";
   @observable userPlaylistsFromApi: Array<IPlaylist>;
@@ -427,12 +432,6 @@ export class AppState {
           return -1;
         }
         return 0;
-      })
-      .map(artist => {
-        return {
-          ...artist,
-          picture_medium: this.getComposerPhoto(artist)
-        } as IComposer;
       });
   }
 
@@ -559,6 +558,16 @@ export class AppState {
       id: "artists",
       index: 1,
       title: "My artists",
+      routePath: ROUTE_ARTISTS,
+      count: null,
+      onEnter: () => {
+        this.showOnlyComposers = false;
+      }
+    },
+    {
+      id: "kassikRanks",
+      index: 1,
+      title: "My Klassic Ranks",
       routePath: ROUTE_ARTISTS,
       count: null,
       onEnter: () => {
@@ -730,5 +739,18 @@ export class AppState {
   @computed
   get isEntornDiscover(): boolean {
     return this.history.location.pathname.startsWith("/discover");
+  }
+
+  @action upadateImatgeURL(IdAutor: number, FotoURL: string): Promise<any> {
+    const URL_PHOTO = "http://localhost:50688/api/AutorFoto";
+    return axios.put( URL_PHOTO,{IdAutor: IdAutor, FotoURL: FotoURL});
+  }
+
+  @observable activeComposerId: number = -1;
+  @computed get activeComposer(): IComposer {
+    if (this.activeComposerId < 0) {
+      return null;
+    }
+    return this.composers[this.activeComposerId];
   }
 }

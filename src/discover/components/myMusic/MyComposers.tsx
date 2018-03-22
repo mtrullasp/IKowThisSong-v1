@@ -14,7 +14,7 @@ import { style } from "typestyle";
 import { EventHandler } from "react";
 import { withRouter } from "react-router";
 import TextField from "material-ui/TextField";
-import { FUNNY_FONT } from "../../../util/constants";
+import {FUNNY_FONT, ROUTE_COMPOSER} from "../../../util/constants";
 
 const styles = theme => ({
   root: {
@@ -27,7 +27,7 @@ const styles = theme => ({
   gridList: {
     width: "100%",
     height: "auto",
-    overflowY: 'auto'
+    overflowY: "auto"
   },
   gridTileBar: {
     fontSize: 9
@@ -45,7 +45,7 @@ interface IProps {
 }
 @inject("appState")
 @observer
-class MyComposers extends React.Component<IProps, {}> {º
+class MyComposers extends React.Component<IProps, {}> {
   constructor(props: IProps, context: any) {
     super(props, context);
   }
@@ -57,7 +57,7 @@ class MyComposers extends React.Component<IProps, {}> {º
   renderItem(index, key) {
     return (
       <div key={key}>
-        <img src={this.props.appState.composers[index].picture_medium} />
+        <img src={this.props.appState.composers[index].PictureMediumURL} />
       </div>
     );
   }
@@ -66,7 +66,7 @@ class MyComposers extends React.Component<IProps, {}> {º
     const classes: ClassNameMap<string> = this.props.classes;
     /*
       const imatges = this.props.appState.usercomposers.map(art => {
-        return <Col lg={3}><img src={art.picture_medium} style={{display: "inline"}}/></Col>
+        return <Col lg={3}><img src={art.PictureMediumURL} style={{display: "inline"}}/></Col>
       });
       return (0
         <Grid fluid={true}>
@@ -87,7 +87,11 @@ class MyComposers extends React.Component<IProps, {}> {º
 */
     const NUMBER_COLS = 5;
     return (
-      <GridList cellHeight={400} cols={NUMBER_COLS} className={style({width: '100%'})}>
+      <GridList
+        cellHeight={400}
+        cols={NUMBER_COLS}
+        className={style({ width: "100%" })}
+      >
         <GridListTile
           key="Subheader"
           cols={NUMBER_COLS}
@@ -96,7 +100,7 @@ class MyComposers extends React.Component<IProps, {}> {º
           <Subheader component="div" style={{ margin: 0, padding: 0 }}>
             <TextField
               id="filtrecomposers"
-              placeholder={'Filter by Name'}
+              placeholder={"Filter by Name"}
               className={style({
                 width: "100%",
                 fontSize: 50,
@@ -111,16 +115,30 @@ class MyComposers extends React.Component<IProps, {}> {º
         </GridListTile>
         {this.props.appState.composers.map((composer, index) => (
           <GridListTile
-            key={composer.IdAutor}
+            onClick={() => {
+              const routePath = ROUTE_COMPOSER.replace(':composerId', composer.IdAutor.toString());
+              this.props.appState.activeComposerId = composer.IdAutor;
+              this.props.appState.go(routePath);
+/*
+              const picture_medium = prompt("Foto");
+              this.props.appState.upadateImatgeURL(
+                composer.IdAutor,
+                picture_medium
+              ).then(() => {
+                this.props.appState.getComposers();
+              });
+*/
+            }}
+           key={composer.IdAutor}
             className={style({ cursor: "pointer" })}
           >
-            <img src={composer.picture_medium} alt={composer.Nom} />
+            <img src={composer.PictureMediumURL} alt={composer.Nom} />
             <GridListTileBar
               className={classes.gridTileBar}
               title={<span style={{ fontSize: 12 }}>{composer.Nom}</span>}
               subtitle={
                 <div>
-{/*
+                  {/*
                   <span style={{ fontSize: 11 }}>
                     {composer.nb_album} àlbumsi {composer.nb_fan} fans
                   </span>
@@ -138,7 +156,7 @@ class MyComposers extends React.Component<IProps, {}> {º
                   </span>
                 </div>
               }
-/*
+              /*
               actionIcon={
                 <IconButton className={classes.icon}>
                   <a
