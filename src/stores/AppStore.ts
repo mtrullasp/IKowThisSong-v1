@@ -6,7 +6,7 @@ import {
   ROUTE_COMPOSERS,
   ROUTE_HOME,
   ROUTE_PLAYLIST,
-  ROUTE_PLAYLISTS
+  ROUTE_PLAYLISTS, ROUTE_TRACKS
 } from "../util/constants";
 //import composersTs from "../data/composers";
 //import { getComposers, insertConposers } from "../data/dbComposers";
@@ -16,12 +16,13 @@ import * as $ from "jquery";
 import axios from "axios";
 
 export class IComposer {
-  IdAutor: number;
+  IdComposer: number;
   IdDeezer: number;
   Nom: string;
   Nivell: number;
   Bio: string;
   AnyoNeix: number;
+  AnyoDefu: number;
   PictureMediumURL: string;
 }
 
@@ -157,7 +158,7 @@ export class AppState {
 
     /*
     getComposers().then(resp => {
-      debugger ;this.composers = resp;
+      this.composers = resp;
     });
 */
     this.userArtistsFromApi = [];
@@ -173,7 +174,7 @@ export class AppState {
     });
 
     DZ.Event.subscribe("player_position", (resp: any) => {
-      this.trackProgress = resp.currentTime; //debugger ;
+      this.trackProgress = resp.currentTime; //
     });
 
     //insertConposers(composers);
@@ -290,7 +291,7 @@ export class AppState {
 */
 
   @action getComposers(): Promise<any> {
-    const URL_COMPOSERS = "http://localhost:50688/api/autors";
+    const URL_COMPOSERS = "http://localhost:50688/api/composers";
     return axios.get(URL_COMPOSERS).then(resp => {
       this.composersFromApi = resp.data;
     });
@@ -378,7 +379,7 @@ export class AppState {
   }
 /*
   private getComposerPhoto(composer: IComposer): string {
-    debugger ;const myPhoto = this.composersPhotos.find(photo => photo.id === composer.IdDeezer);
+    const myPhoto = this.composersPhotos.find(photo => photo.id === composer.IdDeezer);
     return !!myPhoto ? myPhoto.foto : '';
   }
 */
@@ -419,11 +420,11 @@ export class AppState {
     return this.composers.length;
   }
 
-  @observable composersFromApi: Array<IComposer>;
+  @observable composersFromApi: Array<IComposer> = [];
   @computed
   get composers(): Array<IComposer> {
     return this.composersFromApi
-      .filter(c => !!c.IdDeezer)
+      /*.filter(c => !!c.IdDeezer)*/
       .sort((a1, a2): number => {
         if (a1.AnyoNeix > a2.AnyoNeix) {
           return 1;
@@ -476,9 +477,11 @@ export class AppState {
   @action
   setHistory(history: any) {
     this.history = history;
+/*
     if (this.isEntornDiscover) {
       this.setTabActiveIndex(0);
     }
+*/
   }
   @action
   go(path: string) {
@@ -492,6 +495,10 @@ export class AppState {
   @action
   goBack() {
     this.history.goBack();
+  }
+  @action
+  goForward() {
+    this.history.goForward();
   }
   @action
   goHome() {
@@ -566,7 +573,7 @@ export class AppState {
     },
     {
       id: "kassikRanks",
-      index: 1,
+      index: 2,
       title: "My Klassic Ranks",
       routePath: ROUTE_ARTISTS,
       count: null,
@@ -577,20 +584,27 @@ export class AppState {
     {
       id: "playlists",
       count: null,
-      index: 2,
+      index: 3,
       title: "My PlayLists",
       routePath: ROUTE_PLAYLISTS
     },
     {
-      id: "tracks",
-      index: 3,
+      id: "albums",
       count: null,
-      title: "My Tracks",
+      index: 4,
+      title: "My Albums",
       routePath: ROUTE_PLAYLISTS
     },
     {
+      id: "tracks",
+      index: 5,
+      count: null,
+      title: "My Tracks",
+      routePath: ROUTE_TRACKS
+    },
+    {
       id: "search",
-      index: 4,
+      index: 6,
       title: "My Searchs",
       routePath: ROUTE_PLAYLISTS
     }
@@ -741,9 +755,9 @@ export class AppState {
     return this.history.location.pathname.startsWith("/discover");
   }
 
-  @action upadateImatgeURL(IdAutor: number, FotoURL: string): Promise<any> {
-    const URL_PHOTO = "http://localhost:50688/api/AutorFoto";
-    return axios.put( URL_PHOTO,{IdAutor: IdAutor, FotoURL: FotoURL});
+  @action upadateImatgeURL(IdComposer: number, PictureMediumURL: string): Promise<any> {
+    const URL_PHOTO = "http://localhost:50688/api/ComposerPhoto";
+    return axios.put( URL_PHOTO,{IdComposer: IdComposer, PictureMediumURL: PictureMediumURL});
   }
 
   @observable activeComposerId: number = -1;

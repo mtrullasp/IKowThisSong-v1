@@ -1,18 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/src/util/constants.ts" line="5" mnemonic="6" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="100828f7-a792-40ea-89bf-c53219f48e8f" name="Default" comment="Prpimer Commmit versió 1">
+    <list default="true" id="100828f7-a792-40ea-89bf-c53219f48e8f" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/composers.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/composersPhoto.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/dbComposers.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/discover/components/myMusic/MyArtists.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/discover/components/myMusic/MyArtists.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App..tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App..tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Header..tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Header..tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dashboard/DashBoard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/dashboard/DashBoard.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/discover/components/AppDiscover.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/discover/components/AppDiscover.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/discover/components/MyPlaylistTracks.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/discover/components/MyPlaylistTracks.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/discover/components/myMusic/MyComposers.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/discover/components/myMusic/MyComposers.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/discover/components/myMusic/MyMusic.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/discover/components/myMusic/MyMusic.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/discover/components/myMusic/MyPlaylists.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/discover/components/myMusic/MyPlaylists.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/discover/components/myPlayer/MyPlayer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/discover/components/myPlayer/MyPlayer.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/stores/AppStore.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/stores/AppStore.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/util/constants.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/util/constants.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/widgets/MyTab.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/widgets/MyTab.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/widgets/SelectablePanel.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/widgets/SelectablePanel.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/todo.txt" beforeDir="false" afterPath="$PROJECT_DIR$/todo.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -26,93 +36,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="MyComposers.tsx" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/discover/components/myMusic/MyComposers.tsx">
+      <file leaf-file-name="AppDiscover.tsx" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/discover/components/AppDiscover.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="208">
-              <caret line="119" column="70" lean-forward="true" selection-start-line="119" selection-start-column="70" selection-end-line="119" selection-end-column="70" />
+            <state relative-caret-position="782">
+              <caret line="68" column="10" selection-start-line="68" selection-start-column="10" selection-end-line="68" selection-end-column="10" />
               <folding>
-                <element signature="e#566#645#0" expanded="true" />
+                <element signature="e#76#107#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MyMusic.tsx" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/discover/components/myMusic/MyMusic.tsx">
+      <file leaf-file-name="Header..tsx" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Header..tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="167">
-              <caret line="59" column="50" lean-forward="true" selection-start-line="59" selection-start-column="50" selection-end-line="59" selection-end-column="50" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ParagraphBootstrap..tsx" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/dashboard/ParagraphBootstrap..tsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="36" column="32" selection-start-line="36" selection-start-column="32" selection-end-line="36" selection-end-column="32" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DashBoard.tsx" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/dashboard/DashBoard.tsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="211">
-              <caret line="70" column="49" selection-start-line="70" selection-start-column="49" selection-end-line="70" selection-end-column="49" />
-              <folding>
-                <element signature="e#307#338#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SelectablePanel.tsx" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/widgets/SelectablePanel.tsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="5" column="7" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="133">
-              <caret line="57" column="61" selection-start-line="57" selection-start-column="61" selection-end-line="57" selection-end-column="61" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AppStore.ts" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/stores/AppStore.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="211">
-              <caret line="194" column="13" lean-forward="true" selection-start-line="194" selection-start-column="13" selection-end-line="194" selection-end-column="13" />
-              <folding>
-                <element signature="e#0#68#0" expanded="true" />
-                <element signature="e#466#494#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="todo.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/todo.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Composer.tsx" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/discover/components/myMusic/Composer.tsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="26" column="3" lean-forward="true" selection-start-line="26" selection-start-column="3" selection-end-line="26" selection-end-column="3" />
+            <state relative-caret-position="544">
+              <caret line="41" column="47" selection-start-line="41" selection-start-column="47" selection-end-line="41" selection-end-column="47" />
               <folding>
                 <element signature="e#0#31#0" expanded="true" />
               </folding>
@@ -120,11 +60,92 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="constants.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/util/constants.ts">
+      <file leaf-file-name="DivInline..tsx" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/widgets/DivInline..tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" column="13" selection-start-line="1" selection-start-column="13" selection-end-line="1" selection-end-column="13" />
+            <state relative-caret-position="340">
+              <caret line="21" column="3" selection-start-line="21" selection-start-column="3" selection-end-line="21" selection-end-column="3" />
+              <folding>
+                <element signature="e#0#31#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.d.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/node_modules/@types/history/index.d.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="272">
+              <caret line="19" column="4" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="4" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="App..tsx" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/App..tsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="16" column="20" selection-start-line="16" selection-start-column="20" selection-end-line="16" selection-end-column="20" />
+              <folding>
+                <element signature="e#0#31#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MyTab.tsx" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/widgets/MyTab.tsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="208">
+              <caret line="21" column="62" selection-start-line="21" selection-start-column="62" selection-end-line="21" selection-end-column="62" />
+              <folding>
+                <element signature="e#0#31#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="InlineTrackPlayer..tsx" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/widgets/InlineTrackPlayer..tsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="391">
+              <caret line="26" column="12" selection-start-line="26" selection-start-column="12" selection-end-line="26" selection-end-column="12" />
+              <folding>
+                <element signature="e#0#31#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MyPlaylistTracks.tsx" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/discover/components/MyPlaylistTracks.tsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="731">
+              <caret line="49" column="16" selection-start-line="49" selection-start-column="16" selection-end-line="49" selection-end-column="16" />
+              <folding>
+                <element signature="e#0#31#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MyPlayer.tsx" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/discover/components/myPlayer/MyPlayer.tsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1428">
+              <caret line="95" column="8" selection-start-line="95" selection-start-column="8" selection-end-line="95" selection-end-column="8" />
+              <folding>
+                <element signature="e#0#31#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.tsx" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/index.tsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="16" column="9" selection-start-line="16" selection-start-column="9" selection-end-line="16" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -140,40 +161,42 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>getcom</find>
-      <find>composersFr</find>
-      <find>300</find>
-      <find>playli</find>
-      <find>cols</find>
-      <find>fau</find>
-      <find>350</find>
-      <find>image</find>
-      <find>pict</find>
-      <find>icompo</find>
-      <find>picture</find>
-      <find>prompt</find>
-      <find>onclick</find>
-      <find>getComposers</find>
-      <find>URL_COMPOSERS</find>
-      <find>axios</find>
-      <find>update</find>
-      <find>select</find>
-      <find>he</find>
-      <find>cell</find>
-      <find>20</find>
-      <find>par</find>
-      <find>: 400</find>
-      <find>400</find>
-      <find>retro</find>
-      <find>width</find>
-      <find>my</find>
-      <find>onClick</find>
-      <find>active</find>
-      <find>this.set</find>
+      <find>react</find>
+      <find>composers</find>
+      <find>composer</find>
+      <find>import {observer}ºº</find>
+      <find>tracks</find>
+      <find>setTa</find>
+      <find>settabac</find>
+      <find>setTabActiveIndex</find>
+      <find>debugger ;</find>
+      <find>activeTrac</find>
+      <find>activepl</find>
+      <find>Grid</find>
+      <find>&lt;ul</find>
+      <find>fontS</find>
+      <find>primary</find>
+      <find>i kn</find>
+      <find>i know</find>
+      <find>grid</find>
+      <find>THE</find>
+      <find>MUI</find>
+      <find>MUITHEMEPROV</find>
+      <find>go back</find>
+      <find>&lt;Icon</find>
+      <find>state</find>
+      <find>goback</find>
+      <find>defaultP</find>
+      <find>30</find>
+      <find>fon</find>
+      <find>space-e</find>
+      <find>myc</find>
     </findStrings>
     <replaceStrings>
       <replace>artists</replace>
       <replace>composer</replace>
+      <replace>IdComposer</replace>
+      <replace />
     </replaceStrings>
     <dirStrings>
       <dir>C:\wrk\IKowThisSong</dir>
@@ -188,7 +211,6 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/package.json" />
-        <option value="$PROJECT_DIR$/webpack.config.js" />
         <option value="$PROJECT_DIR$/src/dashboard/ParagraphBootstrap.tsx" />
         <option value="$PROJECT_DIR$/src/wisgets/SelectablePanel.tsx" />
         <option value="$PROJECT_DIR$/src/index.tsx" />
@@ -196,25 +218,32 @@
         <option value="$PROJECT_DIR$/src/SelectLevel..tsx" />
         <option value="$PROJECT_DIR$/src/discover/Discover..tsx" />
         <option value="$PROJECT_DIR$/src/main.css" />
-        <option value="$PROJECT_DIR$/src/App..tsx" />
         <option value="$PROJECT_DIR$/src/discover/components/ClientArea..tsx" />
-        <option value="$PROJECT_DIR$/src/Header..tsx" />
-        <option value="$PROJECT_DIR$/src/widgets/MyTab.tsx" />
-        <option value="$PROJECT_DIR$/index.html" />
-        <option value="$PROJECT_DIR$/src/discover/components/AppDiscover.tsx" />
-        <option value="$PROJECT_DIR$/src/discover/components/myMusic/MyPlaylists.tsx" />
         <option value="$PROJECT_DIR$/fotoso.json" />
         <option value="$PROJECT_DIR$/src/discover/components/myMusic/MyArtists.tsx" />
-        <option value="$PROJECT_DIR$/src/widgets/SelectablePanel.tsx" />
-        <option value="$PROJECT_DIR$/src/dashboard/DashBoard.tsx" />
         <option value="$PROJECT_DIR$/src/dashboard/ParagraphBootstrap..tsx" />
-        <option value="$PROJECT_DIR$/todo.txt" />
         <option value="$PROJECT_DIR$/src/discover/components/myMusic/Composer..tsx" />
+        <option value="$PROJECT_DIR$/src/discover/components/myMusic/Composer.tsx" />
         <option value="$PROJECT_DIR$/src/util/constants.ts" />
         <option value="$PROJECT_DIR$/src/discover/components/myMusic/MyComposers.tsx" />
-        <option value="$PROJECT_DIR$/src/discover/components/myMusic/Composer.tsx" />
+        <option value="$PROJECT_DIR$/webpack.config.js" />
+        <option value="$PROJECT_DIR$/src/discover/components/myMusic/MyTracks..tsx" />
+        <option value="$PROJECT_DIR$/src/discover/components/MyPlaylistTracks.tsx" />
+        <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/src/widgets/MaxHeightContainer..tsx" />
         <option value="$PROJECT_DIR$/src/discover/components/myMusic/MyMusic.tsx" />
+        <option value="$PROJECT_DIR$/src/discover/components/myMusic/MyPlaylists.tsx" />
+        <option value="$PROJECT_DIR$/src/discover/components/AppDiscover.tsx" />
+        <option value="$PROJECT_DIR$/todo.txt" />
+        <option value="$PROJECT_DIR$/src/widgets/InlineTrackPlayer..tsx" />
+        <option value="$PROJECT_DIR$/src/dashboard/DashBoard.tsx" />
+        <option value="$PROJECT_DIR$/src/widgets/SelectablePanel.tsx" />
         <option value="$PROJECT_DIR$/src/stores/AppStore.ts" />
+        <option value="$PROJECT_DIR$/src/widgets/DivInline..tsx" />
+        <option value="$PROJECT_DIR$/src/Header..tsx" />
+        <option value="$PROJECT_DIR$/src/discover/components/myPlayer/MyPlayer.tsx" />
+        <option value="$PROJECT_DIR$/src/App..tsx" />
+        <option value="$PROJECT_DIR$/src/widgets/MyTab.tsx" />
       </list>
     </option>
   </component>
@@ -248,7 +277,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -277,16 +305,14 @@
               <item name="IKowThisSong" type="b2602c69:ProjectViewProjectNode" />
               <item name="IKowThisSong" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="discover" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="img" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="IKowThisSong" type="b2602c69:ProjectViewProjectNode" />
               <item name="IKowThisSong" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="discover" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="myMusic" type="462c0819:PsiDirectoryNode" />
+              <item name="img" type="462c0819:PsiDirectoryNode" />
+              <item name="icons" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="IKowThisSong" type="b2602c69:ProjectViewProjectNode" />
@@ -294,14 +320,21 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="util" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="IKowThisSong" type="b2602c69:ProjectViewProjectNode" />
+              <item name="IKowThisSong" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="widgets" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="SearchEverywhereHistoryKey" value="myplayli&#9;null&#9;null&#10;MYMU&#9;FILE&#9;file://C:/wrk/IKowThisSong/src/discover/components/myMusic/MyMusic.tsx&#10;myartists&#9;null&#9;null&#10;disco&#9;FILE&#9;file://C:/wrk/IKowThisSong/src/discover/components/AppDiscover.tsx" />
+    <property name="SearchEverywhereHistoryKey" value="mytr&#9;FILE&#9;file://C:/wrk/IKowThisSong/src/discover/components/MyPlaylistTracks.tsx&#10;store&#9;FILE&#9;file://C:/wrk/IKowThisSong/src/stores/AppStore.ts&#10;myplayli&#9;FILE&#9;file://C:/wrk/IKowThisSong/src/discover/components/myMusic/MyPlaylists.tsx&#10;MYMU&#9;FILE&#9;file://C:/wrk/IKowThisSong/src/discover/components/myMusic/MyMusic.tsx&#10;myartists&#9;null&#9;null&#10;disco&#9;FILE&#9;file://C:/wrk/IKowThisSong/src/discover/components/AppDiscover.tsx" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../IKnowThisSong.vell" />
     <property name="node.js.detected.package.prettier" value="true" />
@@ -314,14 +347,16 @@
     <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\wrk\IKowThisSong\src\wisgets" />
-      <recent name="C:\wrk\IKowThisSong\src\discover" />
-      <recent name="C:\wrk\IKowThisSong\src\img" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\wrk\IKowThisSong\src\img\icons" />
+      <recent name="C:\wrk\IKowThisSong\src\img" />
       <recent name="C:\wrk\IKowThisSong\src\discover\components\myMusic" />
       <recent name="C:\wrk\IKowThisSong\src" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\wrk\IKowThisSong\src\img\icons" />
+      <recent name="C:\wrk\IKowThisSong\src\wisgets" />
+      <recent name="C:\wrk\IKowThisSong\src\discover" />
       <recent name="C:\wrk\IKowThisSong\src\img" />
     </key>
   </component>
@@ -350,7 +385,9 @@
       <workItem from="1521323413080" duration="88198000" />
       <workItem from="1521586007015" duration="21257000" />
       <workItem from="1521635578343" duration="2656000" />
-      <workItem from="1521648743046" duration="19205000" />
+      <workItem from="1521648743046" duration="59469000" />
+      <workItem from="1521776188360" duration="192000" />
+      <workItem from="1521776430289" duration="598000" />
     </task>
     <task id="LOCAL-00001" summary="Prpimer Commmit versió 1">
       <created>1521626451773</created>
@@ -359,27 +396,32 @@
       <option name="project" value="LOCAL" />
       <updated>1521626451773</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Diversos Avenços. Totes les fotos dels compositors, 170 (vull arribar als 200 pel Nivell Avançat).">
+      <created>1521692303688</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1521692303688</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="131316000" />
+    <option name="totallyTimeSpent" value="172370000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1696" height="1066" extended-state="6" />
-    <editor active="true" />
     <layout>
+      <window_info anchor="bottom" id="TypeScript" order="7" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25150785" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5018094" side_tool="true" visible="true" weight="0.3290461" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5018094" side_tool="true" weight="0.3290461" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.3290461" />
       <window_info id="npm" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.49819058" visible="true" weight="0.3290461" />
-      <window_info anchor="bottom" id="TypeScript" order="7" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25150785" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49939686" weight="0.3290461" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" sideWeight="0.49819058" visible="true" weight="0.3290461" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -388,6 +430,7 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49939686" weight="0.3290461" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -400,56 +443,17 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <MESSAGE value="Prpimer Commmit versió 1" />
-    <option name="LAST_COMMIT_MESSAGE" value="Prpimer Commmit versió 1" />
+    <MESSAGE value="Diversos Avenços. Totes les fotos dels compositors, 170 (vull arribar als 200 pel Nivell Avançat)." />
+    <option name="LAST_COMMIT_MESSAGE" value="Diversos Avenços. Totes les fotos dels compositors, 170 (vull arribar als 200 pel Nivell Avançat)." />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/util/constants.ts">
+    <entry file="file://$PROJECT_DIR$/src/widgets/MyTab.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="26" lean-forward="true" selection-start-line="1" selection-start-column="13" selection-end-line="1" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/todo.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="50" selection-start-line="1" selection-start-column="50" selection-end-line="1" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/discover/components/myMusic/MyArtists.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1292">
-          <caret line="88" column="24" selection-start-line="88" selection-start-column="24" selection-end-line="88" selection-end-column="24" />
+        <state relative-caret-position="306">
+          <caret line="21" column="62" selection-start-line="21" selection-start-column="62" selection-end-line="21" selection-end-column="62" />
           <folding>
-            <element signature="e#215#270#0" expanded="true" />
-            <element signature="e#566#645#0" expanded="true" />
+            <element signature="e#0#31#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/discover/components/myMusic/MyPlaylists.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1598">
-          <caret line="108" column="35" lean-forward="true" selection-start-line="108" selection-start-column="35" selection-end-line="108" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/stores/AppStore.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2924">
-          <caret line="185" column="53" selection-start-line="185" selection-start-column="48" selection-end-line="185" selection-end-column="53" />
-          <folding>
-            <element signature="e#0#68#0" expanded="true" />
-            <element signature="e#466#494#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/discover/components/AppDiscover.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="16" selection-start-line="16" selection-start-column="16" selection-end-line="16" selection-end-column="16" />
         </state>
       </provider>
     </entry>
@@ -499,10 +503,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1292">
           <caret line="88" column="24" selection-start-line="88" selection-start-column="24" selection-end-line="88" selection-end-column="24" />
-          <folding>
-            <element signature="e#215#270#0" expanded="true" />
-            <element signature="e#566#645#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -517,10 +517,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2924">
           <caret line="185" column="38" lean-forward="true" selection-start-line="185" selection-start-column="38" selection-end-line="185" selection-end-column="38" />
-          <folding>
-            <element signature="e#0#68#0" expanded="true" />
-            <element signature="e#466#494#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -566,10 +562,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2465">
           <caret line="157" column="53" selection-start-line="157" selection-start-column="53" selection-end-line="157" selection-end-column="53" />
-          <folding>
-            <element signature="e#215#270#0" expanded="true" />
-            <element signature="e#566#645#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -577,13 +569,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="15" column="8" selection-start-line="15" selection-start-column="8" selection-end-line="15" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webpack.config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="33" selection-start-column="27" selection-end-line="1" selection-end-column="33" />
         </state>
       </provider>
     </entry>
@@ -595,13 +580,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/dashboard/ParagraphBootstrap.tsx" />
-    <entry file="file://$PROJECT_DIR$/src/index.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="9" selection-start-line="16" selection-start-column="9" selection-end-line="16" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/SelectLevel..tsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
@@ -616,41 +594,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="1" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/App..tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="32" column="12" selection-start-line="32" selection-start-column="12" selection-end-line="32" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/discover/components/ClientArea..tsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="17" column="30" selection-start-line="17" selection-start-column="30" selection-end-line="17" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Header..tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="15" column="8" selection-start-line="15" selection-start-column="8" selection-end-line="15" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/widgets/MyTab.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1156">
-          <caret line="71" column="21" selection-start-line="71" selection-start-column="21" selection-end-line="71" selection-end-column="21" />
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -661,79 +608,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/discover/components/AppDiscover.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="16" selection-start-line="16" selection-start-column="16" selection-end-line="16" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/discover/components/myMusic/MyPlaylists.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1598">
-          <caret line="108" column="35" lean-forward="true" selection-start-line="108" selection-start-column="35" selection-end-line="108" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/data/composersPhoto.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="1457" column="1" lean-forward="true" selection-start-line="6" selection-start-column="37" selection-end-line="1457" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/discover/components/MyPlaylistTracks.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="473">
-          <caret line="55" lean-forward="true" selection-start-line="55" selection-end-line="55" />
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fotos.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/data/dbComposers.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/data/composersPhoto.ts" />
+    <entry file="file://$PROJECT_DIR$/src/data/dbComposers.ts" />
     <entry file="file://$PROJECT_DIR$/src/discover/components/myMusic/MyArtists.tsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
           <caret line="124" selection-start-line="118" selection-end-line="124" />
-          <folding>
-            <element signature="e#215#270#0" expanded="true" />
-            <element signature="e#566#645#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="57" column="61" selection-start-line="57" selection-start-column="61" selection-end-line="57" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dashboard/DashBoard.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="211">
-          <caret line="70" column="49" selection-start-line="70" selection-start-column="49" selection-end-line="70" selection-end-column="49" />
-          <folding>
-            <element signature="e#307#338#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/widgets/SelectablePanel.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="5" column="7" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
         </state>
       </provider>
     </entry>
@@ -744,54 +624,194 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/todo.txt">
+    <entry file="file://$PROJECT_DIR$/src/discover/components/myMusic/MyComposers.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+        <state relative-caret-position="425">
+          <caret line="155" selection-start-line="155" selection-end-line="155" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/discover/components/myMusic/MyComposers.tsx">
+    <entry file="file://$PROJECT_DIR$/webpack.config.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="119" column="70" lean-forward="true" selection-start-line="119" selection-start-column="70" selection-end-line="119" selection-end-column="70" />
-          <folding>
-            <element signature="e#566#645#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="306">
+          <caret line="18" column="13" lean-forward="true" selection-start-line="17" selection-start-column="11" selection-end-line="18" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/util/constants.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="13" selection-start-line="1" selection-start-column="13" selection-end-line="1" selection-end-column="13" />
+        <state relative-caret-position="119">
+          <caret line="7" column="45" lean-forward="true" selection-start-line="7" selection-start-column="45" selection-end-line="7" selection-end-column="45" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/discover/components/myMusic/MyMusic.tsx">
+    <entry file="file://$PROJECT_DIR$/src/discover/components/myMusic/MyTracks..tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="167">
-          <caret line="59" column="50" lean-forward="true" selection-start-line="59" selection-start-column="50" selection-end-line="59" selection-end-column="50" />
+        <state relative-caret-position="119">
+          <caret line="7" column="6" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="1" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/discover/components/myMusic/Composer.tsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="442">
-          <caret line="26" column="3" lean-forward="true" selection-start-line="26" selection-start-column="3" selection-end-line="26" selection-end-column="3" />
+          <caret line="26" column="3" selection-start-line="26" selection-start-column="3" selection-end-line="26" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="43" column="8" selection-start-line="43" selection-start-column="8" selection-end-line="43" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/widgets/MaxHeightContainer..tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" column="3" selection-start-line="22" selection-start-column="3" selection-end-line="22" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/discover/components/myMusic/MyMusic.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="87" selection-start-line="87" selection-end-line="87" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/discover/components/myMusic/MyPlaylists.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="91" column="61" selection-start-line="91" selection-start-column="61" selection-end-line="91" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/todo.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="62" selection-start-line="4" selection-start-column="62" selection-end-line="4" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dashboard/DashBoard.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="126" column="24" lean-forward="true" selection-start-line="126" selection-start-column="24" selection-end-line="126" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/widgets/SelectablePanel.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="5" column="7" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/stores/AppStore.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="500" column="23" lean-forward="true" selection-start-line="500" selection-start-column="23" selection-end-line="500" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/@types/history/index.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="19" column="4" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/discover/components/AppDiscover.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="782">
+          <caret line="68" column="10" selection-start-line="68" selection-start-column="10" selection-end-line="68" selection-end-column="10" />
+          <folding>
+            <element signature="e#76#107#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/widgets/DivInline..tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="21" column="3" selection-start-line="21" selection-start-column="3" selection-end-line="21" selection-end-column="3" />
           <folding>
             <element signature="e#0#31#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/stores/AppStore.ts">
+    <entry file="file://$PROJECT_DIR$/src/Header..tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="211">
-          <caret line="194" column="13" lean-forward="true" selection-start-line="194" selection-start-column="13" selection-end-line="194" selection-end-column="13" />
+        <state relative-caret-position="544">
+          <caret line="41" column="47" selection-start-line="41" selection-start-column="47" selection-end-line="41" selection-end-column="47" />
           <folding>
-            <element signature="e#0#68#0" expanded="true" />
-            <element signature="e#466#494#0" expanded="true" />
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/widgets/InlineTrackPlayer..tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="26" column="12" selection-start-line="26" selection-start-column="12" selection-end-line="26" selection-end-column="12" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/discover/components/MyPlaylistTracks.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="731">
+          <caret line="49" column="16" selection-start-line="49" selection-start-column="16" selection-end-line="49" selection-end-column="16" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/discover/components/myPlayer/MyPlayer.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1428">
+          <caret line="95" column="8" selection-start-line="95" selection-start-column="8" selection-end-line="95" selection-end-column="8" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/index.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="16" column="9" selection-start-line="16" selection-start-column="9" selection-end-line="16" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/App..tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="16" column="20" selection-start-line="16" selection-start-column="20" selection-end-line="16" selection-end-column="20" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/widgets/MyTab.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="21" column="62" selection-start-line="21" selection-start-column="62" selection-end-line="21" selection-end-column="62" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -2,7 +2,8 @@ import * as React from "react";
 import Paper from "material-ui/Paper";
 
 interface IProps {
-  height?: number;
+  height?: number | string;
+  width?: number | string;
   isSelected?: boolean;
   isHovered?: boolean;
   onMouseEnter?: () => void;
@@ -35,6 +36,7 @@ class SelectablePanel extends React.Component<IProps, {}> {
           padding: this.props.padding,
           cursor: this.props.cursor,
           height: this.props.height,
+          width: this.props.width,
           zIndex: this.props.zIndex
         }}
         className={this.props.className}

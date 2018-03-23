@@ -124,7 +124,7 @@ class DashBoard extends React.Component<IProps, {}> {
                       }}
                     >
                       <header>
-                        <img src="/src/img/Discover.jpg" />
+                        <img src="/src/img/icons/discover.png" />
                       </header>
                       <h3 style={headerStyle}>
                         <b>DISCOVER CLASSICAL MUSIC</b>
@@ -149,7 +149,7 @@ class DashBoard extends React.Component<IProps, {}> {
                   <Col lg={4} className={style({ fontFamily: INFO_FONT })}>
                     <ParagraphBootstrap height={PANEL_HEIGHT}>
                       <header>
-                        <img src="/src/img/Listen.jpg" />
+                        <img src="/src/img/icons/headphones_128.png" />
                       </header>
                       <h3 style={headerStyle}>
                         <b>LISTEN YOUR CLASSICAL MUSIC</b>
@@ -174,7 +174,7 @@ class DashBoard extends React.Component<IProps, {}> {
                   <Col lg={4} className={style({ fontFamily: INFO_FONT })}>
                     <ParagraphBootstrap height={PANEL_HEIGHT}>
                       <header>
-                        <img src="/src/img/Test.jpg" />
+                        <img src="/src/img/icons/quiz.png" />
                       </header>
                       <h3 style={headerStyle}>
                         <b>TEST YOUR CLASSICAL MUSIC KNOWLEDGE</b>

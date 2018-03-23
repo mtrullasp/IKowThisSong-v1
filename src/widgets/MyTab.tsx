@@ -19,7 +19,7 @@ class MyTab extends React.Component<IProps, {}> {
     const Tabs = this.props.appState.tabDataSet.map((tab, index: number) => {
       const fontSize = this.props.appState.tabActiveIndex === index ? 50 : 40;
       const fontWeight =
-        this.props.appState.tabActiveIndex === index ? 900 : 200;
+        this.props.appState.tabActiveIndex === index ? 900 : 700;
       return (
         <li
           style={{
@@ -51,8 +51,8 @@ class MyTab extends React.Component<IProps, {}> {
               style={{
                 fontFamily: FUNNY_FONT,
                 marginLeft: 5,
-                fontSize: 18,
-                fontWeight: 600,
+                fontSize: 25,
+                fontWeight: 900,
                 color: "red"
               }}
             >
@@ -67,7 +67,7 @@ class MyTab extends React.Component<IProps, {}> {
         style={{
           listStyleType: "none",
           display: "flex",
-          justifyContent: "space-evenly",
+          justifyContent: "space-between",
           width: "100%",
           height: 20,
           padding: 0

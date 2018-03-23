@@ -89,7 +89,7 @@ class MyPlaylists extends React.Component<IProps, {}> {
 */
     const COLS = 5;
     return (
-      <GridList cellHeight={350} cols={COLS}>
+      <GridList cellHeight={350} cols={COLS} style={{overflow: "hidden"}}>
         <GridListTile
           key="Subheader"
           cols={COLS}
@@ -112,31 +112,39 @@ class MyPlaylists extends React.Component<IProps, {}> {
             />
           </Subheader>
         </GridListTile>
-        {this.props.appState.userPlaylists.map((playlist, index) => (
-          <GridListTile
-            key={playlist.id}
-            className={style({ cursor: "pointer" })}
-            onClick={() => {
-              this.props.appState.setActivePlaylist(playlist.id);
-            }}
-          >
-            <img src={playlist.picture_medium} alt={playlist.title} />
-            <GridListTileBar
-              className={classes.gridTileBar}
-              title={<span style={{ fontSize: 12 }}>{playlist.title}</span>}
-              subtitle={
-                <div>
-                  <a href={playlist.link}>
-                    <span style={{ fontSize: 11 }}>
-                      {playlist.nb_tracks} traks and {playlist.fans} fans
-                    </span>
-                    {/*<input type={"text"} value={playlist.id} />*/}
-                  </a>
-                </div>
-              }
-            />
-          </GridListTile>
-        ))}
+        {this.props.appState.userPlaylists.map((playlist, index) => {
+          return (
+            <Link
+              to={ROUTE_PLAYLIST.replace(":playlistId", playlist.id.toString())}
+              style={{ padding: 5, margin: "-5px" }}
+            >
+              <GridListTile
+                key={playlist.id}
+                className={style({ cursor: "pointer" })}
+                onClick={(e: any) => {
+                  e.stopPropagation();
+                  //this.props.appState.setActivePlaylist(playlist.id);
+                }}
+              >
+                <img src={playlist.picture_medium} alt={playlist.title} />
+                <GridListTileBar
+                  className={classes.gridTileBar}
+                  title={<span style={{ fontSize: 12 }}>{playlist.title}</span>}
+                  subtitle={
+                    <div>
+                      <a href={playlist.link}>
+                        <span style={{ fontSize: 11 }}>
+                          {playlist.nb_tracks} traks and {playlist.fans} fans
+                        </span>
+                        {/*<input type={"text"} value={playlist.id} />*/}
+                      </a>
+                    </div>
+                  }
+                />
+              </GridListTile>
+            </Link>
+          );
+        })}
       </GridList>
     );
   }

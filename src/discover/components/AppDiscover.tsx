@@ -22,23 +22,6 @@ import PlaylistTracks from "./PlaylistTracks";
 import MyPlaylists from "./myMusic/MyPlaylists";
 import SwipeableViews from "react-swipeable-views";
 import MyPlaylistTracks from "./MyPlaylistTracks";
-import { MuiThemeProvider, createMuiTheme } from "material-ui/styles";
-
-const theme = createMuiTheme({
-  overrides: {
-    MuiListItemText: {
-      primary: {
-        fontSize: 26,
-        fontFamily: INFO_FONT
-      },
-      secondary: {
-        color: "#6b5e51",
-        fontSize: 24,
-        fontFamily: INFO_FONT
-      }
-    }
-  }
-});
 
 const styles = {
   container: {

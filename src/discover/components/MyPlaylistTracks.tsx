@@ -17,14 +17,13 @@ interface IProps {
 class MyPlaylistTracks extends React.Component<IProps, {}> {
   constructor(props: IProps, context: any) {
     super(props, context);
-    debugger;
     props.appState.activeTracksList = [];
     const AppId = this.props.appState.APP_ID;
     const host = "https://www.deezer.com/plugins/";
     const playlistId: number = parseFloat(
       this.props.match.params["playlistId"]
     );
-    props.appState.activePlayListId = playlistId;
+    props.appState.setActivePlaylist(playlistId);
     const DZ = window.DZ;
     /*
             const src: string = host + "player?format=classic&autoplay=true&playlist=true&width=700&height=550&color=007FEB&" +
@@ -36,10 +35,10 @@ class MyPlaylistTracks extends React.Component<IProps, {}> {
     });
 */
     DZ.api("/playlist/" + playlistId + "/tracks?limit=1000", (tracks: IResponseCollection<ITrack>) => {
-      debugger ;this.props.appState.activeTracksList = tracks.data.filter(d => d.readable);
+      this.props.appState.activeTracksList = tracks.data.filter(d => d.readable);
       tracks.data.forEach(track => {
         DZ.api("/track/" + track.id, trackAmpliat => {
-          debugger ;track = trackAmpliat;
+          track = trackAmpliat;
         })
       })
     });

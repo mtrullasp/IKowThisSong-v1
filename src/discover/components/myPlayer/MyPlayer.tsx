@@ -36,7 +36,7 @@ class MyPlayer extends React.Component<IProps, {}> {
   }
 
   private setupUl() {
-    debugger ;$(ReactDOM.findDOMNode(this))
+    $(ReactDOM.findDOMNode(this))
       .find("ul")
       .css("height", "100%")
       .css("overflowY", "auto");
@@ -44,7 +44,10 @@ class MyPlayer extends React.Component<IProps, {}> {
 
   render() {
     //const DZ = window.DZ;
-    const state = this.props.appState;
+    const state = this.props.appState;debugger ;
+    if (!this.props.appState.activePlaylist) {
+      return null;
+    }
     const items = this.props.appState.activeTracksList.map((track, index) => {
       return (
         <ListItem
@@ -61,7 +64,6 @@ class MyPlayer extends React.Component<IProps, {}> {
           component="a"
           href="#simple-list"
           onClick={() => {
-            debugger;
             if (
               state.playerIsPlaying &&
               this.props.appState.activeTrackIndex === index

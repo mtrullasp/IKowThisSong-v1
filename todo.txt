@@ -1,2 +1,5 @@
 * Fer la Base de Dades, amb les imatges baixades i connectar-la per Ids a la Info de Deezer.
 * Inspirar-me en Naxos pel Repertori d''Obres dels compositors i lligar-ho amb KlassicRank Deezer. Bot.
+* Tot, tots els Objectes han de pode ser organitzats prr tags, amb la qual cosa tindrem PlayLists Organitzades per Tags,
+Compositors, Albums, etc. TOT.
+* A part o enlloc de mostrar un Player Estàtic, fer-lo InLine segons la línia del Track Actiu. (Icones fetes a mà)

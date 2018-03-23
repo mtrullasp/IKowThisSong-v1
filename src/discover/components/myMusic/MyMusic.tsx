@@ -1,10 +1,15 @@
 import * as React from "react";
 import ArtistTracks from "../ArtistTracks";
-import Artists, {
-  default as MyArtists
-} from "./MyArtists";
+import Artists, { default as MyArtists } from "./MyArtists";
 import { Route, Switch } from "react-router";
-import {ROUTE_ARTISTS, ROUTE_COMPOSER, ROUTE_COMPOSERS, ROUTE_PLAYLIST, ROUTE_PLAYLISTS} from "../../../util/constants";
+import {
+  ROUTE_ARTISTS,
+  ROUTE_COMPOSER,
+  ROUTE_COMPOSERS,
+  ROUTE_PLAYLIST,
+  ROUTE_PLAYLISTS,
+  ROUTE_TRACKS
+} from "../../../util/constants";
 import { CSSProperties } from "react";
 import Tabs, { Tab } from "material-ui/Tabs";
 import AppBar from "material-ui/AppBar";
@@ -20,6 +25,8 @@ import MyPlaylistTracks from "../MyPlaylistTracks";
 import ClientArea from "../ClientArea.";
 import MyComposers from "./MyComposers";
 import Composer from "./Composer";
+import MyTracks from "./MyTracks.";
+import MaxHeightContainer from "../../../widgets/MaxHeightContainer.";
 
 interface IProps {
   appState?: AppState;
@@ -47,7 +54,7 @@ class MyMusic extends React.Component<IProps, {}> {
     return (
       <div style={style}>
         <MyTab />
-{/*
+        {/*
         <Route path={ROUTE_FAVORITES} component={MyArtists} />
         <Route
           path={"/Me/Playlist/:playlistId/Tracks"}
@@ -56,20 +63,25 @@ class MyMusic extends React.Component<IProps, {}> {
         />
         <Route path={ROUTE_PLAYLISTS} component={MyPlaylists} exact />
 */}
-        <Route path={ROUTE_COMPOSERS} component={MyComposers} exact />
-        <Route path={ROUTE_COMPOSER} component={Composer} />
-        <Route path={ROUTE_ARTISTS} component={MyArtists} exact />
-        <Route
-          path={"/Me/Playlist/:playlistId/Tracks"}
-          component={MyPlaylistTracks}
-          exact
-        />
-        <Route path={ROUTE_PLAYLISTS} component={MyPlaylists} exact />
-        <Route
-          path={ROUTE_PLAYLIST}
-          component={MyPlaylistTracks}
-          exact
-        />
+        <MaxHeightContainer style={{overflowY: "auto", overflowX: "hidden"}}>
+          <Switch>
+            <Route path={ROUTE_COMPOSERS} component={MyComposers} exact />
+            <Route path={ROUTE_COMPOSER} component={Composer} exact />
+            <Route path={ROUTE_ARTISTS} component={MyArtists} exact />
+            <Route
+              path={"/Me/Playlist/:playlistId/Tracks"}
+              component={MyPlaylistTracks}
+              exact
+            />
+            <Route
+              path={ROUTE_PLAYLISTS}
+              component={MyPlaylists}
+              exact={true}
+            />
+            <Route path={ROUTE_PLAYLIST} component={MyPlaylistTracks} exact />
+            <Route path={ROUTE_TRACKS} component={MyTracks} exact={true} />
+          </Switch>
+        </MaxHeightContainer>
       </div>
     );
   }

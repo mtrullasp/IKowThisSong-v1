@@ -14,7 +14,7 @@ import { style } from "typestyle";
 import { EventHandler } from "react";
 import { withRouter } from "react-router";
 import TextField from "material-ui/TextField";
-import {FUNNY_FONT, ROUTE_COMPOSER} from "../../../util/constants";
+import {FUNNY_FONT, INFO_FONT, ROUTE_COMPOSER} from "../../../util/constants";
 
 const styles = theme => ({
   root: {
@@ -116,43 +116,47 @@ class MyComposers extends React.Component<IProps, {}> {
         {this.props.appState.composers.map((composer, index) => (
           <GridListTile
             onClick={() => {
-              const routePath = ROUTE_COMPOSER.replace(':composerId', composer.IdAutor.toString());
-              this.props.appState.activeComposerId = composer.IdAutor;
+              /*
+              const routePath = ROUTE_COMPOSER.replace(':composerId', composer.IdComposer.toString());
+              this.props.appState.activeComposerId = composer.IdComposer;
               this.props.appState.go(routePath);
-/*
-              const picture_medium = prompt("Foto");
-              this.props.appState.upadateImatgeURL(
-                composer.IdAutor,
-                picture_medium
-              ).then(() => {
-                this.props.appState.getComposers();
-              });
 */
+              const picture_medium = prompt("Foto");
+              this.props.appState
+                .upadateImatgeURL(composer.IdComposer, picture_medium)
+                .then(() => {
+                  this.props.appState.getComposers();
+                });
             }}
-           key={composer.IdAutor}
+            key={composer.IdComposer}
             className={style({ cursor: "pointer" })}
           >
             <img src={composer.PictureMediumURL} alt={composer.Nom} />
             <GridListTileBar
               className={classes.gridTileBar}
-              title={<span style={{ fontSize: 12 }}>{composer.Nom}</span>}
+              title={<span style={{ fontSize: 18, fontFamily: INFO_FONT }}>{composer.Nom}</span>}
               subtitle={
                 <div>
-                  {/*
-                  <span style={{ fontSize: 11 }}>
-                    {composer.nb_album} àlbumsi {composer.nb_fan} fans
-                  </span>
-*/}
                   <span
                     style={{
                       position: "relative",
-                      right: 0,
+                      left: 10,
                       color: "white",
-                      marginLeft: 10,
                       fontSize: 16
                     }}
                   >
-                    {composer.IdAutor}
+                    {composer.AnyoNeix} - {composer.AnyoDefu}
+                  </span>
+                  <span
+                    style={{
+                      position: "absolute",
+                      right: 0,
+                      top: 0,
+                      color: "beige",
+                      fontSize: 16
+                    }}
+                  >
+                    {composer.IdComposer}
                   </span>
                 </div>
               }
