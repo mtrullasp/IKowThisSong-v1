@@ -97,7 +97,7 @@ class MyComposers extends React.Component<IProps, {}> {
           cols={NUMBER_COLS}
           style={{ height: 50, padding: 0, margin: 0 }}
         >
-          <Subheader component="div" style={{ margin: 0, padding: 0 }}>
+          <Subheader component="div" style={{ margin: 0, padding: 0, marginTop: 10, marginLeft: 10 }}>
             <TextField
               id="filtrecomposers"
               placeholder={"Filter by Name"}
@@ -115,18 +115,19 @@ class MyComposers extends React.Component<IProps, {}> {
         </GridListTile>
         {this.props.appState.composers.map((composer, index) => (
           <GridListTile
-            onClick={() => {
-              /*
+            onClick={(e: any) => {
+              e.stopPropagation();
               const routePath = ROUTE_COMPOSER.replace(':composerId', composer.IdComposer.toString());
               this.props.appState.activeComposerId = composer.IdComposer;
               this.props.appState.go(routePath);
-*/
+/*
               const picture_medium = prompt("Foto");
               this.props.appState
                 .upadateImatgeURL(composer.IdComposer, picture_medium)
                 .then(() => {
                   this.props.appState.getComposers();
                 });
+*/
             }}
             key={composer.IdComposer}
             className={style({ cursor: "pointer" })}

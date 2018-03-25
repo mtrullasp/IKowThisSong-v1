@@ -20,6 +20,7 @@ import { style } from "typestyle";
 import ParagraphBootstrap from "./ParagraphBootstrap.";
 import { AppState } from "../stores/AppStore";
 import { inject, observer } from "mobx-react";
+import Header from "../Header.";
 
 const PANEL_HEIGHT = 400;
 
@@ -45,6 +46,7 @@ class DashBoard extends React.Component<IProps, {}> {
     };
     return (
       <div>
+        <Header/>
         <h1
           style={{
             display: "block",

@@ -49,7 +49,7 @@ interface IProps {
 @observer
 class MyPlaylists extends React.Component<IProps, {}> {
   constructor(props: IProps, context: any) {
-    super(props, context);
+    super(props, context);debugger ;
   }
 
   static defaultProps: Partial<IProps> = {
@@ -103,7 +103,8 @@ class MyPlaylists extends React.Component<IProps, {}> {
                 width: "100%",
                 fontSize: 50,
                 margin: 0,
-                padding: 0
+                padding: 0,
+                paddingLeft: 4
               })}
               margin="none"
               onChange={(e: any) => {
@@ -114,16 +115,13 @@ class MyPlaylists extends React.Component<IProps, {}> {
         </GridListTile>
         {this.props.appState.userPlaylists.map((playlist, index) => {
           return (
-            <Link
-              to={ROUTE_PLAYLIST.replace(":playlistId", playlist.id.toString())}
-              style={{ padding: 5, margin: "-5px" }}
-            >
               <GridListTile
                 key={playlist.id}
                 className={style({ cursor: "pointer" })}
                 onClick={(e: any) => {
                   e.stopPropagation();
-                  //this.props.appState.setActivePlaylist(playlist.id);
+                  const path = ROUTE_PLAYLIST.replace(":playlistId", playlist.id.toString());
+                  this.props.appState.goActivePlayList(playlist.id);
                 }}
               >
                 <img src={playlist.picture_medium} alt={playlist.title} />
@@ -142,7 +140,7 @@ class MyPlaylists extends React.Component<IProps, {}> {
                   }
                 />
               </GridListTile>
-            </Link>
+            /*</Link>*/
           );
         })}
       </GridList>

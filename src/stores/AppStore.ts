@@ -53,6 +53,7 @@ export interface IAlbum {
   id: number;
   title: string;
   cover_medium: string;
+  cover_big: string;
 }
 
 export interface IInterpret {
@@ -241,9 +242,11 @@ export class AppState {
         /**
          * Playlists
          */
+        this.isLoading = true;
         DZ.api(
           "user/me/playlists?limit=10000",
           (list: IResponseCollection<IPlaylist>) => {
+            this.isLoading = false;
             this.userPlaylistsFromApi = list.data;
             this.tabDataSet.find(tab => tab.id === "playlists").count =
               list.data.length;
@@ -430,6 +433,14 @@ export class AppState {
   get composers(): Array<IComposer> {
     return this.composersFromApi
       /*.filter(c => !!c.IdDeezer)*/
+      .filter((composer: IComposer) => {
+        if (!this.composerNameFilter) {
+          return true;
+        }
+        return composer.Nom
+          .toLowerCase()
+          .includes(this.composerNameFilter.toLowerCase());
+      })
       .sort((a1, a2): number => {
         if (a1.AnyoNeix > a2.AnyoNeix) {
           return 1;
@@ -494,6 +505,9 @@ export class AppState {
   }
   @action
   go(path: string) {
+    if (this.history.location.pathname === path) {
+      return;
+    }
     this.history.push(path);
   }
   @action
@@ -535,6 +549,11 @@ export class AppState {
 
   @action
   filterByComposerNsme(artistNameFilter: string) {
+/*
+    if (artistNameFilter.trimLeft().trimRight().length < 3) {
+      return;
+    }
+*/
     this.composerNameFilter = artistNameFilter;
   }
   @observable composerNameFilter: string;
@@ -649,6 +668,8 @@ export class AppState {
   @action
   setActivePlaylist(id: number) {
     this.activePlayListId = id;
+  }
+  @action goActivePlayList(id: number) {
     this.go(ROUTE_PLAYLIST.replace(":playlistId", id.toString()));
   }
 
@@ -768,6 +789,12 @@ export class AppState {
     }
     return this.activeTrack.album.cover_medium;
   }
+  @computed get activeTrackCoverBig(): string {
+    if (!this.activeTrack) {
+      return null;
+    }
+    return this.activeTrack.album.cover_big;
+  }
 
   @computed
   get isEntornDiscover(): boolean {
@@ -786,9 +813,14 @@ export class AppState {
     }
     return this.composers[this.activeComposerId];
   }
+  @action setActiveComposer(id: number) {
+    this.activeComposerId = id;
+  }
 
   public secondsToTimeFormat(seconds: number): string {
     const ret = new Date(seconds * 1000).toISOString().substr(11, 8);
     return ret.startsWith('00:') ? ret.substr(3) : ret;
   }
+
+  @observable isLoading: boolean = false;
 }

@@ -49,7 +49,7 @@ class MyPlaylistTracks extends React.Component<IProps, {}> {
   static defaultProps = {};
 
   render() {
-    return <MyPlayer waterMark={true} />
+    return <MyPlayer waterMark={true} tipObject="Playlist" />
   }
 }
 

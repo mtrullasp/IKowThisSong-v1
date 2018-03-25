@@ -10,7 +10,7 @@ import { CSSProperties } from "react";
 import { Route, withRouter } from "react-router";
 import ArtistTracks from "./ArtistTracks";
 import TextField from "material-ui/TextField";
-import MyMusic from "./myMusic/MyMusic";
+import MyMusicRouter from "./myMusic/MyMusicRouter";
 import {
   FUNNY_FONT,
   INFO_FONT,
@@ -81,7 +81,7 @@ class AppDiscover extends React.Component<IProps, {}> {
           overflowY: "auto"
         })}
       >
-        <MyMusic />
+        <MyMusicRouter />
       </div>
     );
   }

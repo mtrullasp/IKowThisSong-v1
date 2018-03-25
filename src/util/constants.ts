@@ -1,14 +1,14 @@
-export const ROUTE_COMPOSERS = "/discover/Me/Composers";
-export const ROUTE_COMPOSER = "/discover/Me/Composer/:composerId";
-export const ROUTE_ARTISTS = "/discover/Me/Artists";
-export const ROUTE_KLASSIC_RANKS = "/discover/Me/KlassicRanks";
-export const ROUTE_PLAYLISTS = "/discover/Me/Playlists";
-export const ROUTE_PLAYLIST = "/play/Me/Playlist/:playlistId";
-export const ROUTE_ALBUMS = "/discover/Me/Albums";
-export const ROUTE_TRACKS = "/discover/Me/Tracks";
+export const ROUTE_COMPOSERS = "/content/discover/Me/Composers";
+export const ROUTE_COMPOSER = "/content/discover/Me/Composer/:composerId";
+export const ROUTE_ARTISTS = "/content/discover/Me/Artists";
+export const ROUTE_KLASSIC_RANKS = "/content/discover/Me/KlassicRanks";
+export const ROUTE_PLAYLISTS = "/content/discover/Me/Playlists";
+export const ROUTE_PLAYLIST = "/content/play/Me/Playlist/:playlistId";
+export const ROUTE_ALBUMS = "/content/discover/Me/Albums";
+export const ROUTE_TRACKS = "/content/discover/Me/Tracks";
 
 export const ROUTE_HOME = "/";
-export const ROUTE_DISCOVER = "/discover";
+export const ROUTE_DISCOVER = "/content/discover";
 
 export const FUNNY_FONT = "Amatic SC";
 export const SELECTED_COLOR = "#c4c4b0";

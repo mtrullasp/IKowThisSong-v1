@@ -33,7 +33,7 @@ interface IProps {
 }
 @inject("appState")
 @observer
-class MyMusic extends React.Component<IProps, {}> {
+class MyMusicRouter extends React.Component<IProps, {}> {
   constructor(props: IProps, context: any) {
     super(props, context);
   }
@@ -86,4 +86,4 @@ class MyMusic extends React.Component<IProps, {}> {
   }
 }
 
-export default MyMusic;
+export default MyMusicRouter;
