@@ -1,4 +1,3 @@
-
 import * as React from "react";
 import * as ReactDOM from "react-dom";
 import { observable } from "mobx";
@@ -7,6 +6,7 @@ import { AppState } from "./stores/AppStore";
 //import App from "./components/App";
 import { BrowserRouter } from "react-router-dom";
 import App from "./App.";
+import SliderProva from "./SliderProva.";
 
 const appState: AppState = new AppState();
 appState.login();

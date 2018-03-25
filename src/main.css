@@ -1,9 +1,14 @@
 div#titol {
-    text-align: justify;
+  text-align: justify;
 }
 
 div#titol:after {
-    content: "";
-    display: inline-block;
-    width: 100%;
+  content: "";
+  display: inline-block;
+  width: 100%;
+}
+
+.tabItem:hover,
+.tabItem.active {
+  border-bottom: solid black 4px;
 }

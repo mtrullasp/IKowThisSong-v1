@@ -2,24 +2,25 @@ import * as React from "react";
 import { Route, Switch, withRouter } from "react-router";
 import DashBoard from "./dashboard/DashBoard";
 import Discover from "./discover/Discover.";
-import { INFO_FONT, ROUTE_DISCOVER } from "./util/constants";
+import {INFO_FONT, ROUTE_DISCOVER, ROUTE_PLAYLIST, SECONDARY_COLOR} from "./util/constants";
 import { inject, observer } from "mobx-react";
 import { AppState } from "./stores/AppStore";
 import Header from "./Header.";
 import AppDiscover from "./discover/components/AppDiscover";
 
 import { MuiThemeProvider, createMuiTheme } from "material-ui/styles";
+import MyPlaylistTracks from "./discover/components/MyPlaylistTracks";
 
 const theme = createMuiTheme({
   overrides: {
     MuiListItemText: {
       primary: {
-        fontSize: 30,
+        fontSize: 20,
         fontFamily: INFO_FONT
       },
       secondary: {
-        color: "#6b5e51",
-        fontSize: 25,
+        color: SECONDARY_COLOR,
+        fontSize: 18,
         fontFamily: INFO_FONT
       }
     },
@@ -48,17 +49,16 @@ class App extends React.Component<IProps, {}> {
   static defaultProps = {};
 
   render() {
-    return (
-      <div>
+    return <div>
         <MuiThemeProvider theme={theme}>
           <Header />
-          {/*<Switch>*/}
-          <Route path="/" exact={true} component={DashBoard} />
-          <Route path={ROUTE_DISCOVER} exact={false} component={AppDiscover} />
-          {/*</Switch>*/}
+          <Switch>
+            <Route path="/" exact={true} component={DashBoard} />
+            <Route path={ROUTE_DISCOVER} exact={false} component={AppDiscover} />
+            <Route path={ROUTE_PLAYLIST} component={MyPlaylistTracks} exact />
+          </Switch>
         </MuiThemeProvider>
-      </div>
-    );
+      </div>;
   }
 }
 

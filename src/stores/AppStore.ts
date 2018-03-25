@@ -1,5 +1,6 @@
 import { action, observable, reaction, computed, toJS } from "mobx";
 import { History } from "history";
+
 import {
   MTRULLASP_USER_ID,
   ROUTE_ARTISTS,
@@ -51,6 +52,7 @@ const DZ: IDZ = window.DZ;
 export interface IAlbum {
   id: number;
   title: string;
+  cover_medium: string;
 }
 
 export interface IInterpret {
@@ -123,8 +125,12 @@ export class TArtist {
 export interface IPlaylist {
   id: number;
   title: string;
+  description: string;
+  duration: number;
+  rating: number;
   nb_tracks: number;
   fans: number;
+  creator: IUser;
   link: string;
   picture_medium: string;
   picture_big: string;
@@ -164,7 +170,6 @@ export class AppState {
     this.userArtistsFromApi = [];
 
     DZ.Event.subscribe("player_play", () => {
-      debugger;
       this.activeTrackIndex = DZ.player.getCurrentIndex();
       this.imageSide = "hifiAntic.gif";
     });
@@ -173,8 +178,8 @@ export class AppState {
       this.imageSide = "hifiAnticFix.gif";
     });
 
-    DZ.Event.subscribe("player_position", (resp: any) => {
-      this.trackProgress = resp.currentTime; //
+    DZ.Event.subscribe("player_position", (resp: Array<any>) => {
+      this.trackProgress = resp[0]; //
     });
 
     //insertConposers(composers);
@@ -477,6 +482,10 @@ export class AppState {
   @action
   setHistory(history: any) {
     this.history = history;
+    this.history.listen(ls => {
+      this.canGoBack = (this.history.length > 1);
+      //this.canGoForward = (ls.state.action === 'pop');
+    });
 /*
     if (this.isEntornDiscover) {
       this.setTabActiveIndex(0);
@@ -485,17 +494,18 @@ export class AppState {
   }
   @action
   go(path: string) {
-    debugger;
     this.history.push(path);
   }
   @action
   goArtistTracks(artistId: number) {
     this.history.push("/Me/Artist/" + artistId.toString() + "/Tracks");
   }
+  @observable canGoBack: boolean;
   @action
   goBack() {
     this.history.goBack();
   }
+  @observable canGoForward: boolean;
   @action
   goForward() {
     this.history.goForward();
@@ -644,7 +654,6 @@ export class AppState {
 
   @computed
   get activePlaylist(): IPlaylist {
-    debugger;
     return this.userPlaylists.find(pl => pl.id === this.activePlayListId);
   }
 
@@ -659,7 +668,6 @@ export class AppState {
       this.composers.splice(this.composers.indexOf(artistId), 1);
     } else {
       this.composers.push(artistId);
-      debugger;
       //insertConposers(toJS(this.composers));
     }
 */
@@ -691,6 +699,9 @@ export class AppState {
   @observable activePlayListId: number;
   @observable activeTracksList: Array<ITrack> = [];
   @observable activeTrackIndex: number;
+  @computed get activeTrack(): ITrack {
+    return this.activeTracksList[this.activeTrackIndex];
+  }
 
   /*
   @computed get imageSide(): string {
@@ -744,11 +755,19 @@ export class AppState {
   @action
   playerChangeIndex(index: number) {
     this.activeTrackIndex = index;
-    debugger;
     DZ.player.playPlaylist(this.activePlayListId, true, index);
   }
 
   @observable trackProgress: number = 0;
+  @computed get trackTotalTime(): number {
+    return this.activeTrack.duration;
+  }
+  @computed get activeTrackCover(): string {
+    if (!this.activeTrack) {
+      return null;
+    }
+    return this.activeTrack.album.cover_medium;
+  }
 
   @computed
   get isEntornDiscover(): boolean {
@@ -766,5 +785,10 @@ export class AppState {
       return null;
     }
     return this.composers[this.activeComposerId];
+  }
+
+  public secondsToTimeFormat(seconds: number): string {
+    const ret = new Date(seconds * 1000).toISOString().substr(11, 8);
+    return ret.startsWith('00:') ? ret.substr(3) : ret;
   }
 }

@@ -78,7 +78,6 @@ class MyMusic extends React.Component<IProps, {}> {
               component={MyPlaylists}
               exact={true}
             />
-            <Route path={ROUTE_PLAYLIST} component={MyPlaylistTracks} exact />
             <Route path={ROUTE_TRACKS} component={MyTracks} exact={true} />
           </Switch>
         </MaxHeightContainer>

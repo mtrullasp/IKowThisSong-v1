@@ -10,7 +10,7 @@ interface IProps {
   onMouseLeave?: () => void;
   padding?: number;
   cursor?: string;
-  onClick?: () => void;
+  onClick?: (e: any) => void;
   zIndex?: number;
   className?: string;
 }

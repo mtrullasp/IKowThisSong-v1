@@ -13,7 +13,7 @@
  *
  */
 import * as React from "react";
-import { FUNNY_FONT, INFO_FONT, ROUTE_DISCOVER } from "../util/constants";
+import {FUNNY_FONT, INFO_FONT, ROUTE_DISCOVER, SECONDARY_COLOR, SECONDARY_HEADER_COLOR} from "../util/constants";
 import { CSSProperties } from "react";
 import { Grid, Row, Col } from "react-flexbox-grid";
 import { style } from "typestyle";
@@ -51,9 +51,9 @@ class DashBoard extends React.Component<IProps, {}> {
             textAlign: "center",
             width: "100%",
             fontSize: 20,
-            color: "#36454f",
+            color: SECONDARY_HEADER_COLOR,
             fontFamily: INFO_FONT,
-            fontWeight: 900
+            fontWeight: 700
           }}
         >
           Discover, listen and Test Your Musical Knowledge
@@ -127,7 +127,7 @@ class DashBoard extends React.Component<IProps, {}> {
                         <img src="/src/img/icons/discover.png" />
                       </header>
                       <h3 style={headerStyle}>
-                        <b>DISCOVER CLASSICAL MUSIC</b>
+                        <b>DISCOVER YOUR CLASSICAL MUSIC</b>
                       </h3>
                       <p style={paragraphStyle}>
                         Do You like Classical Music? Come in with us and it

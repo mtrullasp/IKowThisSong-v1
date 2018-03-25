@@ -7,7 +7,7 @@ import Button from "material-ui/Button";
 import Icon from "material-ui/Icon";
 import SelectablePanel from "./widgets/SelectablePanel";
 import DivInline from "./widgets/DivInline.";
-import {style} from "typestyle";
+import { style } from "typestyle";
 
 interface IState {
   goBackIsEnter: boolean;
@@ -38,42 +38,49 @@ class Header extends React.Component<IProps, IState> {
       >
         <Grid fluid>
           <Row>
-            <Col lg={3} className={style({display: "inline-flex"})}>
-              <DivInline style={{marginRight: 20}}>
-                <SelectablePanel
-                  width={70}
-                  onClick={() => this.props.appState.goBack()}
-                  onMouseEnter={() => {
-                    this.setState({ goBackIsEnter: true });
-                  }}
-                  onMouseLeave={() => {
-                    this.setState({ goBackIsEnter: false });
-                  }}
-                  isHovered={this.state.goBackIsEnter}
-                >
-                  <img
-                    src="/src/img/icons/arrow1-left_64.png"
-                    style={{ textAlign: "center" }}
-                  />
-                </SelectablePanel>
+            <Col lg={3} className={style({ display: "inline-flex" })}>
+              <DivInline style={{ marginRight: 20 }}>
+                {this.props.appState.canGoBack && (
+                  <SelectablePanel
+                    width={70}
+                    onClick={(e: any) => {
+                      e.stopPropagation();
+                      this.props.appState.goBack();
+                    }}
+                    onMouseEnter={() => {
+                      this.setState({ goBackIsEnter: true });
+                    }}
+                    onMouseLeave={() => {
+                      this.setState({ goBackIsEnter: false });
+                    }}
+                    isHovered={this.state.goBackIsEnter}
+                  >
+                    <img
+                      src="/src/img/icons/arrow1-left_64.png"
+                      style={{ textAlign: "center" }}
+                    />
+                  </SelectablePanel>
+                )}
               </DivInline>
               <DivInline>
-                <SelectablePanel
-                  width={70}
-                  onClick={() => this.props.appState.goForward()}
-                  onMouseEnter={() => {
-                    this.setState({ goFordwardIsEnter: true });
-                  }}
-                  onMouseLeave={() => {
-                    this.setState({ goFordwardIsEnter: false });
-                  }}
-                  isHovered={this.state.goFordwardIsEnter}
-                >
-                  <img
-                    src="/src/img/icons/arrow1-right_64.png"
-                    style={{ textAlign: "center" }}
-                  />
-                </SelectablePanel>
+                {this.props.appState.canGoForward && (
+                  <SelectablePanel
+                    width={70}
+                    onClick={() => this.props.appState.goForward()}
+                    onMouseEnter={() => {
+                      this.setState({ goFordwardIsEnter: true });
+                    }}
+                    onMouseLeave={() => {
+                      this.setState({ goFordwardIsEnter: false });
+                    }}
+                    isHovered={this.state.goFordwardIsEnter}
+                  >
+                    <img
+                      src="/src/img/icons/arrow1-right_64.png"
+                      style={{ textAlign: "center" }}
+                    />
+                  </SelectablePanel>
+                )}
               </DivInline>
             </Col>
             <Col lg={6}>
