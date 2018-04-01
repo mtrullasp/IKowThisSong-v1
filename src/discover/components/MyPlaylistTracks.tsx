@@ -35,7 +35,7 @@ class MyPlaylistTracks extends React.Component<IProps, {}> {
     });
 */
     DZ.api("/playlist/" + playlistId + "/tracks?limit=1000", (tracks: IResponseCollection<ITrack>) => {
-      this.props.appState.activeTracksList = tracks.data.filter(d => d.readable);
+      debugger ;this.props.appState.activeTracksList = tracks.data.filter(d => {return d.readable});
 /*
       tracks.data.forEach(track => {
         DZ.api("/track/" + track.id, trackAmpliat => {

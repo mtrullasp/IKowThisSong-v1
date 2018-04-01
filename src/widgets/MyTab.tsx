@@ -3,6 +3,7 @@ import { AppState, TMyTab } from "../stores/AppStore";
 import { inject, observer } from "mobx-react";
 import { FUNNY_FONT, INFO_FONT } from "../util/constants";
 import Tabs, { Tab } from "material-ui/Tabs";
+import paleta from "../util/paleta";
 
 interface IProps {
   appState?: AppState;
@@ -29,7 +30,7 @@ class MyTab extends React.Component<IProps, {}> {
   render() {
     const Tabs = this.props.appState.tabDataSet.map((tab, index: number) => {
       const isActive = this.props.appState.tabActiveIndex === index;
-      const fontSize = isActive ? 40 : 40;
+      const fontSize = isActive ? 30 : 30;
       //const borderBottom = (isActive) ? "solid black 4px" : "none";
       const fontWeight =
         this.props.appState.tabActiveIndex === index ? 900 : 700;
@@ -62,11 +63,11 @@ class MyTab extends React.Component<IProps, {}> {
             {tab.count && (
               <span
                 style={{
-                  fontFamily: FUNNY_FONT,
+                  fontFamily: INFO_FONT,
                   marginLeft: 5,
-                  fontSize: 25,
+                  fontSize: 16,
                   fontWeight: 900,
-                  color: "red"
+                  color: paleta.accentColor2
                 }}
               >
                 {tab.count}
@@ -81,9 +82,9 @@ class MyTab extends React.Component<IProps, {}> {
         style={{
           listStyleType: "none",
           display: "flex",
-          justifyContent: "space-between",
+          justifyContent: "space-around",
           width: "100%",
-          height: 50,
+          height: 42,
           padding: 0
         }}
       >

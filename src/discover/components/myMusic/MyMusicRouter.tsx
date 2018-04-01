@@ -1,9 +1,9 @@
 import * as React from "react";
 import ArtistTracks from "../ArtistTracks";
-import Artists, { default as MyArtists } from "./MyArtists";
+import Performers, { default as MyPerformers } from "./MyPerformers";
 import { Route, Switch } from "react-router";
 import {
-  ROUTE_ARTISTS,
+  ROUTE_PERFORMERS,
   ROUTE_COMPOSER,
   ROUTE_COMPOSERS,
   ROUTE_PLAYLIST,
@@ -23,8 +23,8 @@ import PlaylistTracks from "../PlaylistTracks";
 import MyTab from "../../../widgets/MyTab";
 import MyPlaylistTracks from "../MyPlaylistTracks";
 import ClientArea from "../ClientArea.";
-import MyComposers from "./MyComposers";
-import Composer from "./Composer";
+import MyComposers from "./composers/MyComposers";
+import Composer from "./composers/Composer";
 import MyTracks from "./MyTracks.";
 import MaxHeightContainer from "../../../widgets/MaxHeightContainer.";
 
@@ -46,7 +46,9 @@ class MyMusicRouter extends React.Component<IProps, {}> {
       fontFamily: "Amatic SC",
       bold: "700",
       fontSize: 40,
-      fontWeight: 900
+      fontWeight: 900,
+      background: "url(/src/img/street-old-music-wall-digital-manipulated-928931-wallhere.jpg) no-repeat",
+      backgroundSize: "cover"
     };
     const liStyle: CSSProperties = {
       display: "inline"
@@ -55,7 +57,7 @@ class MyMusicRouter extends React.Component<IProps, {}> {
       <div style={style}>
         <MyTab />
         {/*
-        <Route path={ROUTE_FAVORITES} component={MyArtists} />
+        <Route path={ROUTE_FAVORITES} component={MyPerformers} />
         <Route
           path={"/Me/Playlist/:playlistId/Tracks"}
           component={PlaylistTracks}
@@ -67,7 +69,7 @@ class MyMusicRouter extends React.Component<IProps, {}> {
           <Switch>
             <Route path={ROUTE_COMPOSERS} component={MyComposers} exact />
             <Route path={ROUTE_COMPOSER} component={Composer} exact />
-            <Route path={ROUTE_ARTISTS} component={MyArtists} exact />
+            <Route path={ROUTE_PERFORMERS} component={MyPerformers} exact />
             <Route
               path={"/Me/Playlist/:playlistId/Tracks"}
               component={MyPlaylistTracks}
@@ -76,9 +78,9 @@ class MyMusicRouter extends React.Component<IProps, {}> {
             <Route
               path={ROUTE_PLAYLISTS}
               component={MyPlaylists}
-              exact={true}
+              exact
             />
-            <Route path={ROUTE_TRACKS} component={MyTracks} exact={true} />
+            <Route path={ROUTE_TRACKS} component={MyTracks} exact />
           </Switch>
         </MaxHeightContainer>
       </div>

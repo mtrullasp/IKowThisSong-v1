@@ -1,6 +1,6 @@
 import * as React from "react";
 import { inject, observer } from "mobx-react";
-import { AppState } from "../../../stores/AppStore";
+import { AppState } from "../../../../stores/AppStore";
 //import GridList, { GridListTile,  GridListTileBar } from 'material-ui/GridList';
 import Subheader from "material-ui/List/ListSubheader";
 import IconButton from "material-ui/IconButton";
@@ -14,7 +14,8 @@ import { style } from "typestyle";
 import { EventHandler } from "react";
 import { withRouter } from "react-router";
 import TextField from "material-ui/TextField";
-import {FUNNY_FONT, INFO_FONT, ROUTE_COMPOSER} from "../../../util/constants";
+import { FUNNY_FONT, INFO_FONT, ROUTE_COMPOSER } from "../../../../util/constants";
+import {Link} from "react-router-dom";
 
 const styles = theme => ({
   root: {
@@ -97,7 +98,10 @@ class MyComposers extends React.Component<IProps, {}> {
           cols={NUMBER_COLS}
           style={{ height: 50, padding: 0, margin: 0 }}
         >
-          <Subheader component="div" style={{ margin: 0, padding: 0, marginTop: 10, marginLeft: 10 }}>
+          <Subheader
+            component="div"
+            style={{ margin: 0, padding: 0, marginTop: 10, marginLeft: 10 }}
+          >
             <TextField
               id="filtrecomposers"
               placeholder={"Filter by Name"}
@@ -114,13 +118,12 @@ class MyComposers extends React.Component<IProps, {}> {
           </Subheader>
         </GridListTile>
         {this.props.appState.composers.map((composer, index) => (
-          <GridListTile
-            onClick={(e: any) => {
-              e.stopPropagation();
-              const routePath = ROUTE_COMPOSER.replace(':composerId', composer.IdComposer.toString());
-              this.props.appState.activeComposerId = composer.IdComposer;
-              this.props.appState.go(routePath);
-/*
+          <Link to={ROUTE_COMPOSER.replace(':composerId', composer.IdComposer.toString())}>
+            <GridListTile
+              onClick={(e: any) => {
+                e.stopPropagation();
+                //this.props.appState.go(routePath);
+                /*
               const picture_medium = prompt("Foto");
               this.props.appState
                 .upadateImatgeURL(composer.IdComposer, picture_medium)
@@ -128,40 +131,44 @@ class MyComposers extends React.Component<IProps, {}> {
                   this.props.appState.getComposers();
                 });
 */
-            }}
-            key={composer.IdComposer}
-            className={style({ cursor: "pointer" })}
-          >
-            <img src={composer.PictureMediumURL} alt={composer.Nom} />
-            <GridListTileBar
-              className={classes.gridTileBar}
-              title={<span style={{ fontSize: 18, fontFamily: INFO_FONT }}>{composer.Nom}</span>}
-              subtitle={
-                <div>
-                  <span
-                    style={{
-                      position: "relative",
-                      left: 10,
-                      color: "white",
-                      fontSize: 16
-                    }}
-                  >
-                    {composer.AnyoNeix} - {composer.AnyoDefu}
+              }}
+              key={composer.IdComposer}
+              className={style({ cursor: "pointer" })}
+            >
+              <img src={composer.PictureMediumURL} alt={composer.Nom} />
+              <GridListTileBar
+                className={classes.gridTileBar}
+                title={
+                  <span style={{ fontSize: 18, fontFamily: INFO_FONT }}>
+                    {composer.Nom}
                   </span>
-                  <span
-                    style={{
-                      position: "absolute",
-                      right: 0,
-                      top: 0,
-                      color: "beige",
-                      fontSize: 16
-                    }}
-                  >
-                    {composer.IdComposer}
-                  </span>
-                </div>
-              }
-              /*
+                }
+                subtitle={
+                  <div>
+                    <span
+                      style={{
+                        position: "relative",
+                        left: 10,
+                        color: "white",
+                        fontSize: 16
+                      }}
+                    >
+                      {composer.AnyoNeix} - {composer.AnyoDefu}
+                    </span>
+                    <span
+                      style={{
+                        position: "absolute",
+                        right: 0,
+                        top: 0,
+                        color: "beige",
+                        fontSize: 16
+                      }}
+                    >
+                      {composer.IdComposer}
+                    </span>
+                  </div>
+                }
+                /*
               actionIcon={
                 <IconButton className={classes.icon}>
                   <a
@@ -175,8 +182,9 @@ class MyComposers extends React.Component<IProps, {}> {
                 </IconButton>
               }
 */
-            />
-          </GridListTile>
+              />
+            </GridListTile>
+          </Link>
         ))}
       </GridList>
     );

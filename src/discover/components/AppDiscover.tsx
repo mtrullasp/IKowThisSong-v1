@@ -1,6 +1,6 @@
 ///<reference path="../../../node_modules/@types/react-router/index.d.ts"/>
 import * as React from "react";
-import Artists, { default as MyArtists } from "./myMusic/MyArtists";
+import Performers, { default as MyPerformers } from "./myMusic/MyPerformers";
 import { Grid, Row, Col } from "react-flexbox-grid";
 import styled from "styled-components";
 import { style } from "typestyle";
@@ -14,7 +14,7 @@ import MyMusicRouter from "./myMusic/MyMusicRouter";
 import {
   FUNNY_FONT,
   INFO_FONT,
-  ROUTE_ARTISTS,
+  ROUTE_PERFORMERS,
   ROUTE_PLAYLIST,
   ROUTE_PLAYLISTS
 } from "../../util/constants";
@@ -47,6 +47,7 @@ interface IProps {
 class AppDiscover extends React.Component<IProps, {}> {
   constructor(props: IProps, context: any) {
     super(props, context);
+    props.appState.titolSeccio = "DISCOVER YOUR CLASSICAL MUSIC"
     //const {history} = props;
     //props.appState.go(ROUTE_INTERPRETERS);
   }
@@ -73,7 +74,12 @@ class AppDiscover extends React.Component<IProps, {}> {
     };
     return (
       <div
-        style={{ width: "100%", display: "flex", justifyContent: "center" }}
+        style={{
+          width: "100%",
+          display: "flex",
+          justifyContent: "center",
+
+        }}
         className={style({
           margin: 0,
           padding: 0,

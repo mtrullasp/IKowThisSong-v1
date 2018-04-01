@@ -71,7 +71,6 @@ class MyPlayer extends React.Component<IProps, {}> {
       <PlayerBar
         track={state.activeTrack}
         trackProgress={state.trackProgress}
-        isPlaying={this.props.appState.playerIsPlaying}
       />
     );
 
@@ -160,9 +159,6 @@ class MyPlayer extends React.Component<IProps, {}> {
               </Typography>
             </div>
           </Col>
-          <Col lg={6}>
-            <div style={{ alignSelf: "flex-end" }}>{player}</div>
-          </Col>
         </Row>
         <Row>
           <Col
@@ -176,13 +172,18 @@ class MyPlayer extends React.Component<IProps, {}> {
                 this.props.appState.activeTrackCoverBig ||
                 this.props.appState.activePlaylist.picture_big
               }
-              width={"100%"}
+              width={"85%"}
             />
           </Col>
-          <Col lg={6} className={style({padding: 20})}>
-            <MaxHeightContainer delta={-70} style={{ overflowY: "auto" }}>
+          <Col lg={6} className={style({padding: 20, width: "70%"})}>
+            <MaxHeightContainer delta={-200} style={{ overflowY: "auto" }}>
               {items}
             </MaxHeightContainer>
+          </Col>
+        </Row>
+        <Row>
+          <Col lg={12}>
+            <div>{player}</div>
           </Col>
         </Row>
       </div>

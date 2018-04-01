@@ -59,7 +59,7 @@ class MyPlaylists extends React.Component<IProps, {}> {
   renderItem(index, key) {
     return (
       <div key={key}>
-        <img src={this.props.appState.userArtists[index].picture_medium} />
+        <img src={this.props.appState.userPerformers[index].picture_medium} />
       </div>
     );
   }
@@ -67,7 +67,7 @@ class MyPlaylists extends React.Component<IProps, {}> {
   render() {
     const classes: ClassNameMap<string> = this.props.classes;
     /*
-      const imatges = this.props.appState.userArtists.map(art => {
+      const imatges = this.props.appState.userPerformers.map(art => {
         return <Col lg={3}><img src={art.PictureMediumURL} style={{display: "inline"}}/></Col>
       });
       return (0
@@ -82,7 +82,7 @@ class MyPlaylists extends React.Component<IProps, {}> {
       return (<div style={{overflow: 'auto', maxHeight: 400}}>
         <ReactList
           itemRenderer={this.renderItem}
-          length={this.props.appState.userArtists.length}
+          length={this.props.appState.userPerformers.length}
           type='uniform'
         />
       </div>)
@@ -97,7 +97,7 @@ class MyPlaylists extends React.Component<IProps, {}> {
         >
           <Subheader component="div" style={{ margin: 0, padding: 0 }}>
             <TextField
-              id="filtreArtists"
+              id="filtrePerformers"
               placeholder="Filter by Playlist Name"
               className={style({
                 width: "100%",

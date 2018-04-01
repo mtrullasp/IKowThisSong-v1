@@ -1,3 +1,12 @@
+h2 {
+  //mix-blend-mode: screen;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+.fontBorder {
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
 div#titol {
   text-align: justify;
 }
