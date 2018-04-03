@@ -17,6 +17,8 @@ import TextField from "material-ui/TextField";
 import PlaylistTracks from "../MyPlaylistTracks";
 import { Link } from "react-router-dom";
 import { ROUTE_PLAYLIST, ROUTE_PLAYLISTS } from "../../../util/constants";
+import FavoriteIconButton from "../../../widgets/FavoriteIconButton";
+import DivInline from "../../../widgets/DivInline.";
 
 const styles = theme => ({
   root: {
@@ -49,7 +51,8 @@ interface IProps {
 @observer
 class MyPlaylists extends React.Component<IProps, {}> {
   constructor(props: IProps, context: any) {
-    super(props, context);debugger ;
+    super(props, context);
+    debugger;
   }
 
   static defaultProps: Partial<IProps> = {
@@ -89,7 +92,7 @@ class MyPlaylists extends React.Component<IProps, {}> {
 */
     const COLS = 5;
     return (
-      <GridList cellHeight={350} cols={COLS} style={{overflow: "hidden"}}>
+      <GridList cellHeight={350} cols={COLS} style={{ overflow: "hidden" }}>
         <GridListTile
           key="Subheader"
           cols={COLS}
@@ -115,31 +118,51 @@ class MyPlaylists extends React.Component<IProps, {}> {
         </GridListTile>
         {this.props.appState.userPlaylists.map((playlist, index) => {
           return (
-              <GridListTile
-                key={playlist.id}
-                className={style({ cursor: "pointer" })}
-                onClick={(e: any) => {
-                  e.stopPropagation();
-                  const path = ROUTE_PLAYLIST.replace(":playlistId", playlist.id.toString());
-                  this.props.appState.goActivePlayList(playlist.id);
+            <GridListTile
+              key={playlist.id}
+              className={style({ cursor: "pointer" })}
+              onClick={(e: any) => {
+                e.stopPropagation();
+                const path = ROUTE_PLAYLIST.replace(
+                  ":playlistId",
+                  playlist.id.toString()
+                );
+                this.props.appState.goActivePlayList(playlist.id);
+              }}
+            >
+              <DivInline
+                style={{
+                  position: "absolute",
+                  zIndex: 1000,
+                  top: 0,
+                  right: 0,
+                  fontSize: "white"
                 }}
               >
-                <img src={playlist.picture_medium} alt={playlist.title} />
-                <GridListTileBar
-                  className={classes.gridTileBar}
-                  title={<span style={{ fontSize: 12 }}>{playlist.title}</span>}
-                  subtitle={
-                    <div>
-                      <a href={playlist.link}>
-                        <span style={{ fontSize: 11 }}>
-                          {playlist.nb_tracks} traks and {playlist.fans} fans
-                        </span>
-                        {/*<input type={"text"} value={playlist.id} />*/}
-                      </a>
-                    </div>
-                  }
+                <FavoriteIconButton
+                  onClick={(e: any) => {
+                    e.stopPropagation();
+                    this.props.appState.unFavoritePlayList(playlist.id);
+                  }}
+                  color="white"
                 />
-              </GridListTile>
+              </DivInline>
+              <img src={playlist.picture_medium} alt={playlist.title} />
+              <GridListTileBar
+                className={classes.gridTileBar}
+                title={<span style={{ fontSize: 12 }}>{playlist.title}</span>}
+                subtitle={
+                  <div>
+                    <a href={playlist.link}>
+                      <span style={{ fontSize: 11 }}>
+                        {playlist.nb_tracks} traks and {playlist.fans} fans
+                      </span>
+                      {/*<input type={"text"} value={playlist.id} />*/}
+                    </a>
+                  </div>
+                }
+              />
+            </GridListTile>
             /*</Link>*/
           );
         })}

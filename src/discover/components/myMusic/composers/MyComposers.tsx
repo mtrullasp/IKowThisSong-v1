@@ -14,8 +14,12 @@ import { style } from "typestyle";
 import { EventHandler } from "react";
 import { withRouter } from "react-router";
 import TextField from "material-ui/TextField";
-import { FUNNY_FONT, INFO_FONT, ROUTE_COMPOSER } from "../../../../util/constants";
-import {Link} from "react-router-dom";
+import {
+  FUNNY_FONT,
+  INFO_FONT,
+  ROUTE_COMPOSER
+} from "../../../../util/constants";
+import { Link } from "react-router-dom";
 
 const styles = theme => ({
   root: {
@@ -118,7 +122,12 @@ class MyComposers extends React.Component<IProps, {}> {
           </Subheader>
         </GridListTile>
         {this.props.appState.composers.map((composer, index) => (
-          <Link to={ROUTE_COMPOSER.replace(':composerId', composer.IdComposer.toString())}>
+          <Link
+            to={ROUTE_COMPOSER.replace(
+              ":composerId",
+              composer.IdComposer.toString()
+            )}
+          >
             <GridListTile
               onClick={(e: any) => {
                 e.stopPropagation();
@@ -135,7 +144,11 @@ class MyComposers extends React.Component<IProps, {}> {
               key={composer.IdComposer}
               className={style({ cursor: "pointer" })}
             >
-              <img src={composer.PictureMediumURL} alt={composer.Nom} />
+              <img
+                src={composer.PictureMediumURL}
+                alt={composer.Nom}
+                style={{ filter: "grayscale(100%)" }}
+              />
               <GridListTileBar
                 className={classes.gridTileBar}
                 title={

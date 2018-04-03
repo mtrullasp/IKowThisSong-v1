@@ -17,6 +17,17 @@ import {
 import * as $ from "jquery";
 import axios from "axios";
 
+export interface ICiutat {
+  IdCiutat: number;
+  Nom: string;
+  IdPais: number;
+}
+
+export interface IPais {
+  IdPais: number;
+  Nom: string;
+}
+
 export class IComposer {
   IdComposer: number;
   IdDeezer: number;
@@ -27,8 +38,21 @@ export class IComposer {
   AnyoDefu: number;
   PictureMediumURL: string;
   PictureHeaderBioURL: string;
+  PictureHeaderBioURLOverrides: string;
   HeaderQuote: string;
   HeaderQuoteAutor: string;
+  HeaderQuoteAutorIdComposer: number;
+}
+
+export interface IComposerKeyValue {
+  IdComposer: number;
+  Nom: string;
+  ImgAvatarUrl: string;
+}
+
+export interface IComposerFollow {
+  IdComposer: number;
+  IdComposerFollowed: number;
 }
 
 export interface IDZ {
@@ -153,6 +177,7 @@ export class TMyTab {
 
 export class AppState {
   constructor() {
+    this.getSatelits();
     window.addEventListener("keydown", event => {
       console.log(event.key);
       if (event.key === "MediaTrackNext") {
@@ -196,6 +221,7 @@ export class AppState {
          * Coomposers. API Propi SQL SERVER ASP.NET WEB API
          */
         this.getComposers();
+        this.getComposersFollows();
         /**
          * Performers
          */
@@ -306,7 +332,18 @@ export class AppState {
   getComposers(): Promise<any> {
     const URL_COMPOSERS = "http://localhost:50688/api/composers";
     return axios.get(URL_COMPOSERS).then(resp => {
-      this.composersFromApi = resp.data;
+      debugger ;this.composersFromApi = resp.data;
+    });
+  }
+
+  private getSatelits() {
+    const URL_PAISOS = "http://localhost:50688/api/paisos";
+    const URL_CIUTATS = "http://localhost:50688/api/ciutats";
+    axios.get(URL_CIUTATS).then(resp => {
+      this.ciutats = resp.data;
+    });
+    axios.get(URL_PAISOS).then(resp => {
+      this.paisos = resp.data;
     });
   }
 
@@ -744,8 +781,7 @@ export class AppState {
     }
   }
 
-  @observable
-  playerIsPlaying: boolean = false;
+  @observable playerIsPlaying: boolean = false;
 
   @action
   playerPlay() {
@@ -823,21 +859,28 @@ export class AppState {
     }
     return this.composers.find(c => c.IdComposer === this.activeComposerId);
   }
-  @action moveToPrevComposer() {
-    const index = this.composers.findIndex(c => c.IdComposer === this.activeComposerId);
+  @action
+  moveToPrevComposer() {
+    const index = this.composers.findIndex(
+      c => c.IdComposer === this.activeComposerId
+    );
     this.activeComposerId = this.composers[index - 1].IdComposer;
   }
-    @action moveToNextComposer() {
-        const index = this.composers.findIndex(c => c.IdComposer === this.activeComposerId);
-        this.activeComposerId = this.composers[index + 1].IdComposer;
-    }
+  @action
+  moveToNextComposer() {
+    const index = this.composers.findIndex(
+      c => c.IdComposer === this.activeComposerId
+    );
+    this.activeComposerId = this.composers[index + 1].IdComposer;
+  }
   @action
   setActiveComposer(id: number) {
     this.activeComposerId = id;
   }
-  @computed get activeComposerPictureHeaderBioURL(): string {
+  @computed
+  get activeComposerPictureHeaderBioURL(): string {
     if (!this.activeComposer) {
-      return ""
+      return "";
     }
     return this.activeComposer.PictureHeaderBioURL.replace("fixed:", "");
   }
@@ -850,4 +893,143 @@ export class AppState {
   @observable isLoading: boolean = false;
 
   @observable titolSeccio: string;
+
+  @action
+  unFavoritePlayList(idPlayList: number) {
+    DZ.api(
+      "user/me/playlists",
+      "DELETE",
+      { playlist_id: idPlayList },
+      response => {
+        debugger;
+        console.log("PlayList Unfavorited");
+        // actualitació "Optimista": No refresco el Server, esborro la PlayList Local
+        this.userPlaylistsFromApi.slice(
+          this.userPlaylistsFromApi.findIndex(p => p.id === idPlayList),
+          1
+        );
+      }
+    );
+  }
+
+  @observable composerFollows: Array<IComposerFollow>;
+  @computed
+  get activeComposerFollowers(): Array<IComposerKeyValue> {
+    debugger;
+    if (!this.composerFollows) {
+      return [];
+    }
+    return this.composerFollows
+      .filter(c => c.IdComposerFollowed === this.activeComposerId)
+      .map(c => {
+        return {
+          IdComposer: c.IdComposer,
+          Nom: this.getIComposerById(c.IdComposer).Nom,
+          ImgAvatarUrl: this.getIComposerById(c.IdComposer).PictureMediumURL
+        } as IComposerKeyValue;
+      });
+  }
+  @computed
+  get activeComposerFollowing(): Array<IComposerKeyValue> {
+    debugger;
+    if (!this.composerFollows) {
+      return [];
+    }
+    return this.composerFollows
+      .filter(c => c.IdComposer === this.activeComposerId)
+      .map(c => {
+        return {
+          IdComposer: c.IdComposerFollowed,
+          Nom: this.getIComposerById(c.IdComposerFollowed).Nom,
+          ImgAvatarUrl: this.getIComposerById(c.IdComposerFollowed)
+            .PictureMediumURL
+        } as IComposerKeyValue;
+      });
+  }
+
+  private getIComposerById(id: number): IComposer {
+    return this.composers.find(c => c.IdComposer === id);
+  }
+
+  private getComposersFollows() {
+    const URL_FOLLOWS = "http://localhost:50688/api/composersFollows";
+    return axios.get(URL_FOLLOWS).then(resp => {
+      this.composerFollows = resp.data;
+    });
+  }
+
+  @observable ciutats: Array<ICiutat>;
+  @observable paisos: Array<IPais>;
+
+  @computed
+  get activeComposerInfoNeix() {
+    if (!this.activeComposer) {
+      return null;
+    }
+    return this.activeComposer.AnyoNeix + ", " + this.activeComposer;
+  }
+
+  @computed
+  get infoComposerLeftMargin(): string {
+    if (!this.activeComposer || !this.activeComposer.HeaderQuote) {
+      return "";
+    }
+    const token = "right:";
+    if (this.activeComposer.HeaderQuote.startsWith(token)) {
+      const p2 = this.activeComposer.HeaderQuote.indexOf(":", token.length);
+      return this.activeComposer.HeaderQuote.substring(token.length, p2);
+    }
+    return "80px";
+  }
+
+  @computed
+  get activeComposerHeaderQuote(): string {
+    if (!this.activeComposer || !this.activeComposer.HeaderQuote) {
+      return "";
+    }
+    const token = "right:";
+    if (this.activeComposer.HeaderQuote.startsWith(token)) {
+      const p2 = this.activeComposer.HeaderQuote.indexOf(":", token.length);
+      return this.activeComposer.HeaderQuote.substring(p2 + 1);
+    }
+    return this.activeComposer.HeaderQuote;
+  }
+
+  @computed
+  get activeComposerPictureHeaderBioURLOverrides(): Object {
+    if (!this.activeComposer) {
+      return {};
+    }
+    if (!this.activeComposer.PictureHeaderBioURLOverrides) {
+      return {};
+    }
+    try {
+      debugger ;return JSON.parse(this.activeComposer.PictureHeaderBioURLOverrides);
+    } catch (error) {
+      return {};
+    }
+  }
+
+  @computed
+  get activeComposerBackgroundSize(): string {
+    debugger;
+    if (!this.activeComposer) {
+      return "";
+    }
+    return (
+      this.activeComposerPictureHeaderBioURLOverrides["backgroundSize"] ||
+      "cover"
+    );
+  }
+  @computed
+  get activeComposerBackgroundPosition(): string {
+    debugger;
+    if (!this.activeComposer) {
+      return "";
+    }
+    return (
+      this.activeComposerPictureHeaderBioURLOverrides["backgroundPosition"] ||
+      "center 20%"
+    );
+  }
 }

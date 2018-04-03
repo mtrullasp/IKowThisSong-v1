@@ -59,6 +59,8 @@
     "react-rte": "^0.16.1",
     "react-scroll": "^1.7.7",
     "react-swipeable-views": "^0.12.13",
+    "react-textfit": "^1.1.0",
+    "react-to-typescript-definitions": "^0.28.2",
     "react-virtualized": "^9.18.5",
     "style-loader": "^0.20.3",
     "styled-components": "^3.2.3",
