@@ -1,7 +1,7 @@
 import * as React from "react";
 import { AppState, TMyTab } from "../stores/AppStore";
 import { inject, observer } from "mobx-react";
-import { FUNNY_FONT, INFO_FONT } from "../util/constants";
+import {FUNNY_FONT, INFO_FONT, MARGIN_LEFT} from "../util/constants";
 import Tabs, { Tab } from "material-ui/Tabs";
 import paleta from "../util/paleta";
 
@@ -82,7 +82,8 @@ class MyTab extends React.Component<IProps, {}> {
         style={{
           listStyleType: "none",
           display: "flex",
-          justifyContent: "space-around",
+          justifyContent: "space-between",
+            marginLeft: MARGIN_LEFT,
           width: "100%",
           height: 42,
           padding: 0

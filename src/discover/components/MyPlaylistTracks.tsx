@@ -35,11 +35,11 @@ class MyPlaylistTracks extends React.Component<IProps, {}> {
     });
 */
     DZ.api("/playlist/" + playlistId + "/tracks?limit=1000", (tracks: IResponseCollection<ITrack>) => {
-      debugger ;this.props.appState.activeTracksList = tracks.data.filter(d => {return d.readable});
+      this.props.appState.activeTracksList = tracks.data.filter(d => {return d.readable});
 /*
       tracks.data.forEach(track => {
         DZ.api("/track/" + track.id, trackAmpliat => {
-          debugger ;track = trackAmpliat;
+          track = trackAmpliat;
         })
       })
 */
@@ -49,7 +49,10 @@ class MyPlaylistTracks extends React.Component<IProps, {}> {
   static defaultProps = {};
 
   render() {
-    return <MyPlayer waterMark={true} tipObject="Playlist" />
+    if (!this.props.appState.activePlaylist) {
+      return null;
+    }
+    return <MyPlayer waterMark={true} />
   }
 }
 

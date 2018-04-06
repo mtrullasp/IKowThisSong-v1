@@ -35,7 +35,6 @@ declare let window: any;
 
 interface IProps {
   waterMark: boolean;
-  tipObject: string;
   appState?: AppState;
 }
 @inject("appState")
@@ -64,9 +63,6 @@ class MyPlayer extends React.Component<IProps, {}> {
 
   render() {
     const state = this.props.appState;
-    if (!state.activePlaylist) {
-      return null;
-    }
     const player = (
       <PlayerBar
         track={state.activeTrack}
@@ -94,7 +90,6 @@ class MyPlayer extends React.Component<IProps, {}> {
               state.playerPause();
             } else {
               this.props.appState.activeTrackIndex = index;
-              debugger;
               state.playerPlayPlaylist(
                 this.props.appState.activePlayListId,
                 true,

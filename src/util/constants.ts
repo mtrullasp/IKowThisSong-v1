@@ -6,7 +6,7 @@ export const ROUTE_PERFORMERS = "/content/discover/Me/Performers";
 export const ROUTE_KLASSIC_RANKS = "/content/discover/Me/KlassicRanks";
 export const ROUTE_PLAYLISTS = "/content/discover/Me/Playlists";
 export const ROUTE_PLAYLIST = "/content/play/Me/Playlist/:playlistId";
-export const ROUTE_ALBUMS = "/content/discover/Me/Albums";
+export const ROUTE_ALBUM = "/content/play/Me/Album/:albumId";
 export const ROUTE_TRACKS = "/content/discover/Me/Tracks";
 
 export const ROUTE_HOME = "/";
@@ -24,3 +24,5 @@ export const SECONDARY_HEADER_COLOR = paleta.color200;
 
 export const PLAYER_NO_PLAY_COLOR = "#edede7";
 export const PLAYER_PLAY_COLOR = "#c4c4b0";
+
+export const MARGIN_LEFT = 10;

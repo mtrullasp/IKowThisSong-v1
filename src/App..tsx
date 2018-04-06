@@ -49,7 +49,7 @@ interface IProps {
 class App extends React.Component<IProps, {}> {
   constructor(props: IProps, context: any) {
     super(props, context);
-    debugger;
+
     props.appState.setHistory(this.props.history);
   }
 

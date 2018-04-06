@@ -13,8 +13,8 @@ import Paper from "material-ui/Paper";
 import { style } from "typestyle";
 import { EventHandler } from "react";
 import { Route, withRouter } from "react-router";
-import TextField from "material-ui/TextField";
 import PlaylistTracks from "../MyPlaylistTracks";
+import TextField from "material-ui/TextField";
 import { Link } from "react-router-dom";
 import { ROUTE_PLAYLIST, ROUTE_PLAYLISTS } from "../../../util/constants";
 import FavoriteIconButton from "../../../widgets/FavoriteIconButton";
@@ -52,7 +52,7 @@ interface IProps {
 class MyPlaylists extends React.Component<IProps, {}> {
   constructor(props: IProps, context: any) {
     super(props, context);
-    debugger;
+
   }
 
   static defaultProps: Partial<IProps> = {

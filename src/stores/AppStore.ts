@@ -8,7 +8,8 @@ import {
   ROUTE_HOME,
   ROUTE_PLAYLIST,
   ROUTE_PLAYLISTS,
-  ROUTE_TRACKS
+  ROUTE_TRACKS,
+  ROUTE_ALBUM
 } from "../util/constants";
 //import composersTs from "../data/composers";
 //import { getComposers, insertConposers } from "../data/dbComposers";
@@ -28,7 +29,7 @@ export interface IPais {
   Nom: string;
 }
 
-export class IComposer {
+export class TComposer {
   IdComposer: number;
   IdDeezer: number;
   Nom: string;
@@ -36,6 +37,8 @@ export class IComposer {
   Bio: string;
   AnyoNeix: number;
   AnyoDefu: number;
+  IdCiutatNeix: number;
+  IdCiutatDefu: number;
   PictureMediumURL: string;
   PictureHeaderBioURL: string;
   PictureHeaderBioURLOverrides: string;
@@ -63,6 +66,7 @@ export interface IDZ {
   login: (callback: (response: any) => any, perms: any) => void;
   player: {
     playPlaylist(playlistId: number, autoPlay: boolean, index: number);
+    playAlbum(albumId: number, autoPlay: boolean, index: number);
     getCurrentIndex(): number;
     isPlaying: boolean;
     next: () => void;
@@ -80,6 +84,8 @@ const DZ: IDZ = window.DZ;
 export interface IAlbum {
   id: number;
   title: string;
+  nb_tracks: number;
+  duration: number;
   cover_medium: string;
   cover_big: string;
 }
@@ -113,6 +119,23 @@ export interface ITrack {
   contributors: Array<Object>; //Return a list of contributors on the track	list
   artist: IInterpret; //	artist object containing : id, name, link, share, picture, picture_small, PictureMediumURL, picture_big, picture_xl, nb_album, nb_fan, radio, tracklist, role	object
   album: IAlbum; //	album object containing : id, title, link, cover, cover_small, cover_medium, cover_big, cover_xl, release_date	object
+}
+
+export interface IAlbum {
+  id: number; // The Deezer album id	int
+  title: string; // The album title	string
+  link: string; // The url of the album on Deezer	url
+  cover: string; // The url of the album's cover. Add 'size' parameter to the url to change size. Can be 'small', 'medium', 'big', 'xl'	url
+  cover_small: string; //	The url of the album's cover in size small.	url
+  cover_medium: string; // The url of the album's cover in size medium.	url
+  cover_big: string; // The url of the album's cover in size big.	url
+  cover_xl: string; // The url of the album's cover in size xl.	url
+  genre_id: number; // The album's first genre id (You should use the genre list instead). NB : -1 for not found	int
+  fans: number; // The number of album's Fans	int
+  release_date: Date; // The album's release date	date
+  duration: number;
+  nb_tracks: number;
+  record_type: string; //	The record type of the album (EP / ALBUM / etc..)	string
 }
 
 export interface IResponseComment {
@@ -181,10 +204,18 @@ export class AppState {
     window.addEventListener("keydown", event => {
       console.log(event.key);
       if (event.key === "MediaTrackNext") {
-        this.playerNext();
+        if (this.fitxaComposers) {
+          this.moveToNextComposer();
+        } else {
+          this.playerNext();
+        }
       }
       if (event.key === "MediaTrackPrevious") {
-        this.playerPrev();
+        if (this.fitxaComposers) {
+          this.moveToPrevComposer();
+        } else {
+          this.playerPrev();
+        }
       }
       if (event.key === "Escape") {
         this.playerPause();
@@ -306,6 +337,18 @@ export class AppState {
       }
     );
 
+    reaction(
+      () => this.activeComposer,
+      composer => {
+        if (!composer) {
+          return;
+        }
+        DZ.api("/artist/" + composer.IdDeezer + "/albums?limit=10000", resp => {
+          this.composerAlbumsFromApi = resp.data;
+        });
+      }
+    );
+
     /**
      * Events
      */
@@ -332,7 +375,7 @@ export class AppState {
   getComposers(): Promise<any> {
     const URL_COMPOSERS = "http://localhost:50688/api/composers";
     return axios.get(URL_COMPOSERS).then(resp => {
-      debugger ;this.composersFromApi = resp.data;
+      this.composersFromApi = resp.data;
     });
   }
 
@@ -420,7 +463,7 @@ export class AppState {
     return defaultPhoto;
   }
   /*
-  private getComposerPhoto(composer: IComposer): string {
+  private getComposerPhoto(composer: TComposer): string {
     const myPhoto = this.composersPhotos.find(photo => photo.id === composer.IdDeezer);
     return !!myPhoto ? myPhoto.foto : '';
   }
@@ -462,13 +505,14 @@ export class AppState {
     return this.composers.length;
   }
 
-  @observable composersFromApi: Array<IComposer> = [];
+  @observable composersFromApi: Array<TComposer> = [];
   @computed
-  get composers(): Array<IComposer> {
+  get composers(): Array<TComposer> {
+    const sortBy = "Nom"; //AnyoNeix
     return (
       this.composersFromApi
         /*.filter(c => !!c.IdDeezer)*/
-        .filter((composer: IComposer) => {
+        .filter((composer: TComposer) => {
           if (!this.composerNameFilter) {
             return true;
           }
@@ -477,10 +521,10 @@ export class AppState {
           );
         })
         .sort((a1, a2): number => {
-          if (a1.AnyoNeix > a2.AnyoNeix) {
+          if (a1[sortBy] > a2[sortBy]) {
             return 1;
           }
-          if (a1.AnyoNeix < a2.AnyoNeix) {
+          if (a1[sortBy] < a2[sortBy]) {
             return -1;
           }
           return 0;
@@ -708,10 +752,18 @@ export class AppState {
   goActivePlayList(id: number) {
     this.go(ROUTE_PLAYLIST.replace(":playlistId", id.toString()));
   }
+  @action
+  goActiveAlbum(id: number) {
+    this.go(ROUTE_ALBUM.replace(":albumId", id.toString()));
+  }
 
   @computed
   get activePlaylist(): IPlaylist {
     return this.userPlaylists.find(pl => pl.id === this.activePlayListId);
+  }
+  @computed
+  get activeAlbum(): IAlbum {
+    return this.composerAlbumsFromApi.find(pl => pl.id === this.activeAlbumId);
   }
 
   @observable showOnlyComposers: boolean = true;
@@ -760,6 +812,11 @@ export class AppState {
   get activeTrack(): ITrack {
     return this.activeTracksList[this.activeTrackIndex];
   }
+  @observable activeAlbumId: number;
+  @action
+  setActiveAlbum(idAlbum: number) {
+    this.activeAlbumId = idAlbum;
+  }
 
   /*
   @computed get imageSide(): string {
@@ -790,7 +847,6 @@ export class AppState {
 
   @action
   playerTogglePlay() {
-    debugger;
     if (this.playerIsPlaying) {
       this.playerPause();
       this.playerIsPlaying = false;
@@ -809,6 +865,11 @@ export class AppState {
   @action
   playerPlayPlaylist(playlistId: number, autoPlay: boolean, index: number) {
     DZ.player.playPlaylist(playlistId, autoPlay, index);
+  }
+
+  @action
+  playerPlayAlbum(albumId: number, autoPlay: boolean, index: number) {
+    DZ.player.playAlbum(albumId, autoPlay, index);
   }
 
   @action
@@ -834,7 +895,9 @@ export class AppState {
     if (!this.activeTrack) {
       return null;
     }
-    return this.activeTrack.album.cover_big;
+    try {
+      return this.activeTrack.album.cover_big;
+    } catch (e) {}
   }
 
   @computed
@@ -853,7 +916,7 @@ export class AppState {
 
   @observable activeComposerId: number = -1;
   @computed
-  get activeComposer(): IComposer {
+  get activeComposer(): TComposer {
     if (this.activeComposerId < 0) {
       return null;
     }
@@ -901,7 +964,6 @@ export class AppState {
       "DELETE",
       { playlist_id: idPlayList },
       response => {
-        debugger;
         console.log("PlayList Unfavorited");
         // actualitació "Optimista": No refresco el Server, esborro la PlayList Local
         this.userPlaylistsFromApi.slice(
@@ -915,7 +977,6 @@ export class AppState {
   @observable composerFollows: Array<IComposerFollow>;
   @computed
   get activeComposerFollowers(): Array<IComposerKeyValue> {
-    debugger;
     if (!this.composerFollows) {
       return [];
     }
@@ -931,7 +992,6 @@ export class AppState {
   }
   @computed
   get activeComposerFollowing(): Array<IComposerKeyValue> {
-    debugger;
     if (!this.composerFollows) {
       return [];
     }
@@ -947,7 +1007,7 @@ export class AppState {
       });
   }
 
-  private getIComposerById(id: number): IComposer {
+  private getIComposerById(id: number): TComposer {
     return this.composers.find(c => c.IdComposer === id);
   }
 
@@ -962,11 +1022,41 @@ export class AppState {
   @observable paisos: Array<IPais>;
 
   @computed
-  get activeComposerInfoNeix() {
+  get activeComposerInfoNeixDefu() {
     if (!this.activeComposer) {
       return null;
     }
-    return this.activeComposer.AnyoNeix + ", " + this.activeComposer;
+    let llocNeix = "";
+    let paisNeix = "";
+    let ciutat: ICiutat;debugger ;
+    if (!!this.activeComposer.IdCiutatNeix) {
+      ciutat = this.ciutats.find(
+        c => c.IdCiutat === this.activeComposer.IdCiutatNeix
+      );
+      llocNeix = (!!ciutat && !!ciutat.Nom ? ciutat.Nom : '');
+      paisNeix = this.paisos.find(p => p.IdPais === ciutat.IdPais).Nom;
+      llocNeix += " (" + paisNeix + ")";
+    }
+    let llocDefu = "";
+    let paisDefu = "";
+    let ciutatDefu;
+    if (!!this.activeComposer.IdCiutatDefu) {
+      ciutatDefu = this.ciutats.find(
+        c => c.IdCiutat === this.activeComposer.IdCiutatDefu
+      );
+      llocDefu = ciutatDefu.Nom;
+      paisDefu = this.paisos.find(p => p.IdPais === ciutatDefu.IdPais).Nom;
+      llocDefu += " (" + paisDefu + ")";
+    }
+    return (
+      llocNeix +
+        (!!llocNeix ? ", " : "") +
+      this.activeComposer.AnyoNeix +
+        (!!this.activeComposer.AnyoDefu ? " - " : "") +
+      this.activeComposer.AnyoDefu +
+        (!!llocDefu ? ", " : "") +
+      llocDefu
+    );
   }
 
   @computed
@@ -1004,7 +1094,7 @@ export class AppState {
       return {};
     }
     try {
-      debugger ;return JSON.parse(this.activeComposer.PictureHeaderBioURLOverrides);
+      return JSON.parse(this.activeComposer.PictureHeaderBioURLOverrides);
     } catch (error) {
       return {};
     }
@@ -1012,7 +1102,6 @@ export class AppState {
 
   @computed
   get activeComposerBackgroundSize(): string {
-    debugger;
     if (!this.activeComposer) {
       return "";
     }
@@ -1023,7 +1112,6 @@ export class AppState {
   }
   @computed
   get activeComposerBackgroundPosition(): string {
-    debugger;
     if (!this.activeComposer) {
       return "";
     }
@@ -1032,4 +1120,38 @@ export class AppState {
       "center 20%"
     );
   }
+  @computed
+  get activeComposerImageFilter(): string {
+    if (!this.activeComposer) {
+      return "";
+    }
+    return (
+      this.activeComposerPictureHeaderBioURLOverrides["filter"] ||
+      "grayscale(100%)"
+    );
+  }
+  @computed
+  get activeComposerImageTransform(): string {
+    if (!this.activeComposer) {
+      return "";
+    }
+    return this.activeComposerPictureHeaderBioURLOverrides["transform"] || "";
+  }
+
+  @computed
+  get activeComposerColor(): string {
+    if (!this.activeComposer) {
+      return "";
+    }
+    return this.activeComposerPictureHeaderBioURLOverrides["color"] || "white";
+  }
+
+  @computed
+  get fitxaComposers(): boolean {
+    return !!this.activeComposer;
+  }
+
+  @observable composerAlbumsFromApi: Array<IAlbum>;
+
+  @observable composerAlbumsOffset: number = 0;
 }
