@@ -28,3 +28,14 @@ div#titol:after {
 .tabItem.active {
   border-bottom: solid black 4px;
 }
+
+.item-social-avatar {
+  cursor: pointer;
+  font-weight: bold;
+}
+.item-social-avatar:hover {
+  color: black;
+  background: white;
+  padding-bottom: 0px;
+  border-radius: 20px;
+}

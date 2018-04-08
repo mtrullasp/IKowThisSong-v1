@@ -1185,7 +1185,7 @@
                         var t = e.tracks.join("|");
                         DZ.Event.subscribe(DZ.Event.player.TRACKS_LOADED + "_playTracks_" + t, [function (t) {
                             e.callback(t)
-                        }], !0), DZ.player._core.setType("playTracks", t), DZ.communication.send("frames.dzplayer", "DZ.player_controler.playTracks", {
+                         }], !0), DZ.player._core.setType("playTracks", t), DZ.communication.send("frames.dzplayer", "DZ.player_controler.playTracks", {
                             trackList: t,
                             index: e.index,
                             autoplay: e.autoplay,

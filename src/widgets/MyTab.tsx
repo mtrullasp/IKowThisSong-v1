@@ -70,7 +70,7 @@ class MyTab extends React.Component<IProps, {}> {
                   color: paleta.accentColor2
                 }}
               >
-                {tab.count}
+                {tab.count()}
               </span>
             )}
           </div>

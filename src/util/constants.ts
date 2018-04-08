@@ -8,6 +8,7 @@ export const ROUTE_PLAYLISTS = "/content/discover/Me/Playlists";
 export const ROUTE_PLAYLIST = "/content/play/Me/Playlist/:playlistId";
 export const ROUTE_ALBUM = "/content/play/Me/Album/:albumId";
 export const ROUTE_TRACKS = "/content/discover/Me/Tracks";
+export const ROUTE_SEARCH = "/content/discover/Me/Search";
 
 export const ROUTE_HOME = "/";
 export const ROUTE_DISCOVER = "/content/discover";

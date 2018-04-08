@@ -3,12 +3,12 @@ import ArtistTracks from "../ArtistTracks";
 import Performers, { default as MyPerformers } from "./MyPerformers";
 import { Route, Switch } from "react-router";
 import {
-  ROUTE_PERFORMERS,
-  ROUTE_COMPOSER,
-  ROUTE_COMPOSERS,
-  ROUTE_PLAYLIST,
-  ROUTE_PLAYLISTS,
-  ROUTE_TRACKS
+    ROUTE_PERFORMERS,
+    ROUTE_COMPOSER,
+    ROUTE_COMPOSERS,
+    ROUTE_PLAYLIST,
+    ROUTE_PLAYLISTS,
+    ROUTE_TRACKS, ROUTE_SEARCH
 } from "../../../util/constants";
 import { CSSProperties } from "react";
 import Tabs, { Tab } from "material-ui/Tabs";
@@ -27,6 +27,7 @@ import MyComposers from "./composers/MyComposers";
 import Composer from "./composers/Composer";
 import MyTracks from "./MyTracks.";
 import MaxHeightContainer from "../../../widgets/MaxHeightContainer.";
+import SearchByText from "../search/SearchByText";
 
 interface IProps {
   appState?: AppState;
@@ -81,6 +82,7 @@ class MyMusicRouter extends React.Component<IProps, {}> {
               exact
             />
             <Route path={ROUTE_TRACKS} component={MyTracks} exact />
+              <Route path={ROUTE_SEARCH} component={SearchByText} exact />
           </Switch>
         </MaxHeightContainer>
       </div>

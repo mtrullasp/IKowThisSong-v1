@@ -115,15 +115,7 @@ class MyPerformers extends React.Component<IProps, {}> {
             key={artist.id}
             className={style({ cursor: "pointer" })}
             onClick={() => {
-              if (artist.isComposer) {
-                this.props.appState.userPerformersFromApi.find(
-                  a => a.id === artist.id
-                ).picture_medium = prompt("Foto");
-
-                this.props.appState.setFotos();
-              } else {
-                this.props.appState.toggleComposer(artist.id);
-              }
+              this.props.appState.toggleComposer(artist.id);
               //this.props.appState.artistIdActive = artist.id;
               //this.props.appState.goArtistTracks(artist.id);
               /*
@@ -161,7 +153,7 @@ class MyPerformers extends React.Component<IProps, {}> {
                       color: "white"
                     }}
                   >
-                    {artist.isComposer ? "C" : ""}
+                    {""}
                   </span>
                 </div>
               }

@@ -44,6 +44,7 @@
     "mobx": "4.1.0",
     "mobx-react": "^5.0.0",
     "mobx-react-devtools": "^4.2.15",
+    "mobx-utils": "^4.0.0",
     "prettier": "^1.11.1",
     "prettify": "^0.1.7",
     "rc-slider": "^8.6.1",
@@ -64,6 +65,7 @@
     "react-virtualized": "^9.18.5",
     "style-loader": "^0.20.3",
     "styled-components": "^3.2.3",
+    "ts-keycode-enum": "^1.0.4",
     "typestyle": "^1.7.2"
   }
 }
