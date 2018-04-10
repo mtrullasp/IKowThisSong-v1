@@ -821,18 +821,21 @@ export class AppState {
     this.go(ROUTE_PLAYLIST.replace(":playlistId", id.toString()));
   }
   @action
-  goActiveAlbum(id: number) {
-    this.go(ROUTE_ALBUM.replace(":albumId", id.toString()));
+  goActiveAlbum() {
+    this.go(ROUTE_ALBUM.replace(":albumId", this.activeAlbum.id.toString()));
   }
+  @observable activeAlbum: IAlbum;
 
   @computed
   get activePlaylist(): IPlaylist {
     return this.userPlaylists.find(pl => pl.id === this.activePlayListId);
   }
+  /*
   @computed
   get activeAlbum(): IAlbum {
     return this.composerAlbumsFromApi.find(pl => pl.id === this.activeAlbumId);
   }
+*/
 
   @observable showOnlyComposers: boolean = true;
 
@@ -882,10 +885,14 @@ export class AppState {
   }
   @observable activeAlbumId: number;
   @action
-  setActiveAlbum(idAlbum: number) {
-    this.activeAlbumId = idAlbum;
+  setActiveAlbum(album: IAlbum) {
+    this.activeAlbumId = album.id;
+    this.activeAlbum = album;
   }
-
+  @action
+  setActiveAlbumById(id: number) {
+    this.activeAlbumId = id;
+  }
   /*
   @computed get imageSide(): string {
     if (this.playerIsPlaying) {
@@ -1123,10 +1130,12 @@ export class AppState {
       llocNeix +
       (!!llocNeix ? ", " : "") +
       this.activeComposer.AnyoNeix +
-      (!!this.activeComposer.AnyoDefu ? " - " : "") +
-      this.activeComposer.AnyoDefu +
-      (!!llocDefu ? ", " : "") +
-      llocDefu
+      (!!this.activeComposer.AnyoDefu
+        ? " - " +
+          this.activeComposer.AnyoDefu +
+          (!!llocDefu ? ", " : "") +
+          llocDefu
+        : "")
     );
   }
 
@@ -1234,26 +1243,26 @@ export class AppState {
     this.topTrackIsPlaying = track;
   }
 
-  @observable searchedAlbums: Array<IAlbum>;
+  @observable.deep searchedAlbums: Array<IAlbum>;
   @observable albumAmpliat: any;
   @observable searchStrict: boolean = true;
+  @observable upc: string;
   @action
   searchByText(text: string) {
-    if (text.length === UPC_CODE_LENGHT && isNumeric(text)) {
-      DZ.api("album/upc:" + text + "&strict=on", resp => {
-        this.searchedAlbums = [resp];
-      });
-    } else {
-      DZ.api("search/album?q=" + text + "&strict=on", resp => {
+    DZ.api("search/album?q=" + text + "&limit=1000&strict=on", resp => {
+      this.searchedAlbums = resp.data;
+      //this.searchedAlbums[0].upc = '123';
+      DZ.api("album/" + resp.data[0].id, respAlbum => {
         debugger;
-        this.searchedAlbums = resp.data;
-        /*
-          DZ.api("album/" + resp.data[0].id, respAlbum => {
-            debugger;
-            this.albumAmpliat = respAlbum.data;
-          });
-*/
+        this.searchedAlbums[0].title = respAlbum.upc;
+          this.upc = respAlbum.upc;
       });
-    }
+    });
+  }
+  @action
+  searchByCode(code: string) {
+    DZ.api("album/upc:" + code + "&strict=on", resp => {
+      this.searchedAlbums = [resp];
+    });
   }
 }

@@ -36,6 +36,12 @@ const theme = createMuiTheme({
         fontSize: 25,
         fontFamily: INFO_FONT
       }
+    },
+    MuiInput: {
+      inputTypeSearch: {
+        fontSize: 25,
+        fontFamily: INFO_FONT
+      }
     }
   }
 });
