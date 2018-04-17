@@ -4,6 +4,7 @@ import { inject, observer } from "mobx-react";
 import {FUNNY_FONT, INFO_FONT, MARGIN_LEFT} from "../util/constants";
 import Tabs, { Tab } from "material-ui/Tabs";
 import paleta from "../util/paleta";
+import "./MyTab.css";
 
 interface IProps {
   appState?: AppState;
@@ -35,7 +36,7 @@ class MyTab extends React.Component<IProps, {}> {
       const fontWeight =
         this.props.appState.tabActiveIndex === index ? 900 : 700;
       return (
-        <div
+        <div className="li"
           style={{
             display: "inline",
             marginRight: 40
@@ -78,7 +79,7 @@ class MyTab extends React.Component<IProps, {}> {
       );
     });
     return (
-      <div
+      <div id="my-tab"
         style={{
           listStyleType: "none",
           display: "flex",

@@ -35,7 +35,8 @@ const styles = theme => ({
     overflowY: "auto"
   },
   gridTileBar: {
-    fontSize: 9
+    fontSize: 9,
+    height: "14%"
   },
   icon: {
     color: "rgba(255, 255, 255, 0.54)"
@@ -62,7 +63,7 @@ class MyComposers extends React.Component<IProps, {}> {
   renderItem(index, key) {
     return (
       <div key={key}>
-        <img src={this.props.appState.composers[index].PictureMediumURL} />
+        <img src={this.props.appState.composers[index].PictureMediumURLLocal} />
       </div>
     );
   }
@@ -106,19 +107,35 @@ class MyComposers extends React.Component<IProps, {}> {
             component="div"
             style={{ margin: 0, padding: 0, marginTop: 10, marginLeft: 10 }}
           >
-            <TextField
-              id="filtrecomposers"
-              placeholder={"Filter by Name"}
-              className={style({
-                width: "100%",
-                fontSize: 50,
-                fontFamily: FUNNY_FONT
-              })}
-              margin="none"
-              onChange={(e: any) => {
-                this.props.appState.filterByComposerNsme(e.target.value);
-              }}
-            />
+            <Row>
+              <Col lg={6}>
+                <TextField
+                  id="filtrecomposers"
+                  placeholder={"Filter by Name"}
+                  className={style({
+                    width: "100%",
+                    fontSize: 50,
+                    fontFamily: FUNNY_FONT
+                  })}
+                  margin="none"
+                  onChange={(e: any) => {
+                    this.props.appState.filterByComposerNsme(e.target.value);
+                  }}
+                />
+              </Col>
+              <Col lg={6}>
+                <span
+                  style={{ cursor: "pointer" }}
+                  onClick={() => {
+                    {
+                      this.props.appState.toggleComposerOrderByDirection();
+                    }
+                  }}
+                >
+                  {this.props.appState.composerOrderPrompt}
+                </span>
+              </Col>
+            </Row>
           </Subheader>
         </GridListTile>
         {this.props.appState.composers.map((composer, index) => (
@@ -145,14 +162,14 @@ class MyComposers extends React.Component<IProps, {}> {
               className={style({ cursor: "pointer" })}
             >
               <img
-                src={composer.PictureMediumURL}
+                src={composer.PictureMediumURLLocal}
                 alt={composer.Nom}
-                style={{ filter: "grayscale(100%)" }}
+                style={{}}
               />
               <GridListTileBar
                 className={classes.gridTileBar}
                 title={
-                  <span style={{ fontSize: 18, fontFamily: INFO_FONT }}>
+                  <span style={{ fontSize: 16, fontFamily: INFO_FONT }}>
                     {composer.Nom}
                   </span>
                 }
@@ -163,7 +180,7 @@ class MyComposers extends React.Component<IProps, {}> {
                         position: "relative",
                         left: 10,
                         color: "white",
-                        fontSize: 16
+                        fontSize: 14
                       }}
                     >
                       {composer.AnyoNeix} - {composer.AnyoDefu}

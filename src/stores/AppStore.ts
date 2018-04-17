@@ -1,3 +1,5 @@
+const translate = require("translate");
+import * as pluralize from "pluralize";
 import {
   action,
   observable,
@@ -56,6 +58,7 @@ export class TComposer {
   IdCiutatNeix: number;
   IdCiutatDefu: number;
   PictureMediumURL: string;
+  PictureMediumURLLocal: string;
   PictureHeaderBioURL: string;
   PictureHeaderBioURLOverrides: string;
   HeaderQuote: string;
@@ -221,6 +224,50 @@ export function isNumeric(str: string): boolean {
   return parseFloat(str).toString() == str;
 }
 
+export function refinaSearchAlbums(
+  searchedAlbums: Array<IAlbum>,
+  str: string,
+  recursive: boolean
+): Array<IAlbum> {
+  if (!searchedAlbums) {
+    return null;
+  }
+  const cometes = extractText(str);
+  debugger;
+  if (!cometes) {
+    const parts = str.split(/[ \(,\)]+/);
+    debugger;
+    if (recursive) {
+      parts.find(p => {
+        if (isNumeric(p)) {
+          return !!refinaSearchAlbums(searchedAlbums, p, false);
+        }
+      });
+    }
+  } else {
+    return searchedAlbums.filter(a => {
+      const delims = [" ", ",", ".", ";", "\n"];
+      return !!delims.find(delim => {
+        if (a.title.toLowerCase().indexOf(cometes.toLowerCase() + delim) >= 0) {
+          debugger;
+          return true;
+        }
+        return false;
+      });
+    });
+  }
+}
+
+export function extractText(str): string {
+  let ret = "";
+  if (/"/.test(str)) {
+    ret = str.match(/"(.*?)"/)[1];
+  } else {
+    ret = "";
+  }
+  return ret;
+}
+
 const fnNull = () => {
   return null;
 };
@@ -251,10 +298,10 @@ export class AppState {
     });
 
     /*
-    getComposers().then(resp => {
-      this.composers = resp;
-    });
-*/
+        getComposers().then(resp => {
+          this.composers = resp;
+        });
+    */
     this.userPerformersFromApi = [];
 
     DZ.Event.subscribe("player_play", () => {
@@ -290,39 +337,39 @@ export class AppState {
             //this.setTabActiveIndex(0);
 
             /*this.userPerformersFromApi.forEach(artist => {
-              if (artist.PictureMediumURL.endsWith("000000-80-0-0.jpg")) {
-                const nomsencer = artist.name.split(" ");
-                const cognom =
-                  nomsencer.length > 1
-                    ? nomsencer[nomsencer.length - 1].trim().toLowerCase()
-                    : nomsencer[0].trim().toLowerCase();
-                /!*
-                artist.PictureMediumURL =
-                  "https://www.biografiasyvidas.com/biografia/" +
-                  cognom.charAt(0) +
-                  "/fotos/" +
-                  cognom +
-                  ".jpg";
-*!/
-                /!*
-                DZ.api(
-                  "artist/" + artist.id + "/comments",
-                  (comments: IResponseComment) => {
-                    if (comments.total) {
-                      comments.data.forEach(comment => {
-                        if (comment.text.startsWith("{")) {
-                          try {
-                            const json = JSON.parse(comment.text);
-                            artist.PictureMediumURL = json["photo"];
-                          } catch (e) {}
-                        }
-                      });
-                    }
-                  }
-                );
-*!/
-              }
-            });*/
+                          if (artist.PictureMediumURL.endsWith("000000-80-0-0.jpg")) {
+                            const nomsencer = artist.name.split(" ");
+                            const cognom =
+                              nomsencer.length > 1
+                                ? nomsencer[nomsencer.length - 1].trim().toLowerCase()
+                                : nomsencer[0].trim().toLowerCase();
+                            /!*
+                            artist.PictureMediumURL =
+                              "https://www.biografiasyvidas.com/biografia/" +
+                              cognom.charAt(0) +
+                              "/fotos/" +
+                              cognom +
+                              ".jpg";
+            *!/
+                            /!*
+                            DZ.api(
+                              "artist/" + artist.id + "/comments",
+                              (comments: IResponseComment) => {
+                                if (comments.total) {
+                                  comments.data.forEach(comment => {
+                                    if (comment.text.startsWith("{")) {
+                                      try {
+                                        const json = JSON.parse(comment.text);
+                                        artist.PictureMediumURL = json["photo"];
+                                      } catch (e) {}
+                                    }
+                                  });
+                                }
+                              }
+                            );
+            *!/
+                          }
+                        });*/
             //dthis.getdMoreUserPerformers(performers.next);
           }
         );
@@ -337,38 +384,38 @@ export class AppState {
             this.isLoading = false;
             this.userPlaylistsFromApi = list.data;
             /*
-            this.tabDataSet.find(tab => tab.id === "playlists").count =
-              list.data.length;
-*/
+                        this.tabDataSet.find(tab => tab.id === "playlists").count =
+                          list.data.length;
+            */
           }
         );
       }
     );
 
     /*
-    reaction(
-      () => this.userPerformersFromApi,
-      performers => {
-        this.tabDataSet.find(
-          tab => tab.id === "composers"
-        ).count = this.composersCount();
-        this.tabDataSet.find(
-          tab => tab.id === "performers"
-        ).count = this.performersCount();
-      }
-    );
-*/
+        reaction(
+          () => this.userPerformersFromApi,
+          performers => {
+            this.tabDataSet.find(
+              tab => tab.id === "composers"
+            ).count = this.composersCount();
+            this.tabDataSet.find(
+              tab => tab.id === "performers"
+            ).count = this.performersCount();
+          }
+        );
+    */
 
     /*
-    reaction(
-      () => this.composers.length,
-      () => {
-        this.tabDataSet.find(
-          tab => tab.id === "composers"
-        ).count = this.composersCount();
-      }
-    );
-*/
+        reaction(
+          () => this.composers.length,
+          () => {
+            this.tabDataSet.find(
+              tab => tab.id === "composers"
+            ).count = this.composersCount();
+          }
+        );
+    */
 
     reaction(
       () => this.activeComposer,
@@ -385,27 +432,38 @@ export class AppState {
       }
     );
 
+    reaction(
+      () => this.composers,
+      composers => {
+        composers.forEach(composer => {
+          composer.PictureMediumURLLocal =
+            "http://127.0.0.1/PictureMedium/" + composer.IdComposer + ".jpg";
+        });
+      }
+    );
+
     /**
      * Events
      */
   }
+
   /*
-  getdMoreUserPerformers = (urlParam: string) => {
-    if (!urlParam) {
-      return;
-    }
-    const p = urlParam.indexOf("user/me/");
-    const url = urlParam.substr(p);
-    DZ.api(url, (performers: IResponseCollection) => {
-      this.userPerformersFromApi = performers.data;
-      //this.getdMoreUserPerformers(performers.next);
-    });
-    DZ.api(url, (playlists: IResponseCollection) => {
-      this.userPlaylistsFromApi = playlists.data;
-      //this.getdMoreUserPerformers(performers.next);
-    });
-  };
-*/
+    getdMoreUserPerformers = (urlParam: string) => {
+      if (!urlParam) {
+        return;
+      }
+      const p = urlParam.indexOf("user/me/");
+      const url = urlParam.substr(p);
+      DZ.api(url, (performers: IResponseCollection) => {
+        this.userPerformersFromApi = performers.data;
+        //this.getdMoreUserPerformers(performers.next);
+      });
+      DZ.api(url, (playlists: IResponseCollection) => {
+        this.userPlaylistsFromApi = playlists.data;
+        //this.getdMoreUserPerformers(performers.next);
+      });
+    };
+  */
 
   @action
   getComposers(): Promise<any> {
@@ -445,6 +503,7 @@ export class AppState {
   };
 
   @observable userPerformersFromApi: Array<TArtist>;
+
   @computed
   get userPerformersFromApiResolt(): Array<TArtist> {
     if (!this.userPerformersFromApi) {
@@ -486,23 +545,25 @@ export class AppState {
   //private composersPhotos = composersPhoto;
   private getArtistPhoto(artist: TArtist, defaultPhoto: string): string {
     /*
-    const myPhoto = this.composersPhotos.find(photo => photo.id === artist.id);
-    if (!artist.isComposer) {
-      return defaultPhoto;
-    }
-    return !!myPhoto ? myPhoto.foto : defaultPhoto;
-*/
+        const myPhoto = this.composersPhotos.find(photo => photo.id === artist.id);
+        if (!artist.isComposer) {
+          return defaultPhoto;
+        }
+        return !!myPhoto ? myPhoto.foto : defaultPhoto;
+    */
     return defaultPhoto;
   }
+
   /*
-  private getComposerPhoto(composer: TComposer): string {
-    const myPhoto = this.composersPhotos.find(photo => photo.id === composer.IdDeezer);
-    return !!myPhoto ? myPhoto.foto : '';
-  }
-*/
+    private getComposerPhoto(composer: TComposer): string {
+      const myPhoto = this.composersPhotos.find(photo => photo.id === composer.IdDeezer);
+      return !!myPhoto ? myPhoto.foto : '';
+    }
+  */
 
   @observable userPlayListSortField: string = "title";
   @observable userPlaylistsFromApi: Array<IPlaylist>;
+
   @computed
   get userPlaylists(): Array<IPlaylist> {
     if (!this.userPlaylistsFromApi) {
@@ -554,9 +615,25 @@ export class AppState {
   }
 
   @observable composersFromApi: Array<TComposer> = [];
+
+  @observable composerOrderByField: string = "AnyoNeix";
+  @computed get composerOrderPrompt(): string {
+    if (this.composerOrderByField === "AnyoNeix") {
+      return "Order by Date of Birth " + this.composerOrderByDirectionPrompt;
+    }
+    return "";
+  }
+  @observable composerOrderByDirection: number = 1;
+    @computed get composerOrderByDirectionPrompt(): string {
+      return this.composerOrderByDirection === 1 ? '\u25B2' : '\u25BC';
+    }
+  @action
+  toggleComposerOrderByDirection() {
+    this.composerOrderByDirection *= -1;
+  }
   @computed
   get composers(): Array<TComposer> {
-    const sortBy = "Nom"; //AnyoNeix
+    const sortBy = this.composerOrderByField;
     return (
       this.composersFromApi
         /*.filter(c => !!c.IdDeezer)*/
@@ -570,10 +647,10 @@ export class AppState {
         })
         .sort((a1, a2): number => {
           if (a1[sortBy] > a2[sortBy]) {
-            return 1;
+            return this.composerOrderByDirection;
           }
           if (a1[sortBy] < a2[sortBy]) {
-            return -1;
+            return this.composerOrderByDirection * -1;
           }
           return 0;
         })
@@ -589,11 +666,13 @@ export class AppState {
   }
 
   @observable isPlayHover: boolean = false;
+
   @action
   setPlayHover(hover: boolean) {
     this.isPlayHover = hover;
     this.statusPlay = hover ? "Here we go!" : "";
   }
+
   @observable statusPlay: string;
 
   @action
@@ -626,11 +705,12 @@ export class AppState {
       //this.canGoForward = (ls.state.action === 'pop');
     });
     /*
-    if (this.isEntornDiscover) {
-      this.setTabActiveIndex(0);
-    }
-*/
+        if (this.isEntornDiscover) {
+          this.setTabActiveIndex(0);
+        }
+    */
   }
+
   @action
   go(path: string) {
     if (this.history.location.pathname === path) {
@@ -638,24 +718,31 @@ export class AppState {
     }
     this.history.push(path);
   }
+
   @action
   goArtistTracks(artistId: number) {
     this.history.push("/Me/Artist/" + artistId.toString() + "/Tracks");
   }
+
   @observable canGoBack: boolean;
+
   @action
   goBack() {
     this.history.goBack();
   }
+
   @observable canGoForward: boolean;
+
   @action
   goForward() {
     this.history.goForward();
   }
+
   @action
   goHome() {
     this.go(ROUTE_HOME);
   }
+
   private history: History;
 
   @action
@@ -691,27 +778,30 @@ export class AppState {
   filterByArtistNsme(artistNameFilter: string) {
     this.artistNameFilter = artistNameFilter;
   }
+
   @observable artistNameFilter: string;
 
   @action
   filterByComposerNsme(artistNameFilter: string) {
     /*
-    if (artistNameFilter.trimLeft().trimRight().length < 3) {
-      return;
-    }
-*/
+        if (artistNameFilter.trimLeft().trimRight().length < 3) {
+          return;
+        }
+    */
     this.composerNameFilter = artistNameFilter;
   }
+
   @observable composerNameFilter: string;
   /*
-      getImageArtist = (artitstName: string): Promise<string> => {
-        return getFirstImageURL(artitstName);
-      }
-  */
+        getImageArtist = (artitstName: string): Promise<string> => {
+          return getFirstImageURL(artitstName);
+        }
+    */
 
   private tabMyMusica = [ROUTE_PERFORMERS, ROUTE_PLAYLISTS];
 
   @observable myMusicActiveIndex: number;
+
   @action
   setMyMusicActiveIindex(index: number) {
     this.go(this.tabMyMusica[index]);
@@ -719,6 +809,7 @@ export class AppState {
   }
 
   @observable myMusicActiveTabValue: string;
+
   @action
   setMyMusicActiveTabValue(value: string) {
     this.myMusicActiveTabValue = value;
@@ -795,6 +886,7 @@ export class AppState {
     }
     return this.tabDataSet[this.tabActiveIndex].routePath;
   }
+
   @computed
   get tabActiveId(): string {
     if (this.tabActiveIndex < 0) {
@@ -802,6 +894,7 @@ export class AppState {
     }
     return this.tabDataSet[this.tabActiveIndex].id;
   }
+
   @action
   setTabActiveIndex(index: number) {
     if (this.tabActiveIndex === index) {
@@ -816,26 +909,30 @@ export class AppState {
   setActivePlaylist(id: number) {
     this.activePlayListId = id;
   }
+
   @action
   goActivePlayList(id: number) {
     this.go(ROUTE_PLAYLIST.replace(":playlistId", id.toString()));
   }
+
   @action
   goActiveAlbum() {
     this.go(ROUTE_ALBUM.replace(":albumId", this.activeAlbum.id.toString()));
   }
+
   @observable activeAlbum: IAlbum;
 
   @computed
   get activePlaylist(): IPlaylist {
     return this.userPlaylists.find(pl => pl.id === this.activePlayListId);
   }
+
   /*
-  @computed
-  get activeAlbum(): IAlbum {
-    return this.composerAlbumsFromApi.find(pl => pl.id === this.activeAlbumId);
-  }
-*/
+    @computed
+    get activeAlbum(): IAlbum {
+      return this.composerAlbumsFromApi.find(pl => pl.id === this.activeAlbumId);
+    }
+  */
 
   @observable showOnlyComposers: boolean = true;
 
@@ -844,13 +941,13 @@ export class AppState {
   @action
   toggleComposer(artistId: number) {
     /*
-    if (this.composers.includes(artistId)) {
-      this.composers.splice(this.composers.indexOf(artistId), 1);
-    } else {
-      this.composers.push(artistId);
-      //insertConposers(toJS(this.composers));
-    }
-*/
+        if (this.composers.includes(artistId)) {
+          this.composers.splice(this.composers.indexOf(artistId), 1);
+        } else {
+          this.composers.push(artistId);
+          //insertConposers(toJS(this.composers));
+        }
+    */
   }
 
   @computed
@@ -879,31 +976,37 @@ export class AppState {
   @observable activePlayListId: number;
   @observable activeTracksList: Array<ITrack> = [];
   @observable activeTrackIndex: number;
+
   @computed
   get activeTrack(): ITrack {
     return this.activeTracksList[this.activeTrackIndex];
   }
+
   @observable activeAlbumId: number;
+
   @action
   setActiveAlbum(album: IAlbum) {
     this.activeAlbumId = album.id;
     this.activeAlbum = album;
   }
+
   @action
   setActiveAlbumById(id: number) {
     this.activeAlbumId = id;
   }
+
   /*
-  @computed get imageSide(): string {
-    if (this.playerIsPlaying) {
-      return "hifiAntic.gif";
-    } else {
-      return 'hifiAnticFix.gif';
+    @computed get imageSide(): string {
+      if (this.playerIsPlaying) {
+        return "hifiAntic.gif";
+      } else {
+        return 'hifiAnticFix.gif';
+      }
     }
-  }
-*/
+  */
 
   @observable imageSide: string = "hifiAnticFix.gif";
+
   @computed
   get imageSizeOverlay(): string {
     if (this.playerIsPlaying) {
@@ -956,10 +1059,12 @@ export class AppState {
   }
 
   @observable trackProgress: number = 0;
+
   @computed
   get trackTotalTime(): number {
     return this.activeTrack.duration;
   }
+
   @computed
   get activeTrackCover(): string {
     if (!this.activeTrack) {
@@ -967,6 +1072,7 @@ export class AppState {
     }
     return this.activeTrack.album.cover_medium;
   }
+
   @computed
   get activeTrackCoverBig(): string {
     if (!this.activeTrack) {
@@ -992,6 +1098,7 @@ export class AppState {
   }
 
   @observable activeComposerId: number = -1;
+
   @computed
   get activeComposer(): TComposer {
     if (this.activeComposerId < 0) {
@@ -999,6 +1106,7 @@ export class AppState {
     }
     return this.composers.find(c => c.IdComposer === this.activeComposerId);
   }
+
   @action
   moveToPrevComposer() {
     const index = this.composers.findIndex(
@@ -1006,6 +1114,7 @@ export class AppState {
     );
     this.activeComposerId = this.composers[index - 1].IdComposer;
   }
+
   @action
   moveToNextComposer() {
     const index = this.composers.findIndex(
@@ -1013,16 +1122,23 @@ export class AppState {
     );
     this.activeComposerId = this.composers[index + 1].IdComposer;
   }
+
   @action
   setActiveComposer(id: number) {
     this.activeComposerId = id;
   }
+
   @computed
   get activeComposerPictureHeaderBioURL(): string {
     if (!this.activeComposer) {
       return "";
     }
-    return this.activeComposer.PictureHeaderBioURL.replace("fixed:", "");
+    return (
+      "http://127.0.0.1/PictureHeaderBio/" +
+      this.activeComposer.IdComposer +
+      ".jpg"
+    );
+    //return this.activeComposer.PictureHeaderBioURL.replace("fixed:", "");
   }
 
   public secondsToTimeFormat(seconds: number): string {
@@ -1052,6 +1168,7 @@ export class AppState {
   }
 
   @observable composerFollows: Array<IComposerFollow>;
+
   @computed
   get activeComposerFollowers(): Array<IComposerKeyValue> {
     if (!this.composerFollows) {
@@ -1067,6 +1184,7 @@ export class AppState {
         } as IComposerKeyValue;
       });
   }
+
   @computed
   get activeComposerFollowing(): Array<IComposerKeyValue> {
     if (!this.composerFollows) {
@@ -1190,6 +1308,7 @@ export class AppState {
       "cover"
     );
   }
+
   @computed
   get activeComposerBackgroundPosition(): string {
     if (!this.activeComposer) {
@@ -1200,22 +1319,29 @@ export class AppState {
       "center 20%"
     );
   }
+
   @computed
   get activeComposerImageFilter(): string {
     if (!this.activeComposer) {
       return "";
     }
+    return "";
+    /*
+
     return (
       this.activeComposerPictureHeaderBioURLOverrides["filter"] ||
       "grayscale(100%)"
     );
+*/
   }
+
   @computed
   get activeComposerImageTransform(): string {
     if (!this.activeComposer) {
       return "";
     }
-    return this.activeComposerPictureHeaderBioURLOverrides["transform"] || "";
+    return "";
+    //return this.activeComposerPictureHeaderBioURLOverrides["transform"] || "";
   }
 
   @computed
@@ -1238,31 +1364,159 @@ export class AppState {
   @observable composerTopTracks: Array<ITrack>;
 
   @observable topTrackIsPlaying: ITrack;
+
   @action
   setTopTrackIsPlaying(track: ITrack) {
     this.topTrackIsPlaying = track;
   }
 
-  @observable.deep searchedAlbums: Array<IAlbum>;
+  @computed
+  get searchedAlbums(): Array<IAlbum> {
+    return this.searchedAlbumsRaw; // refinaSearchAlbums(this.searchedAlbumsRaw, this.textSearched, true);
+  }
+
+  @observable searchedTracksRaw: Array<ITrack>;
+  @computed
+  get searchedTrack(): ITrack {
+    if (!this.searchedTracksRaw) {
+      return null;
+    }
+    return this.searchedTracksRaw[0];
+  }
+  @observable searchedAlbumsRaw: Array<IAlbum>;
   @observable albumAmpliat: any;
   @observable searchStrict: boolean = true;
   @observable upc: string;
+  @observable textSearched: string;
+
+  @computed
+  get textSearchedNormalized(): string {
+    let str = this.textSearched
+      .replace("ç", "c")
+      .replace(/[^\w\s]|_/g, "")
+      .replace(/\s+/g, " ");
+
+    debugger;
+    let words = str.split(" ");
+    return this.normalizeForSearch(
+      words.map(w => pluralize.singular(w)).join(" ")
+    );
+    /*
+            return translate(
+              this.normalizeForSearch(words.map(w => pluralize.singular(w)).join(" ")),
+              "en"
+            );
+        */
+  }
+
   @action
   searchByText(text: string) {
-    DZ.api("search/album?q=" + text + "&limit=1000&strict=on", resp => {
-      this.searchedAlbums = resp.data;
-      //this.searchedAlbums[0].upc = '123';
-      DZ.api("album/" + resp.data[0].id, respAlbum => {
+    this.textSearched = text;
+    DZ.api(
+      "search/album?q=" + this.textSearchedNormalized + "&limit=1000",
+      resp => {
         debugger;
-        this.searchedAlbums[0].title = respAlbum.upc;
+        this.searchedAlbumsRaw = resp.data;
+        //this.searchedAlbums[0].upc = '123';
+        DZ.api("album/" + resp.data[0].id, respAlbum => {
+          debugger;
+          this.searchedAlbumsRaw[0].title = respAlbum.upc;
           this.upc = respAlbum.upc;
-      });
-    });
+        });
+      }
+    );
   }
+
   @action
   searchByCode(code: string) {
     DZ.api("album/upc:" + code + "&strict=on", resp => {
-      this.searchedAlbums = [resp];
+      debugger;
+      this.textSearched = "";
+      this.searchedAlbumsRaw = [resp];
     });
   }
+
+  @action
+  searchTrackByCode(code: string) {
+    DZ.api("track/isrc:" + code, resp => {
+      //this.textSearched = "";
+      debugger;
+      this.searchedTracksRaw = [resp];
+    });
+  }
+
+  private normalizeForSearch = function(s) {
+    return s;
+    /*
+    function filter(c) {
+      switch (c) {
+        case "æ":
+        case "ä":
+          return "ae";
+
+        case "å":
+          return "aa";
+
+        case "á":
+        case "à":
+        case "ã":
+        case "â":
+          return "a";
+
+        case "ç":
+        case "č":
+          return "c";
+
+        case "é":
+        case "ê":
+        case "è":
+        case "ë":
+          return "e";
+
+        case "î":
+        case "ï":
+        case "í":
+          return "i";
+
+        case "œ":
+        case "ö":
+          return "oe";
+
+        case "ó":
+        case "õ":
+        case "ô":
+          return "o";
+
+        case "ś":
+        case "š":
+          return "s";
+
+        case "ü":
+          return "ue";
+
+        case "ù":
+        case "ú":
+          return "u";
+
+        case "ß":
+          return "ss";
+
+        case "ё":
+          return "е";
+
+        default:
+          return c;
+      }
+    }
+
+    let normalized = "",
+      i,
+      l;
+    s = s.toLowerCase();
+    for (i = 0, l = s.length; i < l; i = i + 1) {
+      normalized = normalized + filter(s.charAt(i));
+    }
+    return normalized;
+*/
+  };
 }

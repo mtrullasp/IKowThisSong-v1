@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/src/stores/AppStore.ts" line="929" mnemonic="6" />
-    <bookmark url="file://$PROJECT_DIR$/src/stores/AppStore.ts" line="544" mnemonic="9" />
-    <bookmark url="file://$PROJECT_DIR$/src/stores/AppStore.ts" line="432" />
+    <bookmark url="file://$PROJECT_DIR$/src/stores/AppStore.ts" line="974" mnemonic="6" />
+    <bookmark url="file://$PROJECT_DIR$/src/stores/AppStore.ts" line="554" mnemonic="9" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="100828f7-a792-40ea-89bf-c53219f48e8f" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App..tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App..tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/discover/components/myMusic/composers/MyComposers.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/discover/components/myMusic/composers/MyComposers.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/stores/AppStore.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/stores/AppStore.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/widgets/MyTab.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/widgets/MyTab.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -31,12 +32,77 @@
       <file leaf-file-name="AppStore.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/stores/AppStore.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="294">
-              <caret line="1257" column="15" lean-forward="true" selection-start-line="1257" selection-start-column="15" selection-end-line="1257" selection-end-column="15" />
+            <state relative-caret-position="289">
+              <caret line="626" column="60" lean-forward="true" selection-start-line="626" selection-start-column="60" selection-end-line="626" selection-end-column="60" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MyPlaylistTracks.tsx" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/discover/components/MyPlaylistTracks.tsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="48" column="27" lean-forward="true" selection-start-line="48" selection-start-column="27" selection-end-line="48" selection-end-column="27" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MyPlayerAlbum.tsx" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/discover/components/myPlayer/MyPlayerAlbum.tsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="196">
+              <caret line="66" column="7" lean-forward="true" selection-start-line="66" selection-start-column="7" selection-end-line="66" selection-end-column="7" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PlayerBar.tsx" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/widgets/PlayerBar.tsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="189">
+              <caret line="85" column="17" lean-forward="true" selection-start-line="85" selection-start-column="17" selection-end-line="85" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MyTracks..tsx" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/discover/components/myMusic/MyTracks..tsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="346">
+              <caret line="47" column="22" lean-forward="true" selection-start-line="47" selection-start-column="22" selection-end-line="47" selection-end-column="22" />
               <folding>
-                <element signature="e#0#98#0" expanded="true" />
-                <element signature="e#547#575#0" expanded="true" />
+                <element signature="e#0#31#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MyComposers.tsx" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/discover/components/myMusic/composers/MyComposers.tsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="187" selection-start-line="187" selection-end-line="187" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MyTab.tsx" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/widgets/MyTab.tsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="374">
+              <caret line="72" column="15" lean-forward="true" selection-start-line="72" selection-start-column="15" selection-end-line="72" selection-end-column="15" />
+              <folding>
+                <element signature="e#0#31#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MyTab.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/widgets/MyTab.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="138">
+              <caret line="12" column="12" lean-forward="true" selection-start-line="12" selection-start-column="12" selection-end-line="12" selection-end-column="12" />
             </state>
           </provider>
         </entry>
@@ -44,81 +110,20 @@
       <file leaf-file-name="MyAlbumTracks.tsx" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/discover/components/MyAlbumTracks.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="24" column="30" lean-forward="true" selection-start-line="24" selection-start-column="30" selection-end-line="24" selection-end-column="30" />
+            <state relative-caret-position="374">
+              <caret line="29" column="7" selection-start-line="29" selection-start-column="7" selection-end-line="29" selection-end-column="7" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SearchByText.tsx" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/discover/components/search/SearchByText.tsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="53" column="44" selection-start-line="53" selection-start-column="44" selection-end-line="53" selection-end-column="44" />
-              <folding>
-                <element signature="e#0#31#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="App..tsx" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/App..tsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="42" column="29" selection-start-line="42" selection-start-column="29" selection-end-line="42" selection-end-column="29" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SearchedAlbums.tsx" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/discover/components/SearchedAlbums.tsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="75" column="12" lean-forward="true" selection-start-line="75" selection-start-column="12" selection-end-line="75" selection-end-column="12" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="webpack.config.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/webpack.config.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="493">
-              <caret line="29" column="12" selection-start-line="29" selection-start-column="12" selection-end-line="29" selection-end-column="12" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/package.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="228">
-              <caret line="29" column="25" selection-start-line="29" selection-start-column="25" selection-end-line="29" selection-end-column="25" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Composer.tsx" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Composer.tsx" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/discover/components/myMusic/composers/Composer.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="151" column="23" selection-start-line="151" selection-start-column="23" selection-end-line="151" selection-end-column="23" />
+            <state relative-caret-position="986">
+              <caret line="75" column="56" selection-start-line="75" selection-start-column="56" selection-end-line="75" selection-end-column="56" />
               <folding>
                 <element signature="e#316#396#0" expanded="true" />
                 <element signature="e#892#942#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ComposerAlbums.tsx" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/discover/components/ComposerAlbums.tsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="234">
-              <caret line="116" column="13" lean-forward="true" selection-start-line="116" selection-start-column="13" selection-end-line="116" selection-end-column="13" />
-              <folding>
-                <element signature="e#0#31#0" expanded="true" />
-                <element signature="e#513#592#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -130,43 +135,43 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="TypeScrpit React Component" />
-        <option value="CSS File" />
         <option value="TypeScript File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>playertr</find>
-      <find>tracs</find>
-      <find>togg</find>
-      <find>play</find>
-      <find>playtr</find>
-      <find>click</find>
-      <find>tabdatase</find>
-      <find>count</find>
-      <find>fnN</find>
-      <find>count =</find>
-      <find>tabdataset</find>
-      <find>inject</find>
-      <find>UPC_CODE_LENGHT</find>
-      <find>IAlb</find>
-      <find>myplayeralbum</find>
-      <find>myAlbum</find>
-      <find>myalbumtracks</find>
-      <find>:albumId</find>
-      <find>limit=</find>
-      <find>goActiveAlbum</find>
-      <find>link</find>
-      <find>link</find>
-      <find>clickk</find>
-      <find>typesc</find>
-      <find>with</find>
-      <find>ciutat</find>
-      <find>defu</find>
-      <find>prev</find>
-      <find>@inject</find>
-      <find>quote</find>
+      <find>img</find>
+      <find>reaction</find>
+      <find>picturem</find>
+      <find>picturemedium</find>
+      <find>gray</find>
+      <find>&quot;.jpg</find>
+      <find>composers</find>
+      <find>.sort</find>
+      <find>pr</find>
+      <find>proves</find>
+      <find>.png</find>
+      <find>medium</find>
+      <find>gridTileBar</find>
+      <find>SEARCHBYCO</find>
+      <find>.API</find>
+      <find>TRACK</find>
+      <find>/aLBUM/</find>
+      <find>searchby</find>
+      <find>title</find>
+      <find>tracks</find>
+      <find>playerbar</find>
+      <find>li</find>
+      <find>top-menu</find>
+      <find>lis</find>
+      <find>hover</find>
+      <find>class</find>
+      <find>li</find>
+      <find>filter</find>
+      <find>sort</find>
+      <find>idcompo</find>
     </findStrings>
     <replaceStrings>
       <replace>artists</replace>
@@ -180,6 +185,8 @@
       <replace>Album</replace>
       <replace>activrAl</replace>
       <replace>activeAlbum</replace>
+      <replace>my-tab</replace>
+      <replace>div.li</replace>
     </replaceStrings>
     <dirStrings>
       <dir>C:\wrk\IKowThisSong</dir>
@@ -195,8 +202,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/index.tsx" />
-        <option value="$PROJECT_DIR$/src/widgets/Loader..tsx" />
         <option value="$PROJECT_DIR$/src/widgets/ImageButton..tsx" />
         <option value="$PROJECT_DIR$/src/discover/components/myPlayer/MyPlayer.old.tsx" />
         <option value="$PROJECT_DIR$/src/widgets/Img..tsx" />
@@ -204,7 +209,6 @@
         <option value="$PROJECT_DIR$/src/dashboard/DashBoard.tsx" />
         <option value="$PROJECT_DIR$/src/util/paleta.ts" />
         <option value="$PROJECT_DIR$/src/widgets/DivInline..tsx" />
-        <option value="$PROJECT_DIR$/src/widgets/PlayerBar.tsx" />
         <option value="$PROJECT_DIR$/src/discover/components/AppDiscover.tsx" />
         <option value="$PROJECT_DIR$/src/discover/components/myMusic/MyComposers.tsx" />
         <option value="$PROJECT_DIR$/src/discover/components/myMusic/Composer.tsx" />
@@ -212,7 +216,6 @@
         <option value="$PROJECT_DIR$/src/widgets/DivHtml..tsx" />
         <option value="$PROJECT_DIR$/src/MiniHeader..tsx" />
         <option value="$PROJECT_DIR$/src/widgets/FavoriteIconButton.tsx" />
-        <option value="$PROJECT_DIR$/src/discover/components/myMusic/composers/MyComposers.tsx" />
         <option value="$PROJECT_DIR$/src/discover/components/LocalLinkComposer.tsx" />
         <option value="$PROJECT_DIR$/src/widgets/TextFit.tsx" />
         <option value="$PROJECT_DIR$/src/widgets/TextFit/calcSize.ts" />
@@ -222,9 +225,7 @@
         <option value="$PROJECT_DIR$/src/widgets/TextFit/TextFit.tsx" />
         <option value="$PROJECT_DIR$/src/discover/components/myMusic/MyPlaylists.tsx" />
         <option value="$PROJECT_DIR$/src/discover/components/myPlayer/MyPlayer.tsx" />
-        <option value="$PROJECT_DIR$/src/discover/components/myPlayer/MyPlayerAlbum.tsx" />
         <option value="$PROJECT_DIR$/src/myStyles.css" />
-        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/src/main.css" />
         <option value="$PROJECT_DIR$/src/discover/components/ListComposerSocial.tsx" />
         <option value="$PROJECT_DIR$/src/discover/components/myMusic/MyPerformers.tsx" />
@@ -234,7 +235,6 @@
         <option value="$PROJECT_DIR$/src/discover/components/ListTopWorks.tsx" />
         <option value="$PROJECT_DIR$/src/util/constants.ts" />
         <option value="$PROJECT_DIR$/src/discover/components/myMusic/MyMusicRouter.tsx" />
-        <option value="$PROJECT_DIR$/src/widgets/MyTab.tsx" />
         <option value="$PROJECT_DIR$/src/Content..tsx" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/src/discover/components/ListAlbums.tsx" />
@@ -243,9 +243,16 @@
         <option value="$PROJECT_DIR$/src/discover/components/ComposerAlbums.tsx" />
         <option value="$PROJECT_DIR$/src/discover/components/MyAlbumTracks.tsx" />
         <option value="$PROJECT_DIR$/src/discover/components/SearchedAlbums.tsx" />
-        <option value="$PROJECT_DIR$/src/stores/AppStore.ts" />
         <option value="$PROJECT_DIR$/src/discover/components/search/SearchByText.tsx" />
         <option value="$PROJECT_DIR$/src/discover/components/myMusic/composers/Composer.tsx" />
+        <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/src/discover/components/myPlayer/MyPlayerAlbum.tsx" />
+        <option value="$PROJECT_DIR$/src/widgets/PlayerBar.tsx" />
+        <option value="$PROJECT_DIR$/src/discover/components/myMusic/MyTracks..tsx" />
+        <option value="$PROJECT_DIR$/src/widgets/MyTab.css" />
+        <option value="$PROJECT_DIR$/src/widgets/MyTab.tsx" />
+        <option value="$PROJECT_DIR$/src/stores/AppStore.ts" />
+        <option value="$PROJECT_DIR$/src/discover/components/myMusic/composers/MyComposers.tsx" />
       </list>
     </option>
   </component>
@@ -266,8 +273,14 @@
   <component name="NodeModulesDirectoryManager">
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
+  <component name="NodePackageJsonFileManager">
+    <packageJsonPaths>
+      <path value="$PROJECT_DIR$/package.json" />
+    </packageJsonPaths>
+  </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-9" />
+    <option name="x" value="127" />
+    <option name="y" value="28" />
     <option name="width" value="839" />
     <option name="height" value="524" />
   </component>
@@ -296,6 +309,17 @@
               <item name="IKnowThisSong" type="462c0819:PsiDirectoryNode" />
               <item name="dat" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="IKnowThisSong" type="b2602c69:ProjectViewProjectNode" />
+              <item name="IKnowThisSong" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="IKnowThisSong" type="b2602c69:ProjectViewProjectNode" />
+              <item name="IKnowThisSong" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="widgets" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -314,35 +338,35 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="SearchEverywhereHistoryKey" value="search&#9;FILE&#9;file://C:/wrk/IKnowThisSong/src/discover/components/search/SearchByText.tsx&#10;myalbumtra&#9;FILE&#9;file://C:/wrk/IKnowThisSong/src/discover/components/MyAlbumTracks.tsx&#10;Composer&#9;FILE&#9;file://C:/wrk/IKnowThisSong/src/discover/components/myMusic/composers/Composer.tsx&#10;my&#9;FILE&#9;file://C:/wrk/IKnowThisSong/src/widgets/MyTab.tsx&#10;mytab&#9;FILE&#9;file://C:/wrk/IKnowThisSong/src/widgets/MyTab.tsx&#10;appsta&#9;null&#9;null&#10;compo&#9;FILE&#9;file://C:/wrk/IKnowThisSong/src/discover/components/myMusic/composers/Composer.tsx&#10;main&#9;FILE&#9;file://C:/wrk/IKnowThisSong/src/main.css&#10;myperf&#9;FILE&#9;file://C:/wrk/IKnowThisSong/src/discover/components/myMusic/MyPerformers.tsx&#10;state&#9;null&#9;null&#10;myplayer&#9;FILE&#9;file://C:/wrk/IKnowThisSong/src/discover/components/myPlayer/MyPlayerAlbum.tsx&#10;appst&#9;FILE&#9;file://C:/wrk/IKnowThisSong/src/stores/AppStore.ts&#10;myplayeralbum&#9;FILE&#9;file://C:/wrk/IKnowThisSong/src/discover/components/myPlayer/MyPlayerAlbum.tsx&#10;mypla&#9;FILE&#9;file://C:/wrk/IKnowThisSong/src/discover/components/myPlayer/MyPlayerAlbum.tsx&#10;mypl&#9;FILE&#9;file://C:/wrk/IKnowThisSong/src/discover/components/MyPlaylistTracks.tsx&#10;myplaylists&#9;FILE&#9;file://C:/wrk/IKnowThisSong/src/discover/components/myMusic/MyPlaylists.tsx&#10;AlbumCom&#9;FILE&#9;file://C:/wrk/IKnowThisSong/src/discover/components/AlbumComposerItem.tsx&#10;CONSTA&#9;FILE&#9;file://C:/wrk/IKnowThisSong/src/util/constants.ts&#10;composer&#9;FILE&#9;file://C:/wrk/IKnowThisSong/src/discover/components/myMusic/composers/Composer.tsx&#10;icompo&#9;null&#9;null&#10;discover&#9;FILE&#9;file://C:/wrk/IKnowThisSong/src/discover/components/AppDiscover.tsx&#10;playerb&#9;FILE&#9;file://C:/wrk/IKnowThisSong/src/widgets/PlayerBar.tsx&#10;MYPLAYER&#9;FILE&#9;file://C:/wrk/IKnowThisSong/src/discover/components/myPlayer/MyPlayer.tsx&#10;myC&#9;FILE&#9;file://C:/wrk/IKnowThisSong/src/discover/components/myMusic/composers/MyComposers.tsx&#10;mycompo&#9;FILE&#9;file://C:/wrk/IKnowThisSong/src/discover/components/myMusic/composers/MyComposers.tsx&#10;apps&#9;FILE&#9;file://C:/wrk/IKnowThisSong/src/stores/AppStore.ts&#10;appstore&#9;FILE&#9;file://C:/wrk/IKnowThisSong/src/stores/AppStore.ts&#10;myta&#9;FILE&#9;file://C:/wrk/IKnowThisSong/src/widgets/MyTab.tsx&#10;myst&#9;FILE&#9;file://C:/wrk/IKnowThisSong/src/myStyles.css&#10;mys&#9;FILE&#9;file://C:/wrk/IKnowThisSong/src/myStyles.css&#10;mini&#9;null&#9;null&#10;header&#9;FILE&#9;file://C:/wrk/IKnowThisSong/src/MiniHeader..tsx&#10;index.h&#9;FILE&#9;file://C:/wrk/IKowThisSong/index.html&#10;myc&#9;FILE&#9;file://C:/wrk/IKowThisSong/src/discover/components/myMusic/MyComposers.tsx&#10;disco&#9;FILE&#9;file://C:/wrk/IKowThisSong/src/discover/components/AppDiscover.tsx&#10;playerbar&#9;FILE&#9;file://C:/wrk/IKowThisSong/src/widgets/PlayerBar.tsx&#10;appD&#9;null&#9;null&#10;mymusi&#9;null&#9;null&#10;app&#9;FILE&#9;file://C:/wrk/IKowThisSong/src/App..tsx&#10;player&#9;FILE&#9;file://C:/wrk/IKowThisSong/src/widgets/PlayerBar.tsx&#10;myplay&#9;FILE&#9;file://C:/wrk/IKowThisSong/src/discover/components/MyPlaylistTracks.tsx&#10;mymu&#9;null&#9;null&#10;constants&#9;FILE&#9;file://C:/wrk/IKowThisSong/src/util/constants.ts&#10;mycom&#9;FILE&#9;file://C:/wrk/IKowThisSong/src/discover/components/myMusic/MyComposers.tsx&#10;playba&#9;FILE&#9;file://C:/wrk/IKowThisSong/src/widgets/PlayerBar.tsx&#10;DashBo&#9;FILE&#9;file://C:/wrk/IKowThisSong/src/dashboard/DashBoard.tsx&#10;store&#9;FILE&#9;file://C:/wrk/IKowThisSong/src/stores/AppStore.ts&#10;inline&#9;FILE&#9;file://C:/wrk/IKowThisSong/src/widgets/InlineTrackPlayer..tsx&#10;mylists&#9;null&#9;null&#10;dashbo&#9;FILE&#9;file://C:/wrk/IKowThisSong/src/dashboard/DashBoard.tsx" />
+    <property name="SearchEverywhereHistoryKey" value="mytab&#9;FILE&#9;file://D:/wrk/IKnowThisSong/src/widgets/MyTab.tsx&#10;composers&#9;FILE&#9;file://D:/wrk/IKnowThisSong/src/discover/components/myMusic/composers/MyComposers.tsx&#10;mytrack&#9;FILE&#9;file://D:/wrk/IKnowThisSong/src/discover/components/myMusic/MyTracks..tsx&#10;myplayera&#9;FILE&#9;file://D:/wrk/IKnowThisSong/src/discover/components/myPlayer/MyPlayerAlbum.tsx&#10;mypl&#9;FILE&#9;file://D:/wrk/IKnowThisSong/src/discover/components/MyPlaylistTracks.tsx&#10;composer&#9;FILE&#9;file://C:/wrk/IKnowThisSong/src/discover/components/myMusic/composers/Composer.tsx&#10;search&#9;FILE&#9;file://C:/wrk/IKnowThisSong/src/discover/components/search/SearchByText.tsx&#10;mytr&#9;null&#9;null&#10;myalbumtra&#9;FILE&#9;file://C:/wrk/IKnowThisSong/src/discover/components/MyAlbumTracks.tsx&#10;Composer&#9;FILE&#9;file://C:/wrk/IKnowThisSong/src/discover/components/myMusic/composers/Composer.tsx&#10;my&#9;FILE&#9;file://C:/wrk/IKnowThisSong/src/widgets/MyTab.tsx&#10;appsta&#9;null&#9;null&#10;compo&#9;FILE&#9;file://C:/wrk/IKnowThisSong/src/discover/components/myMusic/composers/Composer.tsx&#10;main&#9;FILE&#9;file://C:/wrk/IKnowThisSong/src/main.css&#10;myperf&#9;FILE&#9;file://C:/wrk/IKnowThisSong/src/discover/components/myMusic/MyPerformers.tsx&#10;state&#9;null&#9;null&#10;myplayer&#9;FILE&#9;file://C:/wrk/IKnowThisSong/src/discover/components/myPlayer/MyPlayerAlbum.tsx&#10;appst&#9;FILE&#9;file://C:/wrk/IKnowThisSong/src/stores/AppStore.ts&#10;myplayeralbum&#9;FILE&#9;file://C:/wrk/IKnowThisSong/src/discover/components/myPlayer/MyPlayerAlbum.tsx&#10;mypla&#9;FILE&#9;file://C:/wrk/IKnowThisSong/src/discover/components/myPlayer/MyPlayerAlbum.tsx&#10;myplaylists&#9;FILE&#9;file://C:/wrk/IKnowThisSong/src/discover/components/myMusic/MyPlaylists.tsx&#10;AlbumCom&#9;FILE&#9;file://C:/wrk/IKnowThisSong/src/discover/components/AlbumComposerItem.tsx&#10;CONSTA&#9;FILE&#9;file://C:/wrk/IKnowThisSong/src/util/constants.ts&#10;icompo&#9;null&#9;null&#10;discover&#9;FILE&#9;file://C:/wrk/IKnowThisSong/src/discover/components/AppDiscover.tsx&#10;playerb&#9;FILE&#9;file://C:/wrk/IKnowThisSong/src/widgets/PlayerBar.tsx&#10;MYPLAYER&#9;FILE&#9;file://C:/wrk/IKnowThisSong/src/discover/components/myPlayer/MyPlayer.tsx&#10;myC&#9;FILE&#9;file://C:/wrk/IKnowThisSong/src/discover/components/myMusic/composers/MyComposers.tsx&#10;mycompo&#9;FILE&#9;file://C:/wrk/IKnowThisSong/src/discover/components/myMusic/composers/MyComposers.tsx&#10;apps&#9;FILE&#9;file://C:/wrk/IKnowThisSong/src/stores/AppStore.ts&#10;appstore&#9;FILE&#9;file://C:/wrk/IKnowThisSong/src/stores/AppStore.ts&#10;myta&#9;FILE&#9;file://C:/wrk/IKnowThisSong/src/widgets/MyTab.tsx&#10;myst&#9;FILE&#9;file://C:/wrk/IKnowThisSong/src/myStyles.css&#10;mys&#9;FILE&#9;file://C:/wrk/IKnowThisSong/src/myStyles.css&#10;mini&#9;null&#9;null&#10;header&#9;FILE&#9;file://C:/wrk/IKnowThisSong/src/MiniHeader..tsx&#10;index.h&#9;FILE&#9;file://C:/wrk/IKowThisSong/index.html&#10;myc&#9;FILE&#9;file://C:/wrk/IKowThisSong/src/discover/components/myMusic/MyComposers.tsx&#10;disco&#9;FILE&#9;file://C:/wrk/IKowThisSong/src/discover/components/AppDiscover.tsx&#10;playerbar&#9;FILE&#9;file://C:/wrk/IKowThisSong/src/widgets/PlayerBar.tsx&#10;appD&#9;null&#9;null&#10;mymusi&#9;null&#9;null&#10;app&#9;FILE&#9;file://C:/wrk/IKowThisSong/src/App..tsx&#10;player&#9;FILE&#9;file://C:/wrk/IKowThisSong/src/widgets/PlayerBar.tsx&#10;myplay&#9;FILE&#9;file://C:/wrk/IKowThisSong/src/discover/components/MyPlaylistTracks.tsx&#10;mymu&#9;null&#9;null&#10;constants&#9;FILE&#9;file://C:/wrk/IKowThisSong/src/util/constants.ts&#10;mycom&#9;FILE&#9;file://C:/wrk/IKowThisSong/src/discover/components/myMusic/MyComposers.tsx&#10;playba&#9;FILE&#9;file://C:/wrk/IKowThisSong/src/widgets/PlayerBar.tsx&#10;DashBo&#9;FILE&#9;file://C:/wrk/IKowThisSong/src/dashboard/DashBoard.tsx" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js.last.introduce.type" value="CONST" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.prettier" value="true" />
     <property name="node.js.path.for.package.prettier" value="C:/Program Files/nodejs/node" />
-    <property name="node.js.selected.package.prettier" value="C:\wrk\IKnowThisSong\node_modules\prettier" />
+    <property name="node.js.selected.package.prettier" value="D:\wrk\IKnowThisSong\node_modules\prettier" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="yarn" />
-    <property name="settings.editor.selected.configurable" value="preferences.sourceCode" />
+    <property name="settings.editor.selected.configurable" value="settings.javascript.prettier" />
     <property name="settings.editor.splitter.proportion" value="0.22612086" />
     <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\wrk\IKnowThisSong\src\discover\components\search" />
-      <recent name="C:\wrk\IKnowThisSong\src\widgets\TextFit" />
-      <recent name="C:\wrk\IKnowThisSong" />
-      <recent name="C:\wrk\IKowThisSong\src\discover\components\myMusic\composers" />
-      <recent name="C:\wrk\IKowThisSong\src\discover\components\myMusic" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\wrk\IKnowThisSong\src\discover\components" />
       <recent name="C:\wrk\IKnowThisSong\src\discover\components\search" />
       <recent name="C:\wrk\IKnowThisSong\src\widgets" />
       <recent name="C:\wrk\IKnowThisSong\src\discover\components\myPlayer" />
       <recent name="C:\wrk\IKnowThisSong\src\widgets\TextFit" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\wrk\IKnowThisSong\src\discover\components\search" />
+      <recent name="C:\wrk\IKnowThisSong\src\widgets\TextFit" />
+      <recent name="C:\wrk\IKnowThisSong" />
+      <recent name="C:\wrk\IKowThisSong\src\discover\components\myMusic\composers" />
+      <recent name="C:\wrk\IKowThisSong\src\discover\components\myMusic" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -383,7 +407,14 @@
       <workItem from="1522841659374" duration="23106000" />
       <workItem from="1522956650894" duration="19304000" />
       <workItem from="1523041919039" duration="11885000" />
-      <workItem from="1523097478065" duration="70076000" />
+      <workItem from="1523097478065" duration="73645000" />
+      <workItem from="1523372066889" duration="5419000" />
+      <workItem from="1523395771973" duration="7435000" />
+      <workItem from="1523460671352" duration="21173000" />
+      <workItem from="1523662142870" duration="696000" />
+      <workItem from="1523720758799" duration="23669000" />
+      <workItem from="1523879456839" duration="93000" />
+      <workItem from="1523879647093" duration="17068000" />
     </task>
     <task id="LOCAL-00001" summary="Prpimer Commmit versió 1">
       <created>1521626451773</created>
@@ -448,11 +479,18 @@
       <option name="project" value="LOCAL" />
       <updated>1523153227500</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Millores Composers, Search...">
+      <created>1523324873671</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1523324873671</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="637678000" />
+    <option name="totallyTimeSpent" value="716800000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -467,25 +505,25 @@
     <frame x="-8" y="-8" width="1696" height="1066" extended-state="6" />
     <editor active="true" />
     <layout>
+      <window_info anchor="bottom" id="TypeScript" order="7" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4968051" visible="true" weight="0.25452352" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.328877" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5018094" side_tool="true" weight="0.3290461" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32821077" />
       <window_info id="npm" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.49819058" visible="true" weight="0.3413831" />
-      <window_info anchor="bottom" id="TypeScript" order="7" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4968051" visible="true" weight="0.25452352" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49939686" weight="0.32821077" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" sideWeight="0.49819058" visible="true" weight="0.36333698" />
       <window_info id="Favorites" order="2" sideWeight="0.50319487" side_tool="true" weight="0.25150785" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49939686" weight="0.32821077" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -506,7 +544,8 @@
     <MESSAGE value="Avenços en Fitxa Compositor." />
     <MESSAGE value="Més Avenços en Fitxa Compositor." />
     <MESSAGE value="Search. Molt potent." />
-    <option name="LAST_COMMIT_MESSAGE" value="Search. Molt potent." />
+    <MESSAGE value="Millores Composers, Search..." />
+    <option name="LAST_COMMIT_MESSAGE" value="Millores Composers, Search..." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -516,25 +555,17 @@
           <line>34</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/discover/components/myMusic/MyTracks..tsx</url>
+          <line>83</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="2" />
+      <option name="time" value="3" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/discover/components/myMusic/composers/repertori/Repertori..tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/widgets/DivHtml..tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="5" lean-forward="true" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/img/icons/iknowmysong/icons-reference.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="442">
@@ -616,11 +647,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="118">
           <caret line="118" column="65" lean-forward="true" selection-start-line="118" selection-start-column="65" selection-end-line="118" selection-end-column="65" />
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
-            <element signature="e#215#270#0" expanded="true" />
-            <element signature="e#566#645#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -635,26 +661,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="16" column="39" selection-start-line="16" selection-start-column="39" selection-end-line="16" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/discover/components/myMusic/composers/MyComposers.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2703">
-          <caret line="176" column="36" selection-start-line="176" selection-start-column="36" selection-end-line="176" selection-end-column="36" />
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="901">
-          <caret line="53" column="62" selection-start-line="53" selection-start-column="62" selection-end-line="53" selection-end-column="62" />
-          <folding>
-            <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -700,16 +706,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2431">
           <caret line="155" column="21" selection-start-line="155" selection-start-column="21" selection-end-line="155" selection-end-column="21" />
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/widgets/PlayerBar.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="37" column="17" lean-forward="true" selection-start-line="37" selection-start-column="17" selection-end-line="37" selection-end-column="17" />
         </state>
       </provider>
     </entry>
@@ -738,9 +734,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
           <caret line="67" column="40" selection-start-line="67" selection-start-column="40" selection-end-line="67" selection-end-column="40" />
-          <folding>
-            <element signature="e#0#36#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -748,9 +741,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="356">
           <caret line="96" column="6" lean-forward="true" selection-start-line="96" selection-start-column="6" selection-end-line="96" selection-end-column="6" />
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -758,9 +748,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
           <caret line="119" column="23" selection-start-line="119" selection-start-column="23" selection-end-line="119" selection-end-column="23" />
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -768,9 +755,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="12" column="15" selection-start-line="12" selection-start-column="15" selection-end-line="12" selection-end-column="15" />
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -778,9 +762,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="351">
           <caret line="89" column="15" selection-start-line="89" selection-start-column="15" selection-end-line="89" selection-end-column="15" />
-          <folding>
-            <element signature="e#76#107#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -788,32 +769,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="58" column="11" selection-start-line="58" selection-start-column="11" selection-end-line="58" selection-end-column="11" />
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/widgets/MyTab.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="30" column="41" selection-start-line="30" selection-start-column="41" selection-end-line="30" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/discover/components/PlaylistTracks.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/discover/components/MyPlaylistTracks.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="515">
-          <caret line="54" column="14" selection-start-line="54" selection-start-column="14" selection-end-line="54" selection-end-column="14" />
         </state>
       </provider>
     </entry>
@@ -821,9 +776,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="311">
           <caret line="21" column="31" selection-start-line="21" selection-start-column="31" selection-end-line="21" selection-end-column="31" />
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -834,16 +786,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/discover/components/myPlayer/MyPlayerAlbum.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="226">
-          <caret line="173" column="10" selection-start-line="173" selection-start-column="10" selection-end-line="173" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
+        <state relative-caret-position="493">
           <caret line="29" column="25" selection-start-line="29" selection-start-column="25" selection-end-line="29" selection-end-column="25" />
         </state>
       </provider>
@@ -855,42 +800,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/discover/components/ListAlbums.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="792">
-          <caret line="148" column="26" selection-start-line="148" selection-start-column="26" selection-end-line="148" selection-end-column="26" />
-          <folding>
-            <element signature="e#162#217#0" expanded="true" />
-            <element signature="e#513#592#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/discover/components/ListAlbums.tsx" />
     <entry file="file://$PROJECT_DIR$/src/App..tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
+        <state relative-caret-position="408">
           <caret line="42" column="29" selection-start-line="42" selection-start-column="29" selection-end-line="42" selection-end-column="29" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/discover/components/search/SearchByTextResults.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="24" column="14" lean-forward="true" selection-start-line="24" selection-start-column="14" selection-end-line="24" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/discover/components/MyAlbumTracks.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="24" column="30" lean-forward="true" selection-start-line="24" selection-start-column="30" selection-end-line="24" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/discover/components/search/SearchByTextResults.tsx" />
     <entry file="file://$PROJECT_DIR$/src/discover/components/ComposerAlbums.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="116" column="13" lean-forward="true" selection-start-line="116" selection-start-column="13" selection-end-line="116" selection-end-column="13" />
+        <state relative-caret-position="1700">
+          <caret line="116" column="13" selection-start-line="116" selection-start-column="13" selection-end-line="116" selection-end-column="13" />
           <folding>
             <element signature="e#0#31#0" expanded="true" />
             <element signature="e#513#592#0" expanded="true" />
@@ -900,26 +822,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/discover/components/SearchedAlbums.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="75" column="12" lean-forward="true" selection-start-line="75" selection-start-column="12" selection-end-line="75" selection-end-column="12" />
+        <state relative-caret-position="476">
+          <caret line="44" column="12" selection-start-line="44" selection-start-column="12" selection-end-line="44" selection-end-column="12" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/stores/AppStore.ts">
+    <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="1257" column="15" lean-forward="true" selection-start-line="1257" selection-start-column="15" selection-end-line="1257" selection-end-column="15" />
-          <folding>
-            <element signature="e#0#98#0" expanded="true" />
-            <element signature="e#547#575#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="1088">
+          <caret line="64" column="61" selection-start-line="64" selection-start-column="61" selection-end-line="64" selection-end-column="61" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/discover/components/search/SearchByText.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="53" column="44" selection-start-line="53" selection-start-column="44" selection-end-line="53" selection-end-column="44" />
+        <state relative-caret-position="1105">
+          <caret line="71" selection-end-line="85" />
           <folding>
             <element signature="e#0#31#0" expanded="true" />
           </folding>
@@ -928,12 +846,88 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/discover/components/myMusic/composers/Composer.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="151" column="23" selection-start-line="151" selection-start-column="23" selection-end-line="151" selection-end-column="23" />
+        <state relative-caret-position="986">
+          <caret line="75" column="56" selection-start-line="75" selection-start-column="56" selection-end-line="75" selection-end-column="56" />
           <folding>
             <element signature="e#316#396#0" expanded="true" />
             <element signature="e#892#942#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/material-ui/GridList/GridListTileBar.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="21" column="14" selection-start-line="21" selection-start-column="14" selection-end-line="21" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/discover/components/MyAlbumTracks.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="29" column="7" selection-start-line="29" selection-start-column="7" selection-end-line="29" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/discover/components/MyPlaylistTracks.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="48" column="27" lean-forward="true" selection-start-line="48" selection-start-column="27" selection-end-line="48" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/discover/components/myPlayer/MyPlayerAlbum.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="66" column="7" lean-forward="true" selection-start-line="66" selection-start-column="7" selection-end-line="66" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/widgets/PlayerBar.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="85" column="17" lean-forward="true" selection-start-line="85" selection-start-column="17" selection-end-line="85" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/discover/components/myMusic/MyTracks..tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="346">
+          <caret line="47" column="22" lean-forward="true" selection-start-line="47" selection-start-column="22" selection-end-line="47" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/widgets/MyTab.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="12" column="12" lean-forward="true" selection-start-line="12" selection-start-column="12" selection-end-line="12" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/widgets/MyTab.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="72" column="15" lean-forward="true" selection-start-line="72" selection-start-column="15" selection-end-line="72" selection-end-column="15" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/stores/AppStore.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="626" column="60" lean-forward="true" selection-start-line="626" selection-start-column="60" selection-end-line="626" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/discover/components/myMusic/composers/MyComposers.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="187" selection-start-line="187" selection-end-line="187" />
         </state>
       </provider>
     </entry>
