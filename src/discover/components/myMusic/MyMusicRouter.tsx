@@ -48,7 +48,7 @@ class MyMusicRouter extends React.Component<IProps, {}> {
       bold: "700",
       fontSize: 40,
       fontWeight: 900,
-      background: "url(/src/img/street-old-music-wall-digital-manipulated-928931-wallhere.jpg) no-repeat",
+      background: "url(/src/img/wallpaper.jpg) no-repeat",
       backgroundSize: "cover"
     };
     const liStyle: CSSProperties = {

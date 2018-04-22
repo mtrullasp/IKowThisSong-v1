@@ -24,11 +24,6 @@ div#titol:after {
   width: 100%;
 }
 
-.tabItem:hover,
-.tabItem.active {
-  border-bottom: solid black 4px;
-}
-
 .item-social-avatar {
   cursor: pointer;
   font-weight: bold;
@@ -38,4 +33,17 @@ div#titol:after {
   background: white;
   padding-bottom: 0px;
   border-radius: 20px;
+}
+
+.boldOnHover {
+  font-weight: normal!important;
+}
+.boldOnHover:hover {
+  font-weight: bold!important;
+}
+.fontSize-14-16-onHover {
+  font-size: 14px!important;
+}
+.fontSize-14-16-onHover:hover {
+  font-size:16px!important;
 }

@@ -29,6 +29,10 @@ import * as $ from "jquery";
 import axios from "axios";
 import { ObservableArray } from "mobx/lib/types/observablearray";
 
+export interface IValueDesc {
+  Value: string;
+  Desc: string;
+}
 export interface ICiutat {
   IdCiutat: number;
   Nom: string;
@@ -64,6 +68,8 @@ export class TComposer {
   HeaderQuote: string;
   HeaderQuoteAutor: string;
   HeaderQuoteAutorIdComposer: number;
+  NomPais: string;
+  CodiISOPais: string;
 }
 
 export interface IComposerKeyValue {
@@ -616,20 +622,65 @@ export class AppState {
 
   @observable composersFromApi: Array<TComposer> = [];
 
-  @observable composerOrderByField: string = "AnyoNeix";
-  @computed get composerOrderPrompt(): string {
-    if (this.composerOrderByField === "AnyoNeix") {
-      return "Order by Date of Birth " + this.composerOrderByDirectionPrompt;
+  @observable
+  composerOrderByFields: Array<IValueDesc> = [
+    {
+      Value: "IdComposer",
+      Desc: "Order by Ranking"
+    },
+    {
+      Value: "AnyoNeix",
+      Desc: "Order by Date of Birth"
+    },
+    {
+      Value: "IdNacio",
+      Desc: "Order by Birth Nation"
+    },
+    {
+      Value: "Nom",
+      Desc: "Order by Name"
+    },
+    {
+      Value: "TODO",
+      Desc: "Order by Resultts"
     }
-    return "";
+  ];
+
+  @observable composerOrderByFieldSelectedIndex: number = 0;
+  @computed
+  get composerOrderByField(): string {
+    return this.composerOrderByFields[this.composerOrderByFieldSelectedIndex]
+      .Value;
+  }
+  @computed
+  get composerOrderByDesc(): string {
+    return this.composerOrderByFields[this.composerOrderByFieldSelectedIndex]
+      .Desc;
+  }
+  @computed
+  get composerOrderByFieldsAltres(): Array<IValueDesc> {
+    return this.composerOrderByFields.filter(
+      o => o.Value !== this.composerOrderByField
+    );
+  }
+  @computed
+  get composerOrderPrompt(): string {
+    return this.composerOrderByDesc;
   }
   @observable composerOrderByDirection: number = 1;
-    @computed get composerOrderByDirectionPrompt(): string {
-      return this.composerOrderByDirection === 1 ? '\u25B2' : '\u25BC';
-    }
+  @computed
+  get composerOrderByDirectionPrompt(): string {
+    return this.composerOrderByDirection === 1 ? "\u25B2" : "\u25BC";
+  }
   @action
   toggleComposerOrderByDirection() {
     this.composerOrderByDirection *= -1;
+  }
+  @action
+  changeComposerOrderByField(newField: string) {
+    this.composerOrderByFieldSelectedIndex = this.composerOrderByFields.findIndex(
+      o => o.Value === newField
+    );
   }
   @computed
   get composers(): Array<TComposer> {
@@ -820,7 +871,7 @@ export class AppState {
     {
       id: "composers",
       index: 0,
-      title: "My Composers",
+      title: "Composers",
       routePath: ROUTE_COMPOSERS,
       count: () => {
         return this.composersCount;
@@ -829,16 +880,43 @@ export class AppState {
     {
       id: "performers",
       index: 1,
-      title: "My Performers",
+      title: "Performers",
       routePath: ROUTE_PERFORMERS,
       count: () => {
         return this.performersCount;
       }
     },
+      {
+          id: "performers",
+          index: 1,
+          title: "Conductors",
+          routePath: ROUTE_PERFORMERS,
+          count: () => {
+              return this.performersCount;
+          }
+      },
+      {
+          id: "performers",
+          index: 1,
+          title: "Orchestras",
+          routePath: ROUTE_PERFORMERS,
+          count: () => {
+              return this.performersCount;
+          }
+      },
+      {
+          id: "performers",
+          index: 1,
+          title: "Instruments",
+          routePath: ROUTE_PERFORMERS,
+          count: () => {
+              return this.performersCount;
+          }
+      },
     {
       id: "kassikRanks",
       index: 2,
-      title: "My Klassic Ranks",
+      title: "KlassicRanks",
       routePath: ROUTE_PERFORMERS,
       count: fnNull,
       onEnter: () => {
@@ -851,21 +929,21 @@ export class AppState {
         return this.playlistsCount;
       },
       index: 3,
-      title: "My PlayLists",
+      title: "PlayLists",
       routePath: ROUTE_PLAYLISTS
     },
     {
       id: "albums",
       count: fnNull,
       index: 4,
-      title: "My Albums",
+      title: "Albums",
       routePath: ROUTE_PLAYLISTS
     },
     {
       id: "tracks",
       index: 5,
       count: fnNull,
-      title: "My Tracks",
+      title: "Tracks",
       routePath: ROUTE_TRACKS
     },
     {
@@ -1304,8 +1382,8 @@ export class AppState {
       return "";
     }
     return (
-      this.activeComposerPictureHeaderBioURLOverrides["backgroundSize"] ||
-      "cover"
+      /*this.activeComposerPictureHeaderBioURLOverrides["backgroundSize"] ||*/
+      "auto 100%"
     );
   }
 
@@ -1315,7 +1393,7 @@ export class AppState {
       return "";
     }
     return (
-      this.activeComposerPictureHeaderBioURLOverrides["backgroundPosition"] ||
+      /*this.activeComposerPictureHeaderBioURLOverrides["backgroundPosition"] ||*/
       "center 20%"
     );
   }

@@ -124,16 +124,42 @@ class MyComposers extends React.Component<IProps, {}> {
                 />
               </Col>
               <Col lg={6}>
-                <span
-                  style={{ cursor: "pointer" }}
-                  onClick={() => {
-                    {
-                      this.props.appState.toggleComposerOrderByDirection();
-                    }
-                  }}
-                >
-                  {this.props.appState.composerOrderPrompt}
-                </span>
+                {this.props.appState.composerOrderByFields.map((o, i) => {
+                  return i ===
+                    this.props.appState.composerOrderByFieldSelectedIndex ? (
+                    <span
+                      style={{
+                        cursor: "pointer",
+                        fontSize: 16,
+                        fontWeight: "bold",
+                        display: "inline",
+                        marginLeft: 20
+                      }}
+                      onClick={() => {
+                        {
+                          this.props.appState.toggleComposerOrderByDirection();
+                        }
+                      }}
+                    >
+                      {this.props.appState.composerOrderPrompt}
+                    </span>
+                  ) : (
+                    <span
+                      style={{
+                        cursor: "pointer",
+                        fontSize: 14,
+                        fontWeight: "normal",
+                        marginLeft: 20
+                      }}
+                      className="boldOnHover"
+                      onClick={() => {
+                        this.props.appState.changeComposerOrderByField(o.Value);
+                      }}
+                    >
+                      {o.Desc}
+                    </span>
+                  );
+                })}
               </Col>
             </Row>
           </Subheader>
@@ -194,7 +220,9 @@ class MyComposers extends React.Component<IProps, {}> {
                         fontSize: 16
                       }}
                     >
-                      {composer.IdComposer}
+                      {this.props.appState.composerOrderByField === "IdNacio"
+                        ? composer.CodiISOPais
+                        : composer.IdComposer}
                     </span>
                   </div>
                 }
